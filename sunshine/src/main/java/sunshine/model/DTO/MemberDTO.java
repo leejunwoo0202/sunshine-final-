@@ -1,4 +1,4 @@
-package model.DTO;
+package sunshine.model.DTO;
 
 import java.util.Date;
 

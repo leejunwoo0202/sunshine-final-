@@ -1,4 +1,4 @@
-package model;
+package sunshine.model;
 
 public class AuthInfo {
      private String userId;

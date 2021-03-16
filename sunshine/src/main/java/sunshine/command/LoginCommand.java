@@ -1,4 +1,4 @@
-package command;
+package sunshine.command;
 
 public class LoginCommand {
 	private String loginId;
