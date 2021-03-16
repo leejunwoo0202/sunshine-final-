@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE HTML>
 <!--
 	Industrious by TEMPLATED
@@ -6,6 +8,7 @@
 -->
 <html>
 	<head>
+		<meta charset="UTF-8">
 		<title>Industrious by TEMPLATED</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -23,6 +26,12 @@
 				</nav>
 			</header>
 
+
+
+
+<!--  메뉴 -->
+
+
 		<!-- Nav -->
 			<nav id="menu">
 				<ul>
@@ -30,8 +39,19 @@
 					<li><a href="signUp">회원가입</a></li>
 					<li><a href="generic.html">Generic</a></li>
 					<li><a href="member/login.do">로그인</a>
+					<li><a href="condo/condoMain">콘도</a>					
+					<li><a href="#">레스토랑</a>
+					<li><a href="#">프렌즈샵</a>
+					<li><a href="#">리프트권</a>
+										
 				</ul>
 			</nav>
+
+
+
+<!--  메뉴 -->
+
+
 
 		<!-- Banner -->
 			<section id="banner">

@@ -10,9 +10,7 @@ public class MainController {
 		return "index";
 	}
 	
-	@RequestMapping(value = "signUp")
-	public String main() {
-		return "signUp";
-	}
-	
+	/*
+	 * @RequestMapping(value = "signUp") public String main() { return "signUp"; }
+	 */
 }
