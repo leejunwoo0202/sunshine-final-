@@ -52,9 +52,8 @@
 		<!-- Banner -->
 			<section id="banner">
 				<div class="inner">
-					<h1>Industrious</h1>
-					<p>A responsive business oriented template with a video background<br />
-					designed by <a href="https://templated.co/">TEMPLATED</a> and released under the Creative Commons License.</p>
+					<h1>SunShine</h1>
+					<p>동영상 넣어버렸잖어 ~ css재능충인듯</p>
 				</div>
 				<video autoplay loop muted playsinline src="images/banner.mp4"></video>
 			</section>
