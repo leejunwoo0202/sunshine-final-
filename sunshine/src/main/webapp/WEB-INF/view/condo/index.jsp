@@ -14,7 +14,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
-		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
 	</head>
 	<body class="is-preload">
 
@@ -31,6 +31,7 @@
 
 <!--  메뉴 -->
 
+
 		<!-- Nav -->
 			<nav id="menu">
 				<ul>
@@ -41,9 +42,12 @@
 					<li><a href="condo/condoMain">콘도</a>					
 					<li><a href="#">레스토랑</a>
 					<li><a href="#">프렌즈샵</a>
-					<li><a href="#">리프트권</a>										
+					<li><a href="#">리프트권</a>
+										
 				</ul>
 			</nav>
+
+
 
 <!--  메뉴 -->
 
@@ -56,7 +60,7 @@
 					<p>A responsive business oriented template with a video background<br />
 					designed by <a href="https://templated.co/">TEMPLATED</a> and released under the Creative Commons License.</p>
 				</div>
-				<video autoplay loop muted playsinline src="images/banner.mp4"></video>
+				<video autoplay loop muted playsinline src="../images/banner.mp4"></video>
 			</section>
 
 		<!-- Highlights -->
@@ -65,6 +69,7 @@
 					<header class="special">
 						<h2>Sem turpis amet semper</h2>
 						<p>In arcu accumsan arcu adipiscing accumsan orci ac. Felis id enim aliquet. Accumsan ac integer lobortis commodo ornare aliquet accumsan erat tempus amet porttitor.</p>
+						<a href ="condoForm">객실등록</a>
 					</header>
 					<div class="highlights">
 						<section>
@@ -148,7 +153,7 @@
 								</blockquote>
 								<div class="author">
 									<div class="image">
-										<img src="images/pic01.jpg" alt="" />
+										<img src="../images/pic01.jpg" alt="" />
 									</div>
 									<p class="credit">- <strong>Jane Doe</strong> <span>CEO - ABC Inc.</span></p>
 								</div>
@@ -161,7 +166,7 @@
 								</blockquote>
 								<div class="author">
 									<div class="image">
-										<img src="images/pic03.jpg" alt="" />
+										<img src="../images/pic03.jpg" alt="" />
 									</div>
 									<p class="credit">- <strong>John Doe</strong> <span>CEO - ABC Inc.</span></p>
 								</div>
@@ -174,7 +179,7 @@
 								</blockquote>
 								<div class="author">
 									<div class="image">
-										<img src="images/pic02.jpg" alt="" />
+										<img src="../images/pic02.jpg" alt="" />
 									</div>
 									<p class="credit">- <strong>Janet Smith</strong> <span>CEO - ABC Inc.</span></p>
 								</div>
@@ -218,11 +223,10 @@
 			</footer>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
 	</body>
 </html>
