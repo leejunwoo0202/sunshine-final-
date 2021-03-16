@@ -12,7 +12,7 @@ public class MainController {
 	
 	@RequestMapping(value = "signUp")
 	public String main() {
-		return "signUp";
+		return "member/signUp";
 	}
 	
 }
