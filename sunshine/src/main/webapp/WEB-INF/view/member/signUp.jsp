@@ -8,68 +8,54 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form:form action="memberJoin" method="post" name="frm" id="frm" 
-		 modelAttribute ="memberCommand"> 
+<form:form action="memberSignUpComplete" name="frm" id="frm"  method="post"
+		 modelAttribute ="memberCommand"  > 
 <table>
+
+    <tr><th>이름</th>
+           <td><form:input path="memName" id="memName"/>
+                    <form:errors path="memName" />
+                    </td>
+                    </tr>
 	<tr><th>아이디</th>
-		<td><form:input path="userId" id = "userId" />
-			<form:errors path="userId"/>
+		<td><form:input path="memId" id = "memId" />
+			<form:errors path="memId"/>
 		</td>
 	</tr>
 	<tr><th>비밀번호</th>
-		<td><form:password path="userPw" id = "userPw" />
-			<form:errors path="userPw"/>
+		<td><form:password path="memPw" id = "memPw" />
+			<form:errors path="memPw"/>
 			</td>
 	</tr>
 	<tr><th>비밀번호 확인</th>
-		<td><form:password path="userPwCon" id = "userPwCon" />
-			<form:errors path="userPwCon"/>
+		<td><form:password path="memPwCon" id = "memPwCon" />
+			<form:errors path="memPwCon"/>
 		</td>
 	</tr>
-	<tr><th>이름</th>
-		<td><form:input path="userName" id = "userName" />
-			<form:errors path="userName" />
-		</td>
-	</tr>
-	<tr><th>생년월일</th>
-		<td><input type="date" name="userBirth" id = "userBirth" 
-			placeholder="1999-12-12"/>
-			<form:errors path="userBirth" />
-			</td>
-	</tr>
-	<tr><th>성별</th>
-		<td>
-		<form:radiobutton path="userGender" id = "userGender" value="M" 
-				checked="checked"/>남자
-		<form:radiobutton path="userGender" id = "userGender" value="F"/>여자
-		</td>
+	<tr><th>연락처</th>
+		<td><form:input path="memPhone" id = "memPhone" 
+						placeholder="123-123-1234,123-1234-1234"/>
+			<form:errors path="memPhone" /></td>
 	</tr>
 	<tr><th>이메일</th>
-		<td><form:input path="userEmail" id = "userEmail" />
-			<form:errors path="userEmail" /> </td>
+		<td><form:input path="memEmail" id = "memEmail" />
+			<form:errors path="memEmail" /> </td>
 	</tr>
 	<tr><th>주소</th>
-		<td><form:input path="userAddr" id = "userAddr" />
-		<form:errors path="userAddr" /> </td>
+		<td><form:input path="memAddr" id = "memAddr" />
+		<form:errors path="memAddr" /> </td>
 	</tr>
-	<tr><th>연락처1</th>
-		<td><form:input path="userPh1" id = "userPh1" 
-						placeholder="123-123-1234,123-1234-1234"/>
-			<form:errors path="userPh1" /></td>
+	<tr><th>주민등록번호</th>
+		<td><input type="date" name="memResidentNum" id = "memResidentNum" 
+			placeholder="1999-12-12"/>
+			<form:errors path="memResidentNum" />
+			</td>
 	</tr>
-	<tr><th>연락처2</th>
-		<td><input type="tel" name="userPh2" id = "userPh2" 
-			placeholder="123-123-1234,123-1234-1234"/>
-			<form:errors path="userPh2" /></td>
-	</tr>
-	<tr><th>관심분야</th>
-		<td>
-		<input type="checkbox" name="interest" id = "interest" value="HTML"/>HTML
-		<input type="checkbox" name="interest" id = "interest" value="CSS"/>CSS
-		<input type="checkbox" name="interest" id = "interest" value="jsp"/>jsp
-		<form:errors path="interest" />
-		</td>
-	</tr>
+	
+	
+	
+	
+	
 	<tr>
 	<th colspan="2">
 		<input type="submit" value="가입완료" />

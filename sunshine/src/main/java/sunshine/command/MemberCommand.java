@@ -3,100 +3,100 @@ package sunshine.command;
 import java.util.Date;
 
 public class MemberCommand {
-	String userNo;
-	String userName;
-	String userId;
-	String userPw;
-	String userPwCon;
-	String userPhone;
-	String userEmail;
-	String userAddr;
-	Date userRegist;
-	String userResidentNum;
+	String memNo;
+	String memName;
+	String memId;
+	String memPw;
+	String memPwCon;
+	String memPhone;
+	String memEmail;
+	String memAddr;
+	Date memRegist;
+	String memResidentNum;
 
-	public String getUserNo() {
-		return userNo;
+	public String getMemNo() {
+		return memNo;
 	}
 
-	public void setUserNo(String userNo) {
-		this.userNo = userNo;
+	public void setMemNo(String memNo) {
+		this.memNo = memNo;
 	}
 
-	public String getUserName() {
-		return userName;
+	public String getMemName() {
+		return memName;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setMemName(String memName) {
+		this.memName = memName;
 	}
 
-	public String getUserId() {
-		return userId;
+	public String getMemId() {
+		return memId;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
+	public void setMemId(String memId) {
+		this.memId = memId;
 	}
 
-	public String getUserPw() {
-		return userPw;
+	public String getMemPw() {
+		return memPw;
 	}
 
-	public void setUserPw(String userPw) {
-		this.userPw = userPw;
+	public void setMemPw(String memPw) {
+		this.memPw = memPw;
 	}
 
-	public String getUserPwCon() {
-		return userPwCon;
+	public String getMemPwCon() {
+		return memPwCon;
 	}
 
-	public void setUserPwCon(String userPwCon) {
-		this.userPwCon = userPwCon;
+	public void setMemPwCon(String memPwCon) {
+		this.memPwCon = memPwCon;
 	}
 
-	public String getUserPhone() {
-		return userPhone;
+	public String getMemPhone() {
+		return memPhone;
 	}
 
-	public void setUserPhone(String userPhone) {
-		this.userPhone = userPhone;
+	public void setMemPhone(String memPhone) {
+		this.memPhone = memPhone;
 	}
 
-	public String getUserEmail() {
-		return userEmail;
+	public String getMemEmail() {
+		return memEmail;
 	}
 
-	public void setUserEmail(String userEmail) {
-		this.userEmail = userEmail;
+	public void setMemEmail(String memEmail) {
+		this.memEmail = memEmail;
 	}
 
-	public String getUserAddr() {
-		return userAddr;
+	public String getMemAddr() {
+		return memAddr;
 	}
 
-	public void setUserAddr(String userAddr) {
-		this.userAddr = userAddr;
+	public void setMemAddr(String memAddr) {
+		this.memAddr = memAddr;
 	}
 
-	public Date getUserRegist() {
-		return userRegist;
+	public Date getMemRegist() {
+		return memRegist;
 	}
 
-	public void setUserRegist(Date userRegist) {
-		this.userRegist = userRegist;
+	public void setMemRegist(Date memRegist) {
+		this.memRegist = memRegist;
 	}
 
-	public String getUserResidentNum() {
-		return userResidentNum;
+	public String getMemResidentNum() {
+		return memResidentNum;
 	}
 
-	public void setUserResidentNum(String userResidentNum) {
-		this.userResidentNum = userResidentNum;
+	public void setMemResidentNum(String memResidentNum) {
+		this.memResidentNum = memResidentNum;
 	}
 
 	// 비밀번호와 비밀번호 확인
 	public boolean isuserPwEqualsuserPwCon() {
-		if (userPw.equals(userPwCon)) {
+		if (memPw.equals(memPwCon)) {
 			return true;
 		} else {
 			return false;

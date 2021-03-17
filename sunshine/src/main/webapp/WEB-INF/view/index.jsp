@@ -35,12 +35,12 @@
 			<nav id="menu">
 				<ul>
 					<li><a href="index.html">Home</a></li>
-					<li><a href="signUp">회원가입</a></li>
+					
 					<li><a href="generic.html">Generic</a></li>
 					<li><a href="member/login.do">로그인</a>
 <<<<<<< HEAD
 					<li><a href="register/regist">회원가입</a>
-=======
+=======      
 					<li><a href="condo/condoMain">콘도</a>					
 					<li><a href="#">레스토랑</a>
 					<li><a href="#">프렌즈샵</a>

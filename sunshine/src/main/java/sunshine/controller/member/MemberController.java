@@ -17,25 +17,19 @@ public class MemberController {
 	@Autowired
 	MemberJoinService memberJoinService;
 	
-//	@RequestMapping("agree")
-//	public String agree() {
-//		return "member/agree";
-//	}
-	
 	@RequestMapping(value = "regist", method = RequestMethod.GET)
 	public String regist(Model model) {
 		model.addAttribute("memberCommand",new MemberCommand());
 		return "member/signUp";
 	}
 	
-//	@RequestMapping(value = "memberJoin")
-//	public String memberJoin(MemberCommand memberCommand,
-//			   Errors errors, Model model) {
-//		
-//		if(errors.hasErrors()) {
-//			return "member/memberForm";
-//		}
-//		memberJoinService.execute(memberCommand);
-//		return "member/memberWelcome";
-//	}
+    @RequestMapping(value = "memberSignUpComplete", method = RequestMethod.POST)
+    public String memberJoin(
+    		MemberCommand memberCommand,
+    		 Model model ) {
+        	   
+        	   memberJoinService.execute(memberCommand);
+        	   return "member/memberSignUpComplete";
+           }
+    
 }
