@@ -30,6 +30,7 @@
 					<li><a href="signUp">회원가입</a></li>
 					<li><a href="generic.html">Generic</a></li>
 					<li><a href="member/login.do">로그인</a>
+					<li><a href="register/regist">회원가입</a>
 				</ul>
 			</nav>
 

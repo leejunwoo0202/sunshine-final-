@@ -7,8 +7,8 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import service.member.MemberJoinService;
 import sunshine.command.MemberCommand;
+import sunshine.service.member.MemberJoinService;
 
 @Controller
 @RequestMapping("register")
@@ -22,10 +22,10 @@ public class MemberController {
 //		return "member/agree";
 //	}
 	
-	@RequestMapping(value = "regist", method = RequestMethod.POST)
+	@RequestMapping(value = "regist", method = RequestMethod.GET)
 	public String regist(Model model) {
 		model.addAttribute("memberCommand",new MemberCommand());
-		return "member/memberForm";
+		return "member/signUp";
 	}
 	
 //	@RequestMapping(value = "memberJoin")

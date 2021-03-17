@@ -11,10 +11,14 @@ import sunshine.model.DTO.MemberDTO;
 @Repository
 public class MemberRepository {
 
-	@Autowired
-	private SqlSession sqlSession;
+//	@Autowired
+//	private SqlSession sqlSession;
 	private final String namespace = "mapper.member.memberMapper";
 	private String statement;
+	public Integer joinOkUpdate(MemberDTO memberDTO) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	/*
 	 * public Integer deleteMember(MemberDTO memberDTO) { statement = namespace +
@@ -26,13 +30,13 @@ public class MemberRepository {
 	 * MemberDTO selectByMember(MemberDTO memberDTO) { statement = namespace +
 	 * ".selectMember"; return sqlSession.selectOne(statement, memberDTO); }
 	 */
-	public Integer joinOkUpdate(MemberDTO memberDTO) {
-		statement = namespace + ".joinOkUpdate";
-		return sqlSession.update(statement,memberDTO );
-	}
-	public Integer insertMember(MemberDTO memberDTO) {
-		statement = namespace + ".memberInsert";
-		return sqlSession.update(statement,memberDTO );
-		
-	}
+//	public Integer joinOkUpdate(MemberDTO memberDTO) {
+//		statement = namespace + ".joinOkUpdate";
+//		return sqlSession.update(statement,memberDTO );
+//	}
+//	public Integer insertMember(MemberDTO memberDTO) {
+//		statement = namespace + ".memberInsert";
+//		return sqlSession.update(statement,memberDTO );
+//		
+//	}
 }

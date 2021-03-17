@@ -1,4 +1,4 @@
-package service.member;
+package sunshine.service.member;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -16,8 +16,8 @@ import sunshine.repository.member.MemberRepository;
 @Service
 public class MemberJoinService {
 
-	@Autowired
-	BCryptPasswordEncoder bcryptPasswordEncoder;
+//	@Autowired
+//	BCryptPasswordEncoder bcryptPasswordEncoder;
 	@Autowired
 	MemberRepository memberRepository;
 	
@@ -42,8 +42,8 @@ public class MemberJoinService {
 		memberDTO.setUserRegist((memberCommand.getUserRegist()));
 		memberDTO.setUserResidentNum(memberCommand.getUserResidentNum());
 		//비밀번호 받아오기
-		String pw = bcryptPasswordEncoder.encode(memberCommand.getUserPw());
-		memberDTO.setUserPw(pw);
+//		String pw = bcryptPasswordEncoder.encode(memberCommand.getUserPw());
+//		memberDTO.setUserPw(pw);
 		
 		result = memberRepository.insertMember(memberDTO);
 		if(result != null) {
