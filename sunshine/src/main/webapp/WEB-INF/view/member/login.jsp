@@ -1,15 +1,37 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%@ include file="../include/include.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
-
-
-<title>∑Œ±◊¿Œ∆‰¿Ã¡ˆ</title>
-
+<meta charset="UTF-8" >
+<title>Î°úÍ∑∏Ïù∏ÌéòÏù¥ÏßÄ</title>
 </head>
 <body>
-
+<c:if test="${empty authInfo }"  >
+<form:form action="loginPro" name="frm" method="post" id="frm" 
+           modelAttribute="loginCommand">
+           <table border="1">
+            <tr><td>ÏïÑÏù¥Îîî</td>
+                 <td><form:input path="loginId" id="loginId"/>
+                       <form:errors path="loginId"/>
+                       </td>
+                <td rowspan="2">
+                    <input type="submit" value="Ï†ÑÏÜ°" />
+                    </td>
+                
+                </tr>
+                   <tr><td>ÎπÑÎ∞ÄÎ≤àÌò∏</td>
+                         <td><input type="password" name="loginPw" id="loginPw"/>
+                               <form:errors path="loginPw" />
+                               </td>
+                               </tr>    
+           </table>
+</form:form>
+       </c:if>
+        
+        
+        
         
 
 </body>

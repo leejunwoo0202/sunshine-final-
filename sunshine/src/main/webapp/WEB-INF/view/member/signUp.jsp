@@ -60,7 +60,7 @@
 	<th colspan="2">
 		<input type="submit" value="가입완료" />
 		<input type="reset" value="다시작성" />
-		<input type="button" value="메인으로" onclick="javascript:location.href='../index'"/>
+		<input type="button" value="메인으로" onclick="javascript:location.href='../main'"/>
 	</th>
 	</tr>
 </table>
