@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE HTML>
-
 <!--
 	Industrious by TEMPLATED
 	templated.co @templatedco
@@ -15,19 +14,13 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
-		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
 	</head>
 	<body class="is-preload">
 
 		<!-- Header -->
 			<header id="header">
 				<a class="logo" href="index.html">Industrious</a>
-				<nav>
-			    <a href="login"   >로그인</a>
-				</nav>
-				<nav>
-				<a href="logout">로그아웃</a>
-				</nav>
 				<nav>
 					<a href="#menu">Menu</a>
 				</nav>
@@ -38,23 +31,23 @@
 
 <!--  메뉴 -->
 
+
 		<!-- Nav -->
 			<nav id="menu">
 				<ul>
 					<li><a href="index.html">Home</a></li>
-					
+					<li><a href="signUp">회원가입</a></li>
 					<li><a href="generic.html">Generic</a></li>
-					
-<<<<<<< HEAD
-					<li><a href="register/regist">회원가입</a>
-=======      
+					<li><a href="member/login.do">로그인</a>
 					<li><a href="condo/condoMain">콘도</a>					
 					<li><a href="restaurant/restaurantMain">레스토랑</a>
 					<li><a href="#">프렌즈샵</a>
-					<li><a href="#">리프트권</a>										
->>>>>>> branch 'master' of https://github.com/leejunwoo0202/sunshine-final-.git
+					<li><a href="#">리프트권</a>
+										
 				</ul>
 			</nav>
+
+
 
 <!--  메뉴 -->
 
@@ -64,9 +57,10 @@
 			<section id="banner">
 				<div class="inner">
 					<h1>SunShine</h1>
-					<p>동영상 넣어버렸잖어 ~ css재능충인듯</p>
+					<p>A responsive business oriented template with a video background<br />
+					designed by <a href="https://templated.co/">TEMPLATED</a> and released under the Creative Commons License.</p>
 				</div>
-				<video autoplay loop muted playsinline src="images/banner.mp4"></video>
+				<video autoplay loop muted playsinline src="../images/banner.mp4"></video>
 			</section>
 
 		<!-- Highlights -->
@@ -74,14 +68,14 @@
 				<div class="inner">
 					<header class="special">
 						<h2>Sem turpis amet semper</h2>
-						<p>In arcu accumsan arcu adipiscing accumsan orci ac. Felis id enim aliquet. Accumsan ac integer lobortis commodo ornare aliquet accumsan erat tempus amet porttitor.</p>
+						
 					</header>
 					<div class="highlights">
 						<section>
 							<div class="content">
 								<header>
-									<a href="#" class="icon fa-vcard-o"><span class="label">Icon</span></a>
-									<h3>Feugiat consequat</h3>
+									<a href="restaurantBookMg" class="icon fa-vcard-o"><span class="label">Icon</span></a>
+									<h3>예약관리</h3>
 								</header>
 								<p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>
 							</div>
@@ -90,7 +84,7 @@
 							<div class="content">
 								<header>
 									<a href="#" class="icon fa-files-o"><span class="label">Icon</span></a>
-									<h3>Ante sem integer</h3>
+									<h3>메뉴관리</h3>
 								</header>
 								<p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>
 							</div>
@@ -99,7 +93,7 @@
 							<div class="content">
 								<header>
 									<a href="#" class="icon fa-floppy-o"><span class="label">Icon</span></a>
-									<h3>Ipsum consequat</h3>
+									<h3>룸서비스관리</h3>
 								</header>
 								<p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>
 							</div>
@@ -108,7 +102,7 @@
 							<div class="content">
 								<header>
 									<a href="#" class="icon fa-line-chart"><span class="label">Icon</span></a>
-									<h3>Interdum gravida</h3>
+									<h3>주문관리</h3>
 								</header>
 								<p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>
 							</div>
@@ -117,20 +111,12 @@
 							<div class="content">
 								<header>
 									<a href="#" class="icon fa-paper-plane-o"><span class="label">Icon</span></a>
-									<h3>Faucibus consequat</h3>
+									<h3>결제관리</h3>
 								</header>
 								<p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>
 							</div>
 						</section>
-						<section>
-							<div class="content">
-								<header>
-									<a href="#" class="icon fa-qrcode"><span class="label">Icon</span></a>
-									<h3>Accumsan viverra</h3>
-								</header>
-								<p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>
-							</div>
-						</section>
+					
 					</div>
 				</div>
 			</section>
@@ -158,7 +144,7 @@
 								</blockquote>
 								<div class="author">
 									<div class="image">
-										<img src="images/pic01.jpg" alt="" />
+										<img src="../images/pic01.jpg" alt="" />
 									</div>
 									<p class="credit">- <strong>Jane Doe</strong> <span>CEO - ABC Inc.</span></p>
 								</div>
@@ -171,7 +157,7 @@
 								</blockquote>
 								<div class="author">
 									<div class="image">
-										<img src="images/pic03.jpg" alt="" />
+										<img src="../images/pic03.jpg" alt="" />
 									</div>
 									<p class="credit">- <strong>John Doe</strong> <span>CEO - ABC Inc.</span></p>
 								</div>
@@ -184,7 +170,7 @@
 								</blockquote>
 								<div class="author">
 									<div class="image">
-										<img src="images/pic02.jpg" alt="" />
+										<img src="../images/pic02.jpg" alt="" />
 									</div>
 									<p class="credit">- <strong>Janet Smith</strong> <span>CEO - ABC Inc.</span></p>
 								</div>
@@ -228,11 +214,10 @@
 			</footer>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
 	</body>
 </html>
