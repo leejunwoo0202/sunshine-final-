@@ -11,7 +11,7 @@ import org.springframework.context.annotation.ComponentScan;
 public class App {
 
 	public static void main(String[] args) {
-//		실행시킬 클래스 이름 적음
+//		실행시킬 클래스 이름 적음   
 		SpringApplication.run(App.class, args);
 	}
 
