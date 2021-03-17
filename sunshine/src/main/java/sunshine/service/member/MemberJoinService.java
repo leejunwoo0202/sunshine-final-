@@ -5,6 +5,7 @@ import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
@@ -16,8 +17,8 @@ import sunshine.repository.member.MemberRepository;
 @Service
 public class MemberJoinService {
 
-//	@Autowired
-//	BCryptPasswordEncoder bcryptPasswordEncoder;
+	@Autowired
+	PasswordEncoder passwordEncoder;
 	@Autowired
 	MemberRepository memberRepository;
 	
@@ -42,8 +43,8 @@ public class MemberJoinService {
 		memberDTO.setUserRegist((memberCommand.getUserRegist()));
 		memberDTO.setUserResidentNum(memberCommand.getUserResidentNum());
 		//비밀번호 받아오기
-//		String pw = bcryptPasswordEncoder.encode(memberCommand.getUserPw());
-//		memberDTO.setUserPw(pw);
+		String pw = passwordEncoder.encode(memberCommand.getUserPw());
+		memberDTO.setUserPw(pw);
 		
 		result = memberRepository.insertMember(memberDTO);
 		if(result != null) {
