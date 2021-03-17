@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE HTML>
+
 <!--
 	Industrious by TEMPLATED
 	templated.co @templatedco
@@ -22,6 +23,10 @@
 			<header id="header">
 				<a class="logo" href="index.html">Industrious</a>
 				<nav>
+			    <a href="login"   >로그인</a>
+				</nav>
+				
+				<nav>
 					<a href="#menu">Menu</a>
 				</nav>
 			</header>
@@ -37,7 +42,7 @@
 					<li><a href="index.html">Home</a></li>
 					
 					<li><a href="generic.html">Generic</a></li>
-					<li><a href="member/login.do">로그인</a>
+					<li><a href="member/login">로그인</a>
 <<<<<<< HEAD
 					<li><a href="register/regist">회원가입</a>
 =======      

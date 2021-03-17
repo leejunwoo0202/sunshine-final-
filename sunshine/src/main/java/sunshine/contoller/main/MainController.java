@@ -12,13 +12,17 @@ public class MainController {
 		return "index";
 	}
 	
+	@RequestMapping(value = "main")
+	public String main() {
+		return "index";
+	}
 //<<<<<<< HEAD
 	/*
 	 * @RequestMapping(value = "signUp") public String main() { return "signUp"; }
 	 */
 //=======
 	@RequestMapping(value = "signUp")
-	public String main() {
+	public String signUp() {
 		return "member/signUp";
 	}
 	
