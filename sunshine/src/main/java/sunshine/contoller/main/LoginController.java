@@ -27,11 +27,19 @@ public class LoginController {
 	}
 
 	@RequestMapping(value = "loginPro", method = RequestMethod.POST)
-	public String submit(LoginCommand loginCommand, 
+	public String submit(@Validated LoginCommand loginCommand, 
 			HttpSession session, Model model) throws Exception {
 		String location = loginService.login(loginCommand, session, model);
+		System.out.println(location);
 		return location;
 
 	}
+	
+	@RequestMapping(value = "logout", method = RequestMethod.GET)
+	public String logout(HttpSession session) {
+		session.invalidate();
+		return "redirect:/";
+	}
+	
 
 }

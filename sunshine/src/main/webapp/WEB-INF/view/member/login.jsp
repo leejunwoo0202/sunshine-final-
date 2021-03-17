@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"   isELIgnored="false"%>
     <%@ include file="../include/include.jsp" %>
 <!DOCTYPE html>
 <html>
@@ -11,7 +11,7 @@
 <c:if test="${empty authInfo }"  >
 <form:form action="loginPro" name="frm" method="post" id="frm" 
            modelAttribute="loginCommand">
-           <table border="1">
+           <table border="1" >
             <tr><td>아이디</td>
                  <td><form:input path="loginId" id="loginId"/>
                        <form:errors path="loginId"/>

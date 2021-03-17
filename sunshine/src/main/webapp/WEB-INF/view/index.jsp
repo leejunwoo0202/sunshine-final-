@@ -25,7 +25,9 @@
 				<nav>
 			    <a href="login"   >로그인</a>
 				</nav>
-				
+				<nav>
+				<a href="logout">로그아웃</a>
+				</nav>
 				<nav>
 					<a href="#menu">Menu</a>
 				</nav>
@@ -42,7 +44,7 @@
 					<li><a href="index.html">Home</a></li>
 					
 					<li><a href="generic.html">Generic</a></li>
-					<li><a href="member/login">로그인</a>
+					
 <<<<<<< HEAD
 					<li><a href="register/regist">회원가입</a>
 =======      
