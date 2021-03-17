@@ -3,105 +3,120 @@ package sunshine.model.DTO;
 import java.util.Date;
 
 public class MemberDTO {
-    
-	String userNo;
-	String userName;
-	String userId;
-	String userPw;
-	String userPhone;
-	String userEmail;
-	String userAddr;
-	Date  userRegist;
-	String userResidentNum;
-	
+
+	String memNo;
+	String memName;
+	String memId;
+	String memPw;
+	String memPwCon;
+	String memPhone;
+	String memEmail;
+	String memAddr;
+	Date memRegist;
+	String memResidentNum;
+
 	StartEndPageDTO startEndPageDTO;
+
+	public MemberDTO() {
+	}
+
 	
-	public MemberDTO() {}
-
-	public MemberDTO(String userNo, String userName, String userId, String userPw, String userPhone, String userEmail,
-			String userAddr, Date userRegist, String userResidentNum) {
+	
+	public MemberDTO(String memNo, String memName, String memId, String memPw, String memPwCon, String memPhone,
+			String memEmail, String memAddr, Date memRegist, String memResidentNum) {
 		super();
-		this.userNo = userNo;
-		this.userName = userName;
-		this.userId = userId;
-		this.userPw = userPw;
-		this.userPhone = userPhone;
-		this.userEmail = userEmail;
-		this.userAddr = userAddr;
-		this.userRegist = userRegist;
-		this.userResidentNum = userResidentNum;
+		this.memNo = memNo;
+		this.memName = memName;
+		this.memId = memId;
+		this.memPw = memPw;
+		this.memPwCon = memPwCon;
+		this.memPhone = memPhone;
+		this.memEmail = memEmail;
+		this.memAddr = memAddr;
+		this.memRegist = memRegist;
+		this.memResidentNum = memResidentNum;
 	}
 
-	public String getUserNo() {
-		return userNo;
+
+
+	public String getMemNo() {
+		return memNo;
 	}
 
-	public void setUserNo(String userNo) {
-		this.userNo = userNo;
+	public void setMemNo(String memNo) {
+		this.memNo = memNo;
 	}
 
-	public String getUserName() {
-		return userName;
+	public String getMemName() {
+		return memName;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setMemName(String memName) {
+		this.memName = memName;
 	}
 
-	public String getUserId() {
-		return userId;
+	public String getMemId() {
+		return memId;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
+	public void setMemId(String memId) {
+		this.memId = memId;
 	}
 
-	public String getUserPw() {
-		return userPw;
+	public String getMemPw() {
+		return memPw;
 	}
 
-	public void setUserPw(String userPw) {
-		this.userPw = userPw;
+	public void setMemPw(String memPw) {
+		this.memPw = memPw;
 	}
 
-	public String getUserPhone() {
-		return userPhone;
+	public String getMemPwCon() {
+		return memPwCon;
 	}
 
-	public void setUserPhone(String userPhone) {
-		this.userPhone = userPhone;
+	public void setMemPwCon(String memPwCon) {
+		this.memPwCon = memPwCon;
 	}
 
-	public String getUserEmail() {
-		return userEmail;
+	public String getMemPhone() {
+		return memPhone;
 	}
 
-	public void setUserEmail(String userEmail) {
-		this.userEmail = userEmail;
+	public void setMemPhone(String memPhone) {
+		this.memPhone = memPhone;
 	}
 
-	public String getUserAddr() {
-		return userAddr;
+	public String getMemEmail() {
+		return memEmail;
 	}
 
-	public void setUserAddr(String userAddr) {
-		this.userAddr = userAddr;
+	public void setMemEmail(String memEmail) {
+		this.memEmail = memEmail;
 	}
 
-	public Date getUserRegist() {
-		return userRegist;
+	public String getMemAddr() {
+		return memAddr;
 	}
 
-	public void setUserRegist(Date userRegist) {
-		this.userRegist = userRegist;
+	public void setMemAddr(String memAddr) {
+		this.memAddr = memAddr;
 	}
 
-	public String getUserResidentNum() {
-		return userResidentNum;
+	public Date getMemRegist() {
+		return memRegist;
 	}
 
-	public void setUserResidentNum(String userResidentNum) {
-		this.userResidentNum = userResidentNum;
+	public void setMemRegist(Date memRegist) {
+		this.memRegist = memRegist;
+	}
+
+	public String getMemResidentNum() {
+		return memResidentNum;
+	}
+
+	public void setMemResidentNum(String memResidentNum) {
+		this.memResidentNum = memResidentNum;
 	}
 
 	public StartEndPageDTO getStartEndPageDTO() {
@@ -112,12 +127,4 @@ public class MemberDTO {
 		this.startEndPageDTO = startEndPageDTO;
 	}
 
-	
-	
-	
-	
-	
-	
-
-	
 }
