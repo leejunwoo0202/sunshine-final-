@@ -1,16 +1,17 @@
 package sunshine.model;
 
-public class AuthInfo {
+public class LoginInfo {
      private String userId;
+     private String userPw;
      private String email;
      private String name;
+     private String grade; 
      
-     
-	public AuthInfo(String userId, String email, String name) {
-		
-		this.userId = userId;
-		this.email = email;
-		this.name = name;
+	public String getGrade() {
+		return grade;
+	}
+	public void setGrade(String grade) {
+		this.grade = grade;
 	}
 	public String getUserId() {
 		return userId;
@@ -29,6 +30,12 @@ public class AuthInfo {
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	public String getUserPw() {
+		return userPw;
+	}
+	public void setUserPw(String userPw) {
+		this.userPw = userPw;
 	}
      
 	

@@ -50,12 +50,13 @@
 				<!-- Elements -->
 				<div class="row">
 					<div class="col-6 col-12-medium">
-						   <form action="condoRegistCom" method="get" id="frm" name ="frm" >
+						   <form action="condoRegistCom" method="post" id="frm" name ="frm" enctype="multipart/form-data">
                      <h2>객실등록</h2>
                      
                      <table border="1">
                         <tr><td>객실번호</td><td>
-                        <input type ="text" name="roomNum" id="roomNum"/>
+                        <input type ="text" name="roomNum" id="roomNum"/><br />
+                        ${Using_roomNum}
                         </td></tr>                                                               
                         <tr><td>객실타입</td><td>
                         <select id = "roomType" name = "roomType">
@@ -69,10 +70,12 @@
                         <input type ="text" name ="roomPrice" id = "roomPrice"/>
                         </td></tr>                                          
                         <tr><td>객실사진</td><td>
-                        <input type="file" name="roomImage" id ="roomImage" >       
+                        <input type="file" name="roomImage" id ="roomImage" ><br />
+                         ${noImg }  <%-- 이미지가 없을 경우   --%>
                         </td></tr>                                          
                         <tr><td>객실설명</td><td>
                         <textarea cols="20" rows="10" id = "roomDetail" name = "roomDetail">
+                        	내용
                         </textarea></td></tr>
                         <tr><td>
                         <input type="submit"  value ="등록">

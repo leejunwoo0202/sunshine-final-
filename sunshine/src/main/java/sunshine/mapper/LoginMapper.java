@@ -3,9 +3,10 @@ package sunshine.mapper;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
-import sunshine.model.DTO.CondoDTO;
+import sunshine.model.LoginInfo;
+
 @Component
 @Repository
-public interface CondoMapper {
-	public Integer insertCondo(CondoDTO condoDTO);
+public interface LoginMapper {
+	public LoginInfo loginUser(String loginId);
 }

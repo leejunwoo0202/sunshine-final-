@@ -18,30 +18,19 @@ PUBLIC "-//mybtis.org//DTD Mapper 3.0//EN"
       MEM_REGIST,MEM_RESIDENT_NUM
 </sql>
 
+<!--  회원가입 -->
 <insert id="insertMember" parameterType="sunshine.model.DTO.MemberDTO" >
          insert into mem(<include refid="basecolumn1"/>)
          values(mem_seq.nextval,#{memName},#{memId},#{memPw},#{memPhone},
             #{memEmail},#{memAddr},sysdate,#{memResidentNum})
      </insert>
      
-        <select id="selectByMember" parameterType="sunshine.model.DTO.MemberDTO" 
-         resultType="sunshine.model.DTO.MemberDTO" >
-         select *
-         from(select rownum rn, <include refid="basecolumn" />
-                 from(select <include refid="basecolumn1"/>
-                          from mem
-                          <where>
-                              <if test="memId != null">
-                                   mem_id = #{memId}
-                              </if>
-                          </where>
-                     order by mem_regist desc))
-                     <where>
-                           <if test="startEndPageDTO != null" >
-                                 rn between #{startEndPageDTO.startPage}
-                                     and #{startEndPageDTO.endPage}
-                           </if>
-                     </where>
+        <select id="selectByMember"  parameterType="string"  
+        resultType="sunshine.model.DTO.MemberDTO">
+        select <include refid="basecolumn"/>     
+        from mem where mem_id = #{memId}
+        
      </select> 
+    
     
 </mapper>

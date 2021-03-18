@@ -9,7 +9,11 @@ import sunshine.model.DTO.MemberDTO;
 @Component
 @Repository(value = "sunshine.mapper")
 public interface MemberMapper {
+	//회원가입
 	public Integer insertMember(MemberDTO memberDTO) ;
 	
-	public List<MemberDTO> selectByMember(MemberDTO memberDTO)throws Exception;
+    //내정보
+	public MemberDTO selectByMember(String memId);
+	
+	
 }
