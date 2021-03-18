@@ -6,9 +6,10 @@ PUBLIC "-//mybtis.org//DTD Mapper 3.0//EN"
 <!--  다른 mapper와 중복되지 않도록 네임스페이스 기재  -->
 <mapper namespace="sunshine.mapper.MemberMapper">
 <sql id="basecolumn">
-     mem_name memName,mem_id memId, mem_pw memPw,
-      mem_phone memPhone, mem_email memEmail,mem_addr memAddr,
-      mem_regist memRegist,mem_resident_num memResident
+     mem_no memNo ,mem_name memName,mem_id memId, 
+     mem_pw memPw,mem_phone memPhone, mem_email memEmail,
+     mem_addr memAddr,mem_regist memRegist,
+     mem_resident_num memResident
 </sql>   
 
 
@@ -28,7 +29,7 @@ PUBLIC "-//mybtis.org//DTD Mapper 3.0//EN"
          select *
          from(select rownum rn, <include refid="basecolumn" />
                  from(select <include refid="basecolumn1"/>
-                          from member
+                          from mem
                           <where>
                               <if test="memId != null">
                                    mem_id = #{memId}

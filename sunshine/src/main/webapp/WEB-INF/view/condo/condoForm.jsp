@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ include file="../include/include.jsp" %>
 <!DOCTYPE HTML>
 <!--
 	Industrious by TEMPLATED
@@ -49,14 +50,38 @@
 				<!-- Elements -->
 				<div class="row">
 					<div class="col-6 col-12-medium">
-						<form action="#" method="post">
-							<table border="1">
-							<tr><td>객실번호</td><td>객실타입</td><td>이용요금</td><td>사진</td><td>설명</td></tr>
-							<tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
-							<tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
-							<tr><td><input type ="submit" value="등록"></td></tr>
-							</table>
-						</form>
+						   <form action="condoRegistCom" method="get" id="frm" name ="frm" >
+                     <h2>객실등록</h2>
+                     
+                     <table border="1">
+                        <tr><td>객실번호</td><td>
+                        <input type ="text" name="roomNum" id="roomNum"/>
+                        </td></tr>                                                               
+                        <tr><td>객실타입</td><td>
+                        <select id = "roomType" name = "roomType">
+                           <option value ="DR">Double Room</option>
+                           <option value ="TR">Twin Room</option>
+                           <option value ="FR">family Room</option>
+                           <option value ="CR">Connecting Room</option>                           
+                        </select>
+                        </td></tr>
+                        <tr><td>이용요금</td><td>
+                        <input type ="text" name ="roomPrice" id = "roomPrice"/>
+                        </td></tr>                                          
+                        <tr><td>객실사진</td><td>
+                        <input type="file" name="roomImage" id ="roomImage" >       
+                        </td></tr>                                          
+                        <tr><td>객실설명</td><td>
+                        <textarea cols="20" rows="10" id = "roomDetail" name = "roomDetail">
+                        </textarea></td></tr>
+                        <tr><td>
+                        <input type="submit"  value ="등록">
+                        </td>
+                        <td><input type="reset"  value ="재입력">   
+                        </td></tr>                                          
+                        
+                     </table>
+                  </form>
 					</div>
 				</div>
 			</div>

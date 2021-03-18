@@ -25,7 +25,9 @@
 				<nav>
 			    <a href="login"   >로그인</a>
 				</nav>
-				
+				<nav>
+				<a href="logout">로그아웃</a>
+				</nav>
 				<nav>
 					<a href="#menu">Menu</a>
 				</nav>
@@ -40,17 +42,12 @@
 			<nav id="menu">
 				<ul>
 					<li><a href="index.html">Home</a></li>
-					
-					<li><a href="generic.html">Generic</a></li>
-					<li><a href="member/login">로그인</a>
-<<<<<<< HEAD
+					<li><a href="generic.html">Generic</a></li>					
 					<li><a href="register/regist">회원가입</a>
-=======      
 					<li><a href="condo/condoMain">콘도</a>					
-					<li><a href="#">레스토랑</a>
+					<li><a href="restaurant/restaurantMain">레스토랑</a>
 					<li><a href="#">프렌즈샵</a>
 					<li><a href="#">리프트권</a>										
->>>>>>> branch 'master' of https://github.com/leejunwoo0202/sunshine-final-.git
 				</ul>
 			</nav>
 
@@ -62,7 +59,7 @@
 			<section id="banner">
 				<div class="inner">
 					<h1>SunShine</h1>
-					<p>동영상 넣어버렸잖어 ~ css재능충인듯</p>
+					<p>선샤인 빌리지</p>
 				</div>
 				<video autoplay loop muted playsinline src="images/banner.mp4"></video>
 			</section>
