@@ -18,7 +18,7 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
 	<body class="is-preload">
-
+    
 		<!-- Header -->
 			<header id="header">
 				<a class="logo" href="index.html">Industrious</a>
