@@ -31,5 +31,9 @@ public class MemberController {
         	   memberJoinService.execute(memberCommand);
         	   return "member/memberSignUpComplete";
            }
+    @RequestMapping(value = "main", method = RequestMethod.GET)
+    public String memberMain() {
+    	return "member/main";
+    }
     
 }

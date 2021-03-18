@@ -26,6 +26,9 @@
 			    <a href="login"   >로그인</a>
 				</nav>
 				<nav>
+				<a href="register/regist">회원가입</a>
+				</nav>
+				<nav>
 				<a href="logout">로그아웃</a>
 				</nav>
 				<nav>
@@ -42,17 +45,14 @@
 			<nav id="menu">
 				<ul>
 					<li><a href="index.html">Home</a></li>
+					<li><a href="register/main" >myPage</a>
 					
-					<li><a href="generic.html">Generic</a></li>
-					
-<<<<<<< HEAD
-					<li><a href="register/regist">회원가입</a>
-=======      
+ 
 					<li><a href="condo/condoMain">콘도</a>					
 					<li><a href="#">레스토랑</a>
 					<li><a href="#">프렌즈샵</a>
 					<li><a href="#">리프트권</a>										
->>>>>>> branch 'master' of https://github.com/leejunwoo0202/sunshine-final-.git
+
 				</ul>
 			</nav>
 

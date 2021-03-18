@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapper namespace="sunshine.mapper.LoginMapper">
+	<sql id="basecolumn1">
+		MEM_NO,MEM_NAME,MEM_ID,MEM_PW,MEM_PHONE,MEM_EMAIL,MEM_ADDR,
+		MEM_REGIST,MEM_RESIDENT_NUM
+	</sql>
+	<!-- 로그인 -->
+	<select id="loginUser"
+		parameterType="string"
+		resultType="sunshine.model.LoginInfo">
+			 select mem_id userId , mem_pw userPw, mem_name name, mem_email email 
+			 ,'mem' grade 
+			 from mem
+			 where mem_id = #{logId}
+			 union
+			 select em_id userId , em_pw userPw, em_name name, em_email email 
+			 ,'em' grade 
+			 from em
+			 where em_id = #{logId}
+			 
+			 
+	</select>
+</mapper>
