@@ -20,7 +20,9 @@
 
 		<!-- Header -->
 			<header id="header">
-				<a class="logo" href="index.html">Industrious</a>
+				<nav >
+				<a class="logo" href="../main"><img src="../images/LogoSun2.jpg" alt="SunShine" id = "SunShineLogo"/></a>	
+			</nav>	
 				<nav>
 					<a href="#menu">Menu</a>
 				</nav>
@@ -60,7 +62,7 @@
 					<p>A responsive business oriented template with a video background<br />
 					designed by <a href="https://templated.co/">TEMPLATED</a> and released under the Creative Commons License.</p>
 				</div>
-				<video autoplay loop muted playsinline src="../images/banner.mp4"></video>
+				<video autoplay loop muted playsinline src="../images/restaurant.mp4"></video>
 			</section>
 
 		<!-- Highlights -->

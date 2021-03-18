@@ -24,22 +24,28 @@
     
 		<!-- Header -->
 			<header id="header">
-				<a class="logo" href="index.html">Industrious</a>
+			<nav >
+				<a class="logo" href="main"><img src="images/LogoSun2.jpg" alt="SunShine" id = "SunShineLogo"/></a>	
+			</nav>	
 				<c:if test="${empty loginInfo }">
 				<nav>
 			    <a href="login"   >로그인</a>
 				</nav>
+		
 				<nav>
 				<a href="register/regist">회원가입</a>
 				</nav>
+				
+				<nav>
+					<a href="#menu">Menu</a>
+				</nav>
+				
 				</c:if>
 				<c:if test="${!empty loginInfo }">
 				<nav>
 				<a href="logout">로그아웃</a>
 				</nav>
-				<nav>
-					<a href="#menu">Menu</a>
-				</nav>
+		
 				</c:if>
 			</header>
 <!--  메뉴 -->
@@ -47,7 +53,7 @@
 		<!-- Nav -->
 			<nav id="menu">
 				<ul>
-					<li><a href="index.html">Home</a></li>
+					<li><a href="main">Home</a></li>
 
 					<li><a href="register/main" >myPage</a>
 					
@@ -55,9 +61,10 @@
 
 						
 					<li><a href="register/regist">회원가입</a>
-
-					<li><a href="condo/condoMain">콘도</a>					
+	
 					<li><a href="restaurant/restaurantMain">레스토랑</a>
+					
+					<li><a href="condo/condoMain">콘도</a>				
 					<li><a href="#">프렌즈샵</a>
 					<li><a href="#">리프트권</a>										
 

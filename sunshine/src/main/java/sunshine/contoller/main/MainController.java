@@ -29,4 +29,3 @@ public class MainController {
 //>>>>>>> branch 'master' of https://github.com/leejunwoo0202/sunshine-final-.git
 }
 
-//주석은 ctrl + shift + c
