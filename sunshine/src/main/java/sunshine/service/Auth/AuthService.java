@@ -34,7 +34,7 @@ public class AuthService {
 			location = "redirect:/";
 		} else {
 			model.addAttribute("로그인 실패", loginInfo);
-			location = "main";
+			location = "index";
 
 		}
 		return location;
