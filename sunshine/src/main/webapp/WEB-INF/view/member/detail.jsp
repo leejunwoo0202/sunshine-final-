@@ -15,6 +15,8 @@
 이메일 : ${memDto.memEmail }<br/>
 주소 : ${memDto.memAddr }<br/>
 가입일 : ${memDto.memRegist }<br/>
+
+<a href="memberModify">수정하러가기</a>
 <a href="../main">메인화면</a>
 
 

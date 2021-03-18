@@ -20,14 +20,20 @@ import sunshine.service.member.MemberInfoService;
   
   @Autowired 
   MemberInfoService memberInfoService;
+  
   @RequestMapping("detail")
   public String memDetail(HttpSession session ,Model model) {
 	  memberInfoService.execute(session,model);
 	  return "member/detail";
   
-  
-  
   }
+  @RequestMapping("memberModify")
+  public String memberModify(HttpSession session, Model model) {
+	  memberInfoService.execute(session, model);
+	  return "member/modify";
+  }
+  
+  
   
   }
  
