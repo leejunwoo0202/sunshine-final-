@@ -25,19 +25,19 @@ public class AuthService {
 		String location;
 		loginInfo = loginMapper.loginUser(loginCommand.getLoginId());
 		if (loginInfo == null) {
-			model.addAttribute("일치하지 않는 아이디", loginInfo);
-			location = "main";
-		}
-
-		if (passwordEncoder.matches(loginCommand.getLoginId(), loginInfo.getUserId())) {
-			session.setAttribute("로그인 성공", loginInfo);
-			location = "redirect:/";
-		} else {
-			model.addAttribute("로그인 실패", loginInfo);
-			location = "index";
-
+			model.addAttribute( "userFail","일치하지 않는 아이디");
+			location = "member/login";
+		}else {
+			System.out.println( loginInfo.getUserId());
+			if (passwordEncoder.matches(loginCommand.getLoginPw(), loginInfo.getUserPw())) {
+				session.setAttribute("loginInfo", loginInfo);
+				location = "redirect:/";
+			} else {
+				model.addAttribute( "pwFail" , "비밀번호가 틀렸습니다.");
+				location = "member/login";
+	
+			}
 		}
 		return location;
-
 	}
 }

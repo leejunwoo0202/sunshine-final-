@@ -13,6 +13,7 @@ public interface MemberMapper {
 	public Integer insertMember(MemberDTO memberDTO) ;
 	
     //내정보
-	public MemberDTO getMemberDetail(MemberDTO dto)throws Exception;
-
+	public MemberDTO selectByMember(String memId);
+	
+	
 }

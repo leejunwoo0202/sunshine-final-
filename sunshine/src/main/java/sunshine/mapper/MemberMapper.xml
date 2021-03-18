@@ -24,25 +24,12 @@ PUBLIC "-//mybtis.org//DTD Mapper 3.0//EN"
          values(mem_seq.nextval,#{memName},#{memId},#{memPw},#{memPhone},
             #{memEmail},#{memAddr},sysdate,#{memResidentNum})
      </insert>
-     <!--  로그인 -->
-        <select id="selectByMember" parameterType="sunshine.model.DTO.MemberDTO" 
-         resultType="sunshine.model.DTO.MemberDTO" >
-         select *
-         from(select rownum rn, <include refid="basecolumn" />
-                 from(select <include refid="basecolumn1"/>
-                          from mem
-                          <where>
-                              <if test="memId != null">
-                                   mem_id = #{memId}
-                              </if>
-                          </where>
-                     order by mem_regist desc))
-                     <where>
-                           <if test="startEndPageDTO != null" >
-                                 rn between #{startEndPageDTO.startPage}
-                                     and #{startEndPageDTO.endPage}
-                           </if>
-                     </where>
+     
+        <select id="selectByMember"  parameterType="string"  
+        resultType="sunshine.model.DTO.MemberDTO">
+        select <include refid="basecolumn"/>     
+        from mem where mem_id = #{memId}
+        
      </select> 
     
     

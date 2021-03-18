@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ include file="include/include.jsp" %>
 <!DOCTYPE HTML>
 
 <!--
@@ -7,6 +8,7 @@
 	templated.co @templatedco
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 -->
+
 <html>
 	<head>
 		<meta charset="UTF-8">
@@ -17,50 +19,48 @@
 		<meta name="keywords" content="" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
+	
 	<body class="is-preload">
     
 		<!-- Header -->
 			<header id="header">
 				<a class="logo" href="index.html">Industrious</a>
+				<c:if test="${empty loginInfo }">
 				<nav>
 			    <a href="login"   >로그인</a>
 				</nav>
 				<nav>
 				<a href="register/regist">회원가입</a>
 				</nav>
+				</c:if>
+				<c:if test="${!empty loginInfo }">
 				<nav>
 				<a href="logout">로그아웃</a>
 				</nav>
 				<nav>
 					<a href="#menu">Menu</a>
 				</nav>
+				</c:if>
 			</header>
-
-
-
-
 <!--  메뉴 -->
 
 		<!-- Nav -->
 			<nav id="menu">
 				<ul>
 					<li><a href="index.html">Home</a></li>
-<<<<<<< HEAD
+
 					<li><a href="register/main" >myPage</a>
 					
  
-=======
-					<li><a href="generic.html">Generic</a></li>					
+
+						
 					<li><a href="register/regist">회원가입</a>
->>>>>>> branch 'master' of https://github.com/leejunwoo0202/sunshine-final-.git
+
 					<li><a href="condo/condoMain">콘도</a>					
 					<li><a href="restaurant/restaurantMain">레스토랑</a>
 					<li><a href="#">프렌즈샵</a>
 					<li><a href="#">리프트권</a>										
-<<<<<<< HEAD
 
-=======
->>>>>>> branch 'master' of https://github.com/leejunwoo0202/sunshine-final-.git
 				</ul>
 			</nav>
 

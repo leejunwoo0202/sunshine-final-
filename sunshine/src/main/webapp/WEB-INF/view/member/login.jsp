@@ -8,13 +8,11 @@
 <title>로그인페이지</title>
 </head>
 <body>
-<c:if test="${empty authInfo }"  >
-<form:form action="loginPro" name="frm" method="post" id="frm" 
-           modelAttribute="loginCommand">
+<form:form action="loginPro" name="frm" method="post" id="frm"   modelAttribute="loginCommand">
            <table border="1" >
             <tr><td>아이디</td>
                  <td><form:input path="loginId" id="loginId"/>
-                       <form:errors path="loginId"/>
+                       	 <div>${userFail }</div>
                        </td>
                 <td rowspan="2">
                     <input type="submit" value="전송" />
@@ -23,13 +21,12 @@
                 </tr>
                    <tr><td>비밀번호</td>
                          <td><input type="password" name="loginPw" id="loginPw"/>
-                               <form:errors path="loginPw" />
+                               <div>${pwFail }</div>
                                </td>
                                </tr>    
            </table>
 </form:form>
-       </c:if>
-        
+
         
         
         
