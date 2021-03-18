@@ -1,10 +1,12 @@
 package sunshine.model.DTO;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public class CondoDTO {
 	String roomNum;
 	String roomType;
-	String roomPrice;
-	String roomimage;
+	Integer roomPrice;
+	String roomImage;
 	String roomDetail;
 	public String getRoomNum() {
 		return roomNum;
@@ -18,17 +20,18 @@ public class CondoDTO {
 	public void setRoomType(String roomType) {
 		this.roomType = roomType;
 	}
-	public String getRoomPrice() {
+	public Integer getRoomPrice() {
 		return roomPrice;
 	}
-	public void setRoomPrice(String roomPrice) {
+	public void setRoomPrice(Integer roomPrice) {
 		this.roomPrice = roomPrice;
 	}
-	public String getRoomimage() {
-		return roomimage;
+
+	public String getRoomImage() {
+		return roomImage;
 	}
-	public void setRoomimage(String roomimage) {
-		this.roomimage = roomimage;
+	public void setRoomImage(String roomImage) {
+		this.roomImage = roomImage;
 	}
 	public String getRoomDetail() {
 		return roomDetail;
@@ -36,5 +39,6 @@ public class CondoDTO {
 	public void setRoomDetail(String roomDetail) {
 		this.roomDetail = roomDetail;
 	}
+	
 	
 }
