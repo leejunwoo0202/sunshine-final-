@@ -21,7 +21,7 @@ public class AuthService {
 	LoginInfo loginInfo;
 
 	public String authenticate(LoginCommand loginCommand, // id, pw (관리자/회원)
-			HttpSession session, Model model) {
+			HttpSession session, Model model) throws Exception{
 		String location;
 		loginInfo = loginMapper.loginUser(loginCommand.getLoginId());
 		if (loginInfo == null) {
