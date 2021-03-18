@@ -6,6 +6,7 @@ public class CondoDTO {
 	String roomPrice;
 	String roomimage;
 	String roomDetail;
+	
 	public String getRoomNum() {
 		return roomNum;
 	}
