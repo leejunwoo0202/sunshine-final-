@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sunshine.mapper.GoodsMapper">
+
+<sql id="baseColumn">
+    goods_num,goods_name,goods_price,goods_amount,goods_categori,
+    goods_content,goods_image
+ 
+</sql>
+
+<insert id="goodsInsert" parameterType="sunshine.model.DTO.GoodsDTO">
+   insert into shop_goods(<include refid="baseColumn"/>)
+   values(goods_seq.nextval,#{goodsName}, #{goodsPrice}, #{goodsAmount},
+    #{goodsCategori}, #{goodsContent}, #{goodsImage})
+
+</insert>
+
+</mapper>

@@ -9,7 +9,7 @@ import sunshine.command.MemberCommand;
 import sunshine.mapper.MemberMapper;
 import sunshine.model.DTO.MemberDTO;
 
-@Component
+@Component   
 @Service
 public class MemberJoinService {
 

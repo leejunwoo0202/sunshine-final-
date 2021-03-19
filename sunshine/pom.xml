@@ -77,7 +77,7 @@
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
-			<version>1.2</version>
+			
 		</dependency>
 		<!-- jsp파일 서버 재시작 없이 바로 적용하기 spring boot auto restart -->
 		<dependency>

@@ -41,11 +41,18 @@ PUBLIC "-//mybtis.org//DTD Mapper 3.0//EN"
     </select>
     
     <update id="pwUpdate" 
-    parameterType="sunshine.model.DTO.MemberDTO" >
+    		parameterType="sunshine.model.DTO.MemberDTO" >
     update mem
     set mem_pw = #{memPw}
     where mem_id = #{memId}
     </update>
     
+    <delete id="deleteMember"
+    parameterType="string">
+    <if test="value != null">
+    delete from mem
+    where mem_id = #{memId}
+    </if>
+    </delete>
     
 </mapper>
