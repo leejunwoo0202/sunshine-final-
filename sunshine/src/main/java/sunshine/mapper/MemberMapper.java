@@ -1,10 +1,9 @@
 package sunshine.mapper;
 
-import java.util.List;
-
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
+import sunshine.model.LoginInfo;
 import sunshine.model.DTO.MemberDTO;
 @Component
 @Repository(value = "sunshine.mapper")
@@ -15,5 +14,7 @@ public interface MemberMapper {
     //내정보
 	public MemberDTO selectByMember(String memId);
 	
+	public MemberDTO selectByMemberPw(MemberDTO memberDTO);
 	
+	public void pwUpdate(MemberDTO memberDTO);
 }

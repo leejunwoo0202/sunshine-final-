@@ -32,5 +32,20 @@ PUBLIC "-//mybtis.org//DTD Mapper 3.0//EN"
         
      </select> 
     
+    <select id="selectByMemberPw" 
+    parameterType="sunshine.model.DTO.MemberDTO" 
+    resultType="sunshine.model.DTO.MemberDTO">
+    select <include refid="basecolumn"/>
+    from mem where mem_pw = #{mem_pw}
+    
+    </select>
+    
+    <update id="pwUpdate" 
+    parameterType="sunshine.model.DTO.MemberDTO" >
+    update mem
+    set mem_pw = #{memPw}
+    where mem_id = #{memId}
+    </update>
+    
     
 </mapper>

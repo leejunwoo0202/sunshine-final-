@@ -37,9 +37,7 @@
 				<a href="register/regist">회원가입</a>
 				</nav>
 				
-				<nav>
-					<a href="#menu">Menu</a>
-				</nav>
+				
 				
 				</c:if>
 				

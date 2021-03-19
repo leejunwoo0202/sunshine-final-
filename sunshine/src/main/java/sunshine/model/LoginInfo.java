@@ -7,6 +7,10 @@ public class LoginInfo {
      private String name;
      private String grade; 
      
+     
+     
+     
+	
 	public String getGrade() {
 		return grade;
 	}
