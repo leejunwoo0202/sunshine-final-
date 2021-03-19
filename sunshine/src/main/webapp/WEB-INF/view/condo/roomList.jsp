@@ -1,11 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" isELIgnored="false"%>
+     <%@ include file="../include/include.jsp" %>
 <!DOCTYPE HTML>
-<!--
-	Industrious by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
--->
+<!--객실 리스트-->
 <html>
 	<head>
 		<meta charset="UTF-8">
@@ -73,6 +70,26 @@
 					<div class="highlights">
 						<section>
 							<a href ="condoForm">객실등록</a>
+															
+							<table  >
+							<caption>객실리스트</caption>
+								<tr>
+								<td>객실번호</td><td>객실타입</td><td>객실요금</td><td>객실사진</td><td>상세</td>
+								</tr>
+							
+							<c:forEach var ="room" items="${list}" >
+							<tr>
+							<td>${room.roomNum}</td> 
+							<td>${room.roomType}</td> 
+							<td>${room.roomPrice}</td> 
+							<td><c:forTokens items="${room.roomImage}" delims="`"
+							var="img" varStatus="status">
+							<img alt="img" src="WEB-INF/view/condo/upload/${img}" />
+							</c:forTokens></td>
+							<td>${room.roomDetail}</td>
+							</c:forEach>
+								
+							</table>	
 						</section>
 					</div>
 				</div>

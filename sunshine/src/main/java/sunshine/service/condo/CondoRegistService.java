@@ -27,7 +27,7 @@ public class CondoRegistService {
 	@Autowired
 	CondoMapper CondoMapper;
 	public void execute(CondoCommand condoCommand, 
-			BindingResult result, MultipartHttpServletRequest mtfRequest) {
+			BindingResult result, MultipartHttpServletRequest mtfRequest) throws Exception {
 		HttpSession session = mtfRequest.getSession();
 		CondoDTO condoDTO = new CondoDTO();
 		condoDTO.setRoomNum(condoCommand.getRoomNum());

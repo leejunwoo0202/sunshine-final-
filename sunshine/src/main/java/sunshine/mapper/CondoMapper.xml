@@ -18,4 +18,14 @@ ROOM_NUM,ROOM_TYPE,ROOM_PRICE,ROOM_IMAGE,ROOM_DETAIL
 	values(#{roomNum},#{roomType},#{roomPrice},#{roomImage},#{roomDetail})
 </insert>
 
+<select id= "RoomList" parameterType="sunshine.model.DTO.CondoDTO" 
+			resultType="sunshine.model.DTO.CondoDTO">
+	select *
+	 	from ( select rownum rn , <include refid="basecolumn" /> 
+	 	from(select <include refid="basecolumn1" />
+	 		from condo_room
+	 			order by room_num desc )
+	 		) 
+</select>
+
 </mapper>
