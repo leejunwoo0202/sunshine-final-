@@ -69,7 +69,7 @@
 			<section class="wrapper">
 				<div class="inner">
 					<header class="special">
-						<h2>Sem turpis amet semper</h2>
+						<h2>선샤인 레스토랑 관리자 페이지</h2>
 						
 					</header>
 					<div class="highlights">
@@ -85,7 +85,7 @@
 						<section>
 							<div class="content">
 								<header>
-									<a href="#" class="icon fa-files-o"><span class="label">Icon</span></a>
+									<a href="restaurantMenuMg" class="icon fa-files-o"><span class="label">Icon</span></a>
 									<h3>메뉴관리</h3>
 								</header>
 								<p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>
@@ -94,7 +94,7 @@
 						<section>
 							<div class="content">
 								<header>
-									<a href="#" class="icon fa-floppy-o"><span class="label">Icon</span></a>
+									<a href="restaurantRsMg" class="icon fa-floppy-o"><span class="label">Icon</span></a>
 									<h3>룸서비스관리</h3>
 								</header>
 								<p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>
@@ -103,7 +103,7 @@
 						<section>
 							<div class="content">
 								<header>
-									<a href="#" class="icon fa-line-chart"><span class="label">Icon</span></a>
+									<a href="restaurantOrderMg" class="icon fa-line-chart"><span class="label">Icon</span></a>
 									<h3>주문관리</h3>
 								</header>
 								<p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>
@@ -112,7 +112,7 @@
 						<section>
 							<div class="content">
 								<header>
-									<a href="#" class="icon fa-paper-plane-o"><span class="label">Icon</span></a>
+									<a href="restaurantPayMg" class="icon fa-paper-plane-o"><span class="label">Icon</span></a>
 									<h3>결제관리</h3>
 								</header>
 								<p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>

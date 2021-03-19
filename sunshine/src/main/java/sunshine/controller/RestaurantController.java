@@ -12,8 +12,19 @@ public class RestaurantController {
 	}
 	
 	@RequestMapping(value = "restaurantBookMg")
-	public String restaurantForm() {
+	public String restaurantBookMg() {
 		return "restaurant/restaurantBookMg";
 	}
+	
+	@RequestMapping(value = "restaurantMenuMg")
+	public String restaurantMenuMg() {
+		return "restaurant/restaurantMenuMg";
+	}
+	
+	@RequestMapping(value = "restaurantRsMg")
+	public String restaurantRsMg() {
+		return "restaurant/restaurantRsMg";
+	}
+
 
 }
