@@ -27,6 +27,7 @@
 			<nav >
 				<a class="logo" href="main"><img src="images/LogoSun2.jpg" alt="SunShine" id = "SunShineLogo"/></a>	
 			</nav>	
+			    <!--  로그아웃상태   -->
 				<c:if test="${empty loginInfo }">
 				<nav>
 			    <a href="login"   >로그인</a>
@@ -41,9 +42,14 @@
 				</nav>
 				
 				</c:if>
+				
 				<c:if test="${!empty loginInfo }">
 				<nav>
 				<a href="logout">로그아웃</a>
+				</nav>
+		        
+		        <nav>
+					<a href="#menu">Menu</a>
 				</nav>
 		
 				</c:if>
@@ -67,10 +73,10 @@
 					<li><a href="condo/condoMain">콘도</a>				
 					<li><a href="#">프렌즈샵</a>
 					<li><a href="#">리프트권</a>										
-
+                       
 				</ul>
 			</nav>
-
+                  
 <!--  메뉴 -->
 
 
