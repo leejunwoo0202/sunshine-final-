@@ -11,7 +11,7 @@ public class CondoCommand {
 	@NotEmpty(message = "객실타입을 선택하세요.")
 	String roomType;
 	Integer roomPrice;
-	MultipartFile roomImage;
+	MultipartFile [] roomImage;
 	@NotEmpty(message = "객실 정보를 입력하세요.")
 	String roomDetail;
 	public String getRoomNum() {
@@ -32,16 +32,15 @@ public class CondoCommand {
 	public void setRoomPrice(Integer roomPrice) {
 		this.roomPrice = roomPrice;
 	}
-	public MultipartFile getRoomImage() {
+	public MultipartFile[] getRoomImage() {
 		return roomImage;
 	}
-	public void setRoomImage(MultipartFile roomImage) {
+	public void setRoomImage(MultipartFile[] roomImage) {
 		this.roomImage = roomImage;
 	}
 	public String getRoomDetail() {
 		return roomDetail;
 	}
-	
 	public void setRoomDetail(String roomDetail) {
 		this.roomDetail = roomDetail;
 	}

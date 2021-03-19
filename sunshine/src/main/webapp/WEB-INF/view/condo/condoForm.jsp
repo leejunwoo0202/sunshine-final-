@@ -2,15 +2,11 @@
     pageEncoding="UTF-8"%>
     <%@ include file="../include/include.jsp" %>
 <!DOCTYPE HTML>
-<!--
-	Industrious by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
--->
+<!--객실등록-->
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Elements - Industrious by TEMPLATED</title>
+<title>객실등록</title>
 <meta charset="utf-8" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -50,7 +46,7 @@
 				<!-- Elements -->
 				<div class="row">
 					<div class="col-6 col-12-medium">
-						   <form action="condoRegistCom" method="post" id="frm" name ="frm" enctype="multipart/form-data">
+						   <form action="condoRegistCom" method="post" id="frm" name ="frm" enctype="multipart/form-data" >
                      <h2>객실등록</h2>
                      
                      <table border="1">
@@ -70,7 +66,7 @@
                         <input type ="text" name ="roomPrice" id = "roomPrice"/>
                         </td></tr>                                          
                         <tr><td>객실사진</td><td>
-                        <input type="file" name="roomImage" id ="roomImage" ><br />
+                        <input type="file" name="roomImage" id ="roomImage" multiple="multiple"><br />
                          ${noImg }  <%-- 이미지가 없을 경우   --%>
                         </td></tr>                                          
                         <tr><td>객실설명</td><td>

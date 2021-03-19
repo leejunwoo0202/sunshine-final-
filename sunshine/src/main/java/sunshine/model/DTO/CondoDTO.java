@@ -9,6 +9,8 @@ public class CondoDTO {
 	String roomImage;
 	String roomDetail;
 	
+	
+	
 	public String getRoomNum() {
 		return roomNum;
 	}
