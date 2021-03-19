@@ -18,7 +18,6 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import sunshine.command.CondoCommand;
 import sunshine.mapper.CondoMapper;
-import sunshine.model.AuthInfo;
 import sunshine.model.DTO.CondoDTO;
 
 @Component
@@ -30,7 +29,6 @@ public class CondoRegistService {
 	public void execute(CondoCommand condoCommand, 
 			BindingResult result, MultipartHttpServletRequest mtfRequest) {
 		HttpSession session = mtfRequest.getSession();
-		AuthInfo authInfo = (AuthInfo) session.getAttribute("authInfo");
 		CondoDTO condoDTO = new CondoDTO();
 		condoDTO.setRoomNum(condoCommand.getRoomNum());
 		condoDTO.setRoomType(condoCommand.getRoomType());
