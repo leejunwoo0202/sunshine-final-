@@ -1,7 +1,5 @@
 package sunshine.model.DTO;
 
-import org.springframework.web.multipart.MultipartFile;
-
 public class CondoDTO {
 	String roomNum;
 	String roomType;
