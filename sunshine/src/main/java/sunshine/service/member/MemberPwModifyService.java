@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import sunshine.command.MemberPwCommand;
 import sunshine.mapper.MemberMapper;
-import sunshine.model.AuthInfo;
+import sunshine.model.LoginInfo;
 import sunshine.model.DTO.MemberDTO;
 
 @Component
@@ -23,20 +23,20 @@ public class MemberPwModifyService {
     public void execute(MemberPwCommand memberPwCommand,
     		HttpSession session) {
     	MemberDTO memberDTO = new MemberDTO();
-    	AuthInfo authInfo = 
-    			(AuthInfo)session.getAttribute("authInfo");
-    	System.out.println("loginInfo"+authInfo.getUserId());
-    	
-    	memberDTO.setMemId(authInfo.getUserId());
-    	memberDTO = memberMapper.selectByMemberPw(memberDTO);
+    	LoginInfo loginInfo = 
+    			(LoginInfo)session.getAttribute("loginInfo");
+    	// 내정보 보기
+    	memberDTO = memberMapper.selectByMember(loginInfo.getUserId());
     	if(!passwordEncoder.matches(
-    			memberPwCommand.getOldPw(),
-    			memberDTO.getMemPw())){
+    			memberPwCommand.getOldPw(),memberDTO.getMemPw())){
+    		// 패스워드가 일치 하지 않은 경우
+    		
     	}else {
+    		// 패스워드가 일치 한 경우해 야할 코드 삭정
     		memberDTO.setMemPw(
     				passwordEncoder.encode(
     						memberPwCommand.getNewPw()));
-         memberMapper.pwUpdate(memberDTO);    		
+    		memberMapper.pwUpdate(memberDTO);    		
     }
 }
 }
