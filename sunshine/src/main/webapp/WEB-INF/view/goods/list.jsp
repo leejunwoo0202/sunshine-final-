@@ -9,35 +9,35 @@
 </head>
 <body>
 상품리스트<br/>
-상품번호 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-상품이름 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-상품가격 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-상품개수 : ${count }<br/><br/><br/><br/>
-상품종류 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-상품설명 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-이미지 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<table>
 
-<c:forEach items="${list }" var="dto" varStatus="cnt">
+<tr><th>상품번호</th> 
+<th>상품이름</th> 
+<th>상품가격</th> 
+<th>상품개수 </th> 
+<th>상품종류</th> 
+<th>상품설명</th> 
+<th>이미지</th> </tr>
+<c:forEach items="${list}" var="dto" varStatus="cnt">
+<tr><td>${dto.goodsNum}</td><td>${dto.goodsName}</td>
+<td>${dto.goodsPrice}</td><td>${dto.goodsAmount}</td>
+<td>${dto.goodsCategori}</td><td>${dto.goodsContent}</td>
+<td></td></tr>
+${count}
+<fmt:formatNumber value="${dto.goodsPrice }" type="currency"/><br/>
+</c:forEach>
+<%@ include file="../include/includePage.jsp" %>
 
-<!--  페이징 -->
-<a href="goodsDetail?goodsNum=${dto.goodsNum }">${dto.goodsNum }</a>&nbsp;
-<!--  -->
-      ${dto.goodsNum }
-      ${dto.goodsName }
-      ${dto.goodsPrice }
-      ${dto.goodsCategori }
-      ${dto.goodsContent }
+</table>
+<a href="insert">상품등록</a>
+      
       <c:forTokens items="${dto.goodsImage }" delims="`"
       var="i" begin="0" end="0">
       <img alt="" src="../goods/upload/${i }" width="50px">
       
 </c:forTokens>
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-${dto.goodsName }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<fmt:formatNumber value="${dto.goodsPrice }" type="currency"/><br/>
-</c:forEach>
-<%@ include file="../include/includePage.jsp" %>
-<div><a href="insert">상품등록</a></div>
+<!--  페이징 -->
+<a href="goodsDetail?goodsNum=${dto.goodsNum }">${dto.goodsNum }</a>&nbsp;
+<!--  -->
 </body>
 </html>

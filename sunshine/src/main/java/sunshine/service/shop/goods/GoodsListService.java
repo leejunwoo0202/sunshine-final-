@@ -17,6 +17,7 @@ import sunshine.model.DTO.StartEndPageDTO;
 public class GoodsListService {
     @Autowired
     GoodsMapper goodsMapper;
+    
     public void getGoodsList(Model model,Integer page) {
     	int limit = 10;
     	int limitPage = 10;

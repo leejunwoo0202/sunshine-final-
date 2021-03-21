@@ -28,7 +28,7 @@
                    goods_num = #{goodsNum}
              </if>
          </where>
-         order by goods_num desc)
+         order by goods_num)
     )
     <if test="startEndPageDTO != null">
     where rn between #{startEndPageDTO.startPage}
