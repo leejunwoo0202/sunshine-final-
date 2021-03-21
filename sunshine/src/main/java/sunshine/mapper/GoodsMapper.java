@@ -1,5 +1,7 @@
 package sunshine.mapper;
 
+import java.util.List;
+
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
@@ -10,6 +12,9 @@ import sunshine.model.DTO.GoodsDTO;
 public interface GoodsMapper {
 
 	
-	public GoodsDTO goodsInsert(GoodsDTO dto);
+	public Integer goodsInsert(GoodsDTO dto);
 	   
+	public List<GoodsDTO> getGoodsList(GoodsDTO dto);
+	
+	public Integer getGoodsCount();
 }

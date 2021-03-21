@@ -16,4 +16,28 @@
 
 </insert>
 
+<select id="getGoodsList" parameterType="sunshine.model.DTO.GoodsDTO"
+    resultType="sunshine.model.DTO.GoodsDTO">
+    
+    select *
+    from (select rownum rn, <include refid="baseColumn" />
+         from(select <include refid="baseColumn" />
+         from shop_goods
+         <where>
+             <if test="goodsNum != null">
+                   goods_num = #{goodsNum}
+             </if>
+         </where>
+         order by goods_num desc)
+    )
+    <if test="startEndPageDTO != null">
+    where rn between #{startEndPageDTO.startPage}
+         and #{startEndPageDTO.endPage}
+    </if>
+    
+    </select>
+
+    <select id="getGoodsCount" resultType="int">
+           select count(*) from shop_goods
+    </select>
 </mapper>

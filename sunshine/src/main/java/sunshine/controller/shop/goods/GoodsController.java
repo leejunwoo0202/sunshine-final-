@@ -4,9 +4,12 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import sunshine.command.GoodsCommand;
+import sunshine.service.shop.goods.GoodsListService;
 import sunshine.service.shop.goods.GoodsWriteService;
 
 @Controller
@@ -15,6 +18,9 @@ public class GoodsController {
       
 	@Autowired
 	GoodsWriteService goodsWriteService;
+	
+	@Autowired
+	GoodsListService goodsListService;
 	
 	@RequestMapping("main")
 	public String shopMain() {
@@ -30,8 +36,16 @@ public class GoodsController {
     		HttpServletRequest request) {
     	goodsWriteService.goodsWrite(goodsCommand,request);
     	
-    	return "redirect:/goods/main";
+    	return "goods/main";
     }  
+    
+    @RequestMapping("list")
+    public String list(
+    		@RequestParam(value ="page",defaultValue = "1")
+    		Integer page, Model model) {
+    	goodsListService.getGoodsList(model,page);
+    	return "goods/list";
+    }
    
 	
 }
