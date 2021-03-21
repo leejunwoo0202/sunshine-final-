@@ -43,11 +43,12 @@ public class GoodsWriteService {
     	dto.setGoodsContent(goodsCommand.getGoodsContent());
     	
     	
+    	
     	//상품이미지
-    	String path = "WEB-INF/VIEW/goods/upload";
+    	String path = "C:\\Users\\roll master\\git\\sunshine-final-\\sunshine\\src\\main\\webapp\\WEB-INF\\view\\goods\\upload";
     	
     	String filePath = session.getServletContext().getRealPath(path);
-    	System.out.println(filePath);
+    	System.out.println(session.getServletContext().getRealPath(path));
     	String goodsImage = "";
     	if(goodsCommand.getGoodsImage() != null) {
     		for(MultipartFile mf : goodsCommand.getGoodsImage()) {

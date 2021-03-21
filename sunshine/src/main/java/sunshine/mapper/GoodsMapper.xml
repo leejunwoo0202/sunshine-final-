@@ -9,6 +9,16 @@
  
 </sql>
 
+<resultMap type="sunshine.model.DTO.GoodsDTO" id="baseResultMap">
+   <id column="goods_num" jdbcType="VARCHAR" property="goodsNum"/>
+   <result column="goods_Name" jdbcType="VARCHAR" property="goodsName"/>
+   <result column="goods_Price" jdbcType="VARCHAR" property="goodsPrice"/>
+   <result column="goods_Amount" jdbcType="VARCHAR" property="goodsAmount"/>
+   <result column="goods_Categori" jdbcType="VARCHAR" property="goodsCategori"/>
+   <result column="goods_Content" jdbcType="VARCHAR" property="goodsContent"/>
+   <result column="goods_Image" jdbcType="VARCHAR" property="goodsImage"/>
+
+</resultMap>
 <insert id="goodsInsert" parameterType="sunshine.model.DTO.GoodsDTO">
    insert into shop_goods(<include refid="baseColumn"/>)
    values(goods_seq.nextval,#{goodsName}, #{goodsPrice}, #{goodsAmount},
@@ -17,9 +27,9 @@
 </insert>
 
 <select id="getGoodsList" parameterType="sunshine.model.DTO.GoodsDTO"
-    resultType="sunshine.model.DTO.GoodsDTO">
+    resultMap="baseResultMap">
     
-    select *
+    select <include refid="baseColumn"/>
     from (select rownum rn, <include refid="baseColumn" />
          from(select <include refid="baseColumn" />
          from shop_goods

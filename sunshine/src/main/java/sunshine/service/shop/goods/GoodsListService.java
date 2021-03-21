@@ -28,6 +28,12 @@ public class GoodsListService {
     			new StartEndPageDTO(startRow,endRow));
     	List<GoodsDTO> list =
     			goodsMapper.getGoodsList(dto);
+    	System.out.println(list.get(0));
+    	System.out.println(list.get(1));
+    	System.out.println(list.get(2));
+    	System.out.println(list.get(3));
+    	System.out.println(list.get(4));
+    	
     	int count = goodsMapper.getGoodsCount();
     	model.addAttribute("list",list);
     	model.addAttribute("count",count);

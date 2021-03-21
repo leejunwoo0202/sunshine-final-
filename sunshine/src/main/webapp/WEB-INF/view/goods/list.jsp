@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ include file="../include/include.jsp" %>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,22 +23,33 @@
 <tr><td>${dto.goodsNum}</td><td>${dto.goodsName}</td>
 <td>${dto.goodsPrice}</td><td>${dto.goodsAmount}</td>
 <td>${dto.goodsCategori}</td><td>${dto.goodsContent}</td>
-<td></td></tr>
-${count}
-<fmt:formatNumber value="${dto.goodsPrice }" type="currency"/><br/>
+<td><c:forTokens items="${dto.goodsImage }" delims="`"
+      var="i" begin="0" end="0">
+      <img alt="이미지" src="images/${i }" width="50px">
+      <c:out value="${dto.goodsImage}"/>
+</c:forTokens>
+</td>
+</tr>
+
+
 </c:forEach>
+
+<tr>
+<td><c:forTokens items="${dto.goodsImage }" delims="`"
+      var="i" begin="0" end="0">
+      <img alt="" src="../goods/upload/${i }" width="50px">
+</c:forTokens>
+</td></tr>
+
 <%@ include file="../include/includePage.jsp" %>
 
 </table>
 <a href="insert">상품등록</a>
       
-      <c:forTokens items="${dto.goodsImage }" delims="`"
-      var="i" begin="0" end="0">
-      <img alt="" src="../goods/upload/${i }" width="50px">
       
-</c:forTokens>
-<!--  페이징 -->
-<a href="goodsDetail?goodsNum=${dto.goodsNum }">${dto.goodsNum }</a>&nbsp;
-<!--  -->
+<br/>
+
+<a href="goodsDetail?goodsNum=${dto.goodsNum }">${dto.goodsNum }디테일페이지로이동</a>&nbsp;
+
 </body>
 </html>
