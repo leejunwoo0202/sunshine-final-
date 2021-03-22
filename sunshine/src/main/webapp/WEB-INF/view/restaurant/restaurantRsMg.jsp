@@ -7,6 +7,7 @@
 <title>restaurantRsMg 룸서비스관리</title>
 </head>
 <body>
+<form action="restaurant/roomserviceForm" >
 <h1>레스토랑 룸서비스 관리</h1>
 <br>
 <table border="1">
@@ -29,5 +30,6 @@
 </table>
 <input type="submit" value="등록">
 <input type="button"  value ="뒤로" onclick="javascript:location.href='../restaurant/restaurantMain'"/>  
+</form>
 </body>
 </html>

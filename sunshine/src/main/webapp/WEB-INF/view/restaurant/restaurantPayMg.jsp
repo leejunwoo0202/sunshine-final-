@@ -7,6 +7,7 @@
 <title>restaurantPayMg 결제관리</title>
 </head>
 <body>
+<form action="restaurant/payForm" >
 <h1>레스토랑 결제 관리</h1>
 <br>
 <table border="1">
@@ -27,6 +28,6 @@
 </table>
 <input type="submit" value="등록">
 <input type="button"  value ="뒤로" onclick="javascript:location.href='../restaurant/restaurantMain'"/>  
-
+</form>
 </body>
 </html>

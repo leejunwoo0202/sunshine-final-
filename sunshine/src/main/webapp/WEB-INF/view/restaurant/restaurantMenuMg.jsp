@@ -7,6 +7,7 @@
 <title>restaurantMenuMg 메뉴관리</title>
 </head>
 <body>
+<form action="restaurant/menuForm" >
 <h1>레스토랑 메뉴 관리</h1>
 <br>
 <table border="1">
@@ -26,6 +27,7 @@
 </tr>
 </table>
 <input type="submit" value="등록">
-<input type="button"  value ="뒤로" onclick="javascript:location.href='../restaurant/restaurantMain'"/>  
+<input type="button"  value ="뒤로" onclick="javascript:location.href='../restaurant/restaurantMain'"/> 
+</form> 
 </body>
 </html>

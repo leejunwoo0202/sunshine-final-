@@ -23,7 +23,7 @@ public class GoodsOrderInsertService {
     	MemOrderDTO  order = new MemOrderDTO();
     	
     	//상품 정보 넣기
-    	order.setGoodsNum(goodsDto.getGoodsNum());
+    	 order.setGoodsNum(goodsDto.getGoodsNum());
     	
     	//멤버 정보 넣기
 		/*
