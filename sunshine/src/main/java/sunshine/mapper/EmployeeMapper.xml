@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sunshine.mapper.EmployeeMapper" >
+<sql id="basecolumn">
+	EM_NO emNo, EM_NAME emName, EM_ID emId, EM_PW emPw,
+	 EM_PHONE emPhone, EM_EMAIL emEmail, EM_ADDR emAddr,
+	 EM_REGIST emRegist, EM_RESIDENT_NUM emResidentNum
+</sql>
+<sql id="basecolumn1">
+	EM_NO, EM_NAME, EM_ID, EM_PW, EM_PHONE, EM_EMAIL, EM_ADDR,
+	 EM_REGIST, EM_RESIDENT_NUM
+</sql>
+<!--  -->
+<insert id="employeeJoin" parameterType="sunshine.model.DTO.EmployeeDTO">
+		insert into EM ( <include refid="basecolumn1" />  )
+		values(EM_SEQ.NEXTVAL,#{emName},#{emId},#{emPw},#{emPhone},
+		#{emEmail},#{emAddr},sysdate,11111)
+</insert>
+<select id="employeeList"  resultType="sunshine.model.DTO.EmployeeDTO">
+		 select EM_NO emNo, EM_NAME emName, EM_ID emId, EM_PW emPw,
+		 EM_RESIDENT_NUM emResidentNum, EM_PHONE emPhone,
+		 EM_EMAIL emEmail, EM_ADDR emAddr, EM_REGIST emRegist
+		 from EM
+</select>
+<select id="employeeDetail"  parameterType="string" resultType="sunshine.model.DTO.EmployeeDTO">
+		 select EM_NO emNo, EM_NAME emName, EM_ID emId, EM_PW emPw,
+		 EM_RESIDENT_NUM emResidentNum, EM_PHONE emPhone,
+		 EM_EMAIL emEmail, EM_ADDR emAddr, EM_REGIST emRegist
+		 from EM
+		 where EM_NO = #{emNo}
+</select>
+ <!-- select에만 resultType이 있다. -->
+<update id="employeeModifyOk" parameterType="sunshine.model.DTO.EmployeeDTO">
+		update EM
+		set EM_PHONE=#{emPhone}, EM_EMAIL= #{emEmail}, EM_ADDR= #{emAddr}
+		where EM_NO = #{emNo}
+</update>
+<delete id="employeeDelete" parameterType="string">
+		delete from EM
+		where EM_NO = #{emNo}
+</delete>
+</mapper>
