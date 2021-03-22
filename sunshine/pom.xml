@@ -7,7 +7,6 @@
   <groupId>com.sun</groupId>
   <artifactId>sunshine</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <packaging>war</packaging>
 
   <name>sunshine Maven Webapp</name>
   <!-- FIXME change it to the project's website -->
@@ -30,11 +29,7 @@
 		</repository>
 	</repositories>
   <dependencies>
-  <dependency>
-     <groupId>org.apache.tomcat</groupId>
-     <artifactId>tomcat-jasper</artifactId>
-     <version>9.0.16</version>
-  </dependency>
+  
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>

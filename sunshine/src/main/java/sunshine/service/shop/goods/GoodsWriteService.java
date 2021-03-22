@@ -45,7 +45,7 @@ public class GoodsWriteService {
     	
     	
     	//상품이미지
-    	String path = "C:\\Users\\roll master\\git\\sunshine-final-\\sunshine\\src\\main\\webapp\\WEB-INF\\view\\goods\\upload";
+    	String path = "WEB-INF/view/goods/upload";
     	
     	String filePath = session.getServletContext().getRealPath(path);
     	System.out.println(session.getServletContext().getRealPath(path));
