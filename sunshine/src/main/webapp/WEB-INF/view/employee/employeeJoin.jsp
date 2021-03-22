@@ -14,7 +14,7 @@
 	<tr><td>직원ID</td>
 		<td><input type="text" name="emId" /></td></tr>
 	<tr><td>직원PW</td>
-		<td><input type="text" name="emPw"/></td></tr>
+		<td><input type="password" name="emPw"/></td></tr>
 	<tr><td>직원연락처</td>
 		<td><input type="text" name="emPhone"/></td></tr>
 	<tr><td>직원Email</td>

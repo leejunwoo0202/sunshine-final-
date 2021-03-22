@@ -64,7 +64,7 @@ public class GoodsWriteService {
     			goodsImage += store +"`";
     			
     			File file = new File(filePath + "\\" +store);
-    			
+    			System.out.println("file:" + file);
     			try {
     				mf.transferTo(file);
     			}catch(IllegalStateException | IOException e) {

@@ -32,7 +32,7 @@
    
 
 </form:form>
-
+<a href="main" >메인</a><br/>
 
 </body>
 </html>

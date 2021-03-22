@@ -17,4 +17,10 @@ public interface GoodsMapper {
 	public List<GoodsDTO> getGoodsList(GoodsDTO dto);
 	
 	public Integer getGoodsCount();
+
+	public void goodsDelete(String goodsNum);
+
+	public void goodsUpdate(GoodsDTO dto);
+	
+	
 }

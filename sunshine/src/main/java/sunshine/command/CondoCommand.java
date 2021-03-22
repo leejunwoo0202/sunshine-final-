@@ -14,6 +14,10 @@ public class CondoCommand {
 	MultipartFile [] roomImage;
 	@NotEmpty(message = "객실 정보를 입력하세요.")
 	String roomDetail;
+	@NotEmpty(message = "객실 비밀번호을 선택하세요.")
+	String roomPw;
+	
+	
 	public String getRoomNum() {
 		return roomNum;
 	}
@@ -43,6 +47,12 @@ public class CondoCommand {
 	}
 	public void setRoomDetail(String roomDetail) {
 		this.roomDetail = roomDetail;
+	}
+	public String getRoomPw() {
+		return roomPw;
+	}
+	public void setRoomPw(String roomPw) {
+		this.roomPw = roomPw;
 	}
 	
 	
