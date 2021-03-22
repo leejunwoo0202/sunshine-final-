@@ -27,8 +27,5 @@
 </table>
 <input type="submit" value="등록">
 <input type="button"  value ="뒤로" onclick="javascript:location.href='../restaurant/restaurantMain'"/>  
-
-</body>
-</html>
 </body>
 </html>
