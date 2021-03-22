@@ -70,14 +70,14 @@
                          ${noImg }  <%-- 이미지가 없을 경우   --%>
                         </td></tr>                                          
                         <tr><td>객실설명</td><td>
-                        <textarea cols="20" rows="10" id = "roomDetail" name = "roomDetail">
-                        	내용
-                        </textarea></td></tr>
+                        <textarea cols="20" rows="10" id = "roomDetail" name = "roomDetail">내용</textarea></td></tr>
                         <tr><td>
-                        <input type="submit"  value ="등록">
+                        	<input type="submit"  value ="등록">
                         </td>
-                        <td><input type="reset"  value ="재입력">   
-                        </td></tr>                                          
+                        <td>
+                        	<input type="reset"  value ="재입력">   
+                        </td>
+                       </tr>                                          
                         
                      </table>
                   </form>

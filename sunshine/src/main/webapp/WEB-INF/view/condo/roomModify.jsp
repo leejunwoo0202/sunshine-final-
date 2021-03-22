@@ -8,9 +8,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Industrious by TEMPLATED</title>
-<style type="text/css">
-input{border:none;}
-</style>
 <meta charset="utf-8" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -68,7 +65,6 @@ input{border:none;}
 	</section>
 
 	<!-- Highlights -->
-	
 	<section class="wrapper">
 		<div class="inner">
 			<header class="special">
@@ -77,49 +73,20 @@ input{border:none;}
 			</header>
 			<div class="highlights">
 				<section>
-					<form:form action="roomModify?roomNum=${list.get(0).roomNum }" name="frm" method="post" modelAttribute="condoCommand" enctype="multipart/form-data">
 					<table border="1">
 						<tr>
-							<td width="6%">객실 번호</td>
-							<td width="10%">객실 타입</td>
-							<td width="14%">요금</td>
-							<td width="30%">상세</td>							
-							<td width="40%">이미지</td>
+							<td>객실 번호</td>
+							<td>객실 타입</td>
+							<td>요금</td>
+							<td>상세</td>							
+							<td>이미지${room.roomPrice }</td>
 						</tr>
 						<c:forEach var="room" items="${list }">
 							<tr>
-								<td>
-									${room.roomNum}
-									
-								</td>
-								<td>
-									<c:if test="${room.roomType == 'DR' }">
-										Double Room
-									</c:if>
-									<c:if test="${room.roomType == 'TR' }">
-										Twin Room
-									</c:if>
-									<c:if test="${room.roomType == 'FR' }">
-										Family Room
-									</c:if>
-									<c:if test="${room.roomType == 'CR' }">
-										Connecting Room
-									</c:if><br />
-									 <select id = "roomType" name = "roomType">
-			                           <option>수정할 객실 타입</option>
-			                           <option value ="DR">Double Room</option>
-			                           <option value ="TR">Twin Room</option>
-			                           <option value ="FR">Family Room</option>
-			                           <option value ="CR">Connecting Room</option>                           
-			                        </select>
-									<form:errors path="roomType" />
-								</td>
-								<td>
-									<form:input path="roomPrice" value="${room.roomPrice}" size="3"/>원
-								</td>
-								<td>
-									<form:input path="roomDetail" value="${room.roomDetail}"/>
-								</td>								
+								<td>${room.roomNum}</td>	
+								<td>${room.roomType}</td>
+								<td><fmt:formatNumber value="${room.roomPrice }" pattern="#,###" />원</td>
+								<td>${room.roomDetail}</td>								
 								<td><c:forTokens items="${room.roomImage }" delims="`"
 										var="img" varStatus="status">
 										<!--  
@@ -131,12 +98,9 @@ input{border:none;}
 							</tr>
 						</c:forEach>
 					</table>
-				<a href ="../roomList">리스트로 </a>  &nbsp;&nbsp;&nbsp;
-				<a href ="../roomModify?roomNum=${list.get(0).roomNum }"> 수정 </a>  &nbsp;&nbsp;&nbsp;
-				<input type="submit" value="수정" />
-<%-- 				<input type="button" value="수정" onclick="javascript:location.href='roomModify?roomNum=${room.roomNum }'" /> --%>
-				<a href =""> 삭제</a>
-				</form:form>
+				<a href ="../roomList">리스트로 <a>  &nbsp;&nbsp;&nbsp;
+				<a href ="roomModify"> 수정 <a>  &nbsp;&nbsp;&nbsp;
+				<a href =""> 삭제<a>
 				</section>
 			</div>
 		</div>

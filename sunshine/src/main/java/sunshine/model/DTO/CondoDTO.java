@@ -11,6 +11,9 @@ public class CondoDTO {
 	String storeFileName; 
 	String fileSize;
 	
+	String roomPw;
+	String roomReg;
+	
 	StartEndPageDTO startEndPageDTO;
 	
 	
@@ -23,8 +26,10 @@ public class CondoDTO {
 	}
 	
 	//생성자
+	public CondoDTO() {}; //생성자를 임의로 만들어주면 default생성자 만들기
+	
 	public CondoDTO(String roomNum, String roomType, Integer roomPrice, String roomImage, String roomDetail,
-			String originalFileName, String storeFileName, String fileSize) {
+			String originalFileName, String storeFileName, String fileSize, String roomPw, String roomReg) {
 		super();
 		this.roomNum = roomNum;
 		this.roomType = roomType;
@@ -34,9 +39,9 @@ public class CondoDTO {
 		this.originalFileName = originalFileName;
 		this.storeFileName = storeFileName;
 		this.fileSize = fileSize;
+		this.roomPw = roomPw;
+		this.roomReg = roomReg;
 	}
-	public CondoDTO() {}; //생성자를 임의로 만들어주면 default생성자 만들기
-	
 	public String getOriginalFileName() {
 		return originalFileName;
 	}
@@ -85,6 +90,18 @@ public class CondoDTO {
 	}
 	public void setRoomDetail(String roomDetail) {
 		this.roomDetail = roomDetail;
+	}
+	public String getRoomPw() {
+		return roomPw;
+	}
+	public void setRoomPw(String roomPw) {
+		this.roomPw = roomPw;
+	}
+	public String getRoomReg() {
+		return roomReg;
+	}
+	public void setRoomReg(String roomReg) {
+		this.roomReg = roomReg;
 	}
 	
 	

@@ -1,8 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" isELIgnored="false"%>
-     <%@ include file="../include/include.jsp" %>
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ include file="../include/include.jsp" %>
 <!DOCTYPE HTML>
-<!--객실 리스트-->
+
+<!--
+	Industrious by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+
 <html>
 	<head>
 		<meta charset="UTF-8">
@@ -11,41 +26,37 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
-		<link rel="stylesheet" href="../assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
+	
 	<body class="is-preload">
-
+    
 		<!-- Header -->
 			<header id="header">
-				<a class="logo" href="index.html">Industrious</a>
-				<nav>
-					<a href="#menu">Menu</a>
-				</nav>
+			<nav >
+				<a class="logo" href="main"><img src="images/LogoSun2.jpg" alt="SunShine" id = "SunShineLogo"/></a>	
+			</nav>	
+			   
+				
+				
+			
 			</header>
-
-
-
-
 <!--  메뉴 -->
-
 
 		<!-- Nav -->
 			<nav id="menu">
 				<ul>
-					<li><a href="index.html">Home</a></li>
-					<li><a href="signUp">회원가입</a></li>
-					<li><a href="generic.html">Generic</a></li>
-					<li><a href="member/login.do">로그인</a>
-					<li><a href="condo/condoMain">콘도</a>					
-					<li><a href="#">레스토랑</a>
-					<li><a href="#">프렌즈샵</a>
-					<li><a href="#">리프트권</a>
-										
+					<li><a href="main">Home</a></li>
+					<li><a href="register/main" >myPage</a>
+					
+					<li><a href="restaurant/restaurantMain">레스토랑</a>				
+					<li><a href="condo/condoMain">콘도</a>				
+					<li><a href="goods/main">프렌즈샵</a>
+					<li><a href="#">스키장 예약</a>										
+                       
 				</ul>
 			</nav>
-
-
-
+                  
 <!--  메뉴 -->
 
 
@@ -54,46 +65,72 @@
 			<section id="banner">
 				<div class="inner">
 					<h1>SunShine</h1>
-					<p>A responsive business oriented template with a video background<br />
-					designed by <a href="https://templated.co/">TEMPLATED</a> and released under the Creative Commons License.</p>
+					<p>선샤인 빌리지</p>
 				</div>
-				<video autoplay loop muted playsinline src="../images/banner.mp4"></video>
+				<video autoplay loop muted playsinline src="images/banner.mp4"></video>
 			</section>
 
 		<!-- Highlights -->
 			<section class="wrapper">
 				<div class="inner">
 					<header class="special">
-						<h2>객실리스트</h2>
-						
+						<h2>Sem turpis amet semper</h2>
+						<p>In arcu accumsan arcu adipiscing accumsan orci ac. Felis id enim aliquet. Accumsan ac integer lobortis commodo ornare aliquet accumsan erat tempus amet porttitor.</p>
 					</header>
 					<div class="highlights">
 						<section>
-							<a href ="condoForm">객실등록</a>
-															
-							<table >
-							<caption>객실리스트</caption>
-								<tr>
-								<td>객실번호</td><td>객실타입</td><td>객실요금</td><td>객실사진</td><td>상세</td>
-								</tr>
-							
-							<c:forEach var ="room" items="${list }" >
-							<tr>
-							<td><a href ="roomDetail/${room.roomNum}">${room.roomNum}</a></td> 
-<%-- 							<td><a href ="roomDetail?roomNum="${roomNum }>${room.roomNum}</a></td>  --%>
-							<td>${room.roomType}</td> 
-							<td>${room.roomPrice}</td> 
-							<td><c:forTokens items="${room.roomImage }" delims="`" var="img" varStatus="status" end="0" >
-							<!--  
-							<img alt="img" src="WEB-INF/view/condo/upload/${img }" />
-							-->
-							<a href ="roomDetail/${room.roomNum }"><img alt="img" src="/condo/upload/${img }" width = "200px"/></a>
-							</c:forTokens></td>
-							<td>${room.roomDetail }</td>
-							</c:forEach>
-								
-							</table>
-							<%@ include file="../include/includePage.jsp" %>	
+							<div class="content">
+								<header>
+									<a href="#" class="icon fa-vcard-o"><span class="label">Icon</span></a>
+									<h3>Feugiat consequat</h3>
+								</header>
+								<p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>
+							</div>
+						</section>
+						<section>
+							<div class="content">
+								<header>
+									<a href="#" class="icon fa-files-o"><span class="label">Icon</span></a>
+									<h3>Ante sem integer</h3>
+								</header>
+								<p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>
+							</div>
+						</section>
+						<section>
+							<div class="content">
+								<header>
+									<a href="#" class="icon fa-floppy-o"><span class="label">Icon</span></a>
+									<h3>Ipsum consequat</h3>
+								</header>
+								<p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>
+							</div>
+						</section>
+						<section>
+							<div class="content">
+								<header>
+									<a href="#" class="icon fa-line-chart"><span class="label">Icon</span></a>
+									<h3>Interdum gravida</h3>
+								</header>
+								<p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>
+							</div>
+						</section>
+						<section>
+							<div class="content">
+								<header>
+									<a href="#" class="icon fa-paper-plane-o"><span class="label">Icon</span></a>
+									<h3>Faucibus consequat</h3>
+								</header>
+								<p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>
+							</div>
+						</section>
+						<section>
+							<div class="content">
+								<header>
+									<a href="#" class="icon fa-qrcode"><span class="label">Icon</span></a>
+									<h3>Accumsan viverra</h3>
+								</header>
+								<p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>
+							</div>
 						</section>
 					</div>
 				</div>
@@ -122,7 +159,7 @@
 								</blockquote>
 								<div class="author">
 									<div class="image">
-										<img src="../images/pic01.jpg" alt="" />
+										<img src="images/pic01.jpg" alt="" />
 									</div>
 									<p class="credit">- <strong>Jane Doe</strong> <span>CEO - ABC Inc.</span></p>
 								</div>
@@ -135,7 +172,7 @@
 								</blockquote>
 								<div class="author">
 									<div class="image">
-										<img src="../images/pic03.jpg" alt="" />
+										<img src="images/pic03.jpg" alt="" />
 									</div>
 									<p class="credit">- <strong>John Doe</strong> <span>CEO - ABC Inc.</span></p>
 								</div>
@@ -148,7 +185,7 @@
 								</blockquote>
 								<div class="author">
 									<div class="image">
-										<img src="../images/pic02.jpg" alt="" />
+										<img src="images/pic02.jpg" alt="" />
 									</div>
 									<p class="credit">- <strong>Janet Smith</strong> <span>CEO - ABC Inc.</span></p>
 								</div>
@@ -192,10 +229,13 @@
 			</footer>
 
 		<!-- Scripts -->
-			<script src="../assets/js/jquery.min.js"></script>
-			<script src="../assets/js/browser.min.js"></script>
-			<script src="../assets/js/breakpoints.min.js"></script>
-			<script src="../assets/js/util.js"></script>
-			<script src="../assets/js/main.js"></script>
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
 	</body>
+</html>
+</body>
 </html>
