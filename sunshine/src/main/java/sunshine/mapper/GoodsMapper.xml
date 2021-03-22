@@ -50,4 +50,21 @@
     <select id="getGoodsCount" resultType="int">
            select count(*) from shop_goods
     </select>
+    
+    <delete id="goodsDelete" parameterType="string" >
+    delete from shop_goods
+    where goods_num = #{goodsNum}
+    </delete>
+    
+    <update  id="goodsUpdate" parameterType="sunshine.model.DTO.GoodsDTO">
+       update shop_goods
+       set goods_name = #{goodsName},
+       goods_price = #{goodsPrice},
+       goods_amount = #{goodsAmount},
+       goods_categori = #{goodsCategori},
+       goods_content = #{goodsContent}
+       
+       where goods_num = #{goodsNum}
+    
+    </update>
 </mapper>

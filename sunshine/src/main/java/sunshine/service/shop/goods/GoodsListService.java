@@ -20,22 +20,18 @@ public class GoodsListService {
     
     public void getGoodsList(Model model,Integer page) {
     	int limit = 10;
-    	int limitPage = 10;
+    	int limitPage = 10;   
     	Long startRow = ((long)page -1) * limit + 1;
     	Long endRow = startRow + limit -1;
     	GoodsDTO dto = new GoodsDTO();
     	dto.setStartEndPageDTO(
     			new StartEndPageDTO(startRow,endRow));
-    	List<GoodsDTO> list =
+    	List<GoodsDTO> list1 =
     			goodsMapper.getGoodsList(dto);
-    	System.out.println(list.get(0));
-    	System.out.println(list.get(1));
-    	System.out.println(list.get(2));
-    	System.out.println(list.get(3));
-    	System.out.println(list.get(4));
+    	
     	
     	int count = goodsMapper.getGoodsCount();
-    	model.addAttribute("list",list);
+    	model.addAttribute("list",list1);
     	model.addAttribute("count",count);
     	
     	PageAction pageAction = new PageAction();
