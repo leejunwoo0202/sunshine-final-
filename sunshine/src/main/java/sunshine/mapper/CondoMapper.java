@@ -15,6 +15,9 @@ public interface CondoMapper {
 	public Integer insertCondo(CondoDTO condoDTO) throws Exception; 
 	
 	public List<CondoDTO> RoomList(CondoDTO condoDTO) throws Exception;
+
+	public int getRoomCount(CondoDTO condoDTO) throws Exception;
+	
 		
 	
 }

@@ -11,6 +11,32 @@ public class CondoDTO {
 	String storeFileName; 
 	String fileSize;
 	
+	StartEndPageDTO startEndPageDTO;
+	
+	
+	
+	public StartEndPageDTO getStartEndPageDTO() {
+		return startEndPageDTO;
+	}
+	public void setStartEndPageDTO(StartEndPageDTO startEndPageDTO) {
+		this.startEndPageDTO = startEndPageDTO;
+	}
+	
+	//생성자
+	public CondoDTO(String roomNum, String roomType, Integer roomPrice, String roomImage, String roomDetail,
+			String originalFileName, String storeFileName, String fileSize) {
+		super();
+		this.roomNum = roomNum;
+		this.roomType = roomType;
+		this.roomPrice = roomPrice;
+		this.roomImage = roomImage;
+		this.roomDetail = roomDetail;
+		this.originalFileName = originalFileName;
+		this.storeFileName = storeFileName;
+		this.fileSize = fileSize;
+	}
+	public CondoDTO() {}; //생성자를 임의로 만들어주면 default생성자 만들기
+	
 	public String getOriginalFileName() {
 		return originalFileName;
 	}
