@@ -7,20 +7,36 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
+import sunshine.PageAction;
 import sunshine.mapper.CondoMapper;
 import sunshine.model.DTO.CondoDTO;
+import sunshine.model.DTO.GoodsDTO;
+import sunshine.model.DTO.StartEndPageDTO;
 
 @Component
 @Service
 public class RoomListService {
 
 	@Autowired
-	CondoMapper CondoMapper;
-	public void getRoomList(Model model) throws Exception {
+	CondoMapper condoMapper;
+	public void getRoomList(Integer page, Model model) throws Exception {
 		
-		CondoDTO condoDTO = new CondoDTO();
-		List<CondoDTO> list = CondoMapper.RoomList(condoDTO);
-		
+		int limit = 10;
+    	int limitPage = 10;
+    	Long startRow = ((long)page -1) * limit + 1;
+    	Long endRow = startRow + limit -1;
+    	CondoDTO condoDTO = new CondoDTO();
+    	condoDTO.setStartEndPageDTO(
+    			new StartEndPageDTO(startRow,endRow));
+    	
+		List<CondoDTO> list = condoMapper.RoomList(condoDTO);
+		int count = condoMapper.getRoomCount(condoDTO);
 		model.addAttribute("list",list);
+    	model.addAttribute("count",count);
+    	
+    	PageAction pageAction = new PageAction();
+    	pageAction.page(
+    			model, count, limit, limitPage, page,"roomList?");
+		
 	}
 }

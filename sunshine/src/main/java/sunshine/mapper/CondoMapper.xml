@@ -24,8 +24,22 @@ ROOM_NUM,ROOM_TYPE,ROOM_PRICE,ROOM_IMAGE,ROOM_DETAIL
 	 	from ( select rownum rn , <include refid="basecolumn" /> 
 	 	from(select <include refid="basecolumn1" />
 	 		from condo_room
-	 			order by room_num desc )
+	 		<trim prefix="where" prefixOverrides="AND | OR">
+            	<if test="roomNum != null">
+               	  room_num=#{roomNum}
+            	</if>
+         	</trim>
+	 			order by room_num desc
+	 		   )
+	 	   
 	 		) 
+	 	 <if test="startEndPageDTO != null">
+	    	where rn between #{startEndPageDTO.startPage}
+	         and #{startEndPageDTO.endPage}
+    	</if>
+</select>
+<select id="getRoomCount" resultType="int">
+	select count(*) from condo_room
 </select>
 
 </mapper>
