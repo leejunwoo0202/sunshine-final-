@@ -6,16 +6,16 @@ PUBLIC "-//mybtis.org//DTD Mapper 3.0//EN"
 <mapper namespace="sunshine.mapper.CondoMapper">
 <sql id="basecolumn">
   room_num roomNum , room_type roomType, room_price roomPrice,
-  room_image roomImage, room_detail roomDetail
+  room_image roomImage, room_detail roomDetail, room_pw roomPw, room_reg roomReg
 </sql>
 
 <sql id="basecolumn1">
-ROOM_NUM,ROOM_TYPE,ROOM_PRICE,ROOM_IMAGE,ROOM_DETAIL
+ROOM_NUM,ROOM_TYPE,ROOM_PRICE,ROOM_IMAGE,ROOM_DETAIL, room_pw, room_reg
 </sql>
 
 <insert id="insertCondo" parameterType="sunshine.model.DTO.CondoDTO">
 	insert into CONDO_ROOM(<include refid="basecolumn1"/>)
-	values(#{roomNum},#{roomType},#{roomPrice},#{roomImage},#{roomDetail})
+	values(#{roomNum},#{roomType},#{roomPrice},#{roomImage},#{roomDetail},{roomPw},sysdate)
 </insert>
 
 <select id= "RoomList" parameterType="sunshine.model.DTO.CondoDTO" 

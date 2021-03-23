@@ -5,12 +5,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
+import lombok.val;
 import sunshine.command.CondoCommand;
 import sunshine.service.condo.CondoRegistService;
 import sunshine.service.condo.RoomDetailService;
@@ -26,6 +28,12 @@ public class CondoController {
 	RoomListService roomListService;
 	@Autowired
 	RoomDetailService roomDetailService;
+	
+	@ModelAttribute
+	CondoCommand condoCommand() {
+	      return new CondoCommand();
+	   }
+	
 	
 	@RequestMapping(value = "condoMain")
 	public String condoMain() {
@@ -60,4 +68,10 @@ public class CondoController {
 		roomDetailService.getRoomDetail(roomNum, model);
 		return "condo/roomDetail";
 	}
+	@RequestMapping(value = "roomModify")
+	public String roomModify(@RequestParam(value="roomNum")String roomNum, Model model) throws Exception {
+//		roomDetailService.getRoomDetail(roomNum, model);
+		return "condo/roomModify";
+	}
+	
 }

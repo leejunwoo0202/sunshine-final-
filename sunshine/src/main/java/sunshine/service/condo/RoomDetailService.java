@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
+import sunshine.command.CondoCommand;
 import sunshine.mapper.CondoMapper;
 import sunshine.model.DTO.CondoDTO;
 

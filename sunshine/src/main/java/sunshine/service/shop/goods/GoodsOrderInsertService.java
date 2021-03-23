@@ -7,7 +7,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
-import sunshine.command.LoginCommand;
 import sunshine.mapper.GoodsMapper;
 import sunshine.mapper.MemberMapper;
 import sunshine.model.LoginInfo;
@@ -34,8 +33,12 @@ public class GoodsOrderInsertService {
     	MemOrderDTO  order = new MemOrderDTO();
     	
     	//상품 정보 넣기
+
     	System.out.println("goodsDto.getGoodsNum():"+goodsDto.getGoodsNum());
     	order.setGoodsNum(goodsDto.getGoodsNum());
+
+    	 order.setGoodsNum(goodsDto.getGoodsNum());
+
     	
     	model.addAttribute("goodsDTO",goodsDto);
     	//멤버 정보 넣기
