@@ -45,7 +45,7 @@ public class GoodsControllerMember {
 			@RequestParam(value ="goodsNum")String goodsNum,
 			Model model, HttpSession session) {
 		goodsOrderInsertService.goodsOrderAdd(goodsNum,model,session);
-		return "goods/orderInsert";
+		return "goods/orderList";
 	}
 			
 			

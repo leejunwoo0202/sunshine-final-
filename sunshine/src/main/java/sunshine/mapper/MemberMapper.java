@@ -3,6 +3,7 @@ package sunshine.mapper;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
+import sunshine.model.LoginInfo;
 import sunshine.model.DTO.MemberDTO;
 @Component
 @Repository(value = "sunshine.mapper")
@@ -20,5 +21,7 @@ public interface MemberMapper {
 	//업데이트
 	public void pwUpdate(MemberDTO memberDTO);
 	
-	public void deleteMember(String userId); 
+	public void deleteMember(String userId);
+
+	public MemberDTO selectByMemberA(String memId); 
 }

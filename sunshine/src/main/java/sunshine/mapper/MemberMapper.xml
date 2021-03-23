@@ -30,7 +30,16 @@ PUBLIC "-//mybtis.org//DTD Mapper 3.0//EN"
         select <include refid="basecolumn"/>     
         from mem where mem_id = #{memId}
         
-     </select> 
+     </select>
+     
+     <select id="selectByMemberA" parameterType="string"
+     resultType="sunshine.model.DTO.MemberDTO">
+     select <include refid="basecolumn"/>     
+        from mem where mem_id = #{loginInfo}
+     </select>
+     
+     
+      
     
     <select id="selectByMemberPw" 
     parameterType="sunshine.model.DTO.MemberDTO" 

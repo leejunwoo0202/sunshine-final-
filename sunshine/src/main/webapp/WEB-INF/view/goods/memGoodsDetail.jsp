@@ -8,7 +8,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="goodsMem/orderInsert" >
+<form action="orderInsert" >
+<input type="hidden" name="goodsNum" value="${goods.goodsNum}"/>
 <table>
 <tr><th>상품번호</th> 
 <th>상품이름</th> 
