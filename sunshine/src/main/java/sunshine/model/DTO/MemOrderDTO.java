@@ -6,6 +6,10 @@ public class MemOrderDTO {
 	String mOrderNum;
 	Date mOrderDate;
 	String goodsNum;
+	String goodsPrice;
+	String goodsAmount;
+	String goodsTotalPrice;
+	
 	String memNo;
 	String memName;
 	String memId;
@@ -15,6 +19,34 @@ public class MemOrderDTO {
 	String memAddr;
 	Date memRegist;
 	String memResidentNum;
+	String memAmount;
+	
+	
+	
+	public String getGoodsTotalPrice() {
+		return goodsTotalPrice;
+	}
+	public void setGoodsTotalPrice(String goodsTotalPrice) {
+		this.goodsTotalPrice = goodsTotalPrice;
+	}
+	public String getGoodsPrice() {
+		return goodsPrice;
+	}
+	public void setGoodsPrice(String goodsPrice) {
+		this.goodsPrice = goodsPrice;
+	}
+	public String getGoodsAmount() {
+		return goodsAmount;
+	}
+	public void setGoodsAmount(String goodsAmount) {
+		this.goodsAmount = goodsAmount;
+	}
+	public String getMemAmount() {
+		return memAmount;
+	}
+	public void setMemAmount(String memAmount) {
+		this.memAmount = memAmount;
+	}
 	public String getmOrderNum() {
 		return mOrderNum;
 	}

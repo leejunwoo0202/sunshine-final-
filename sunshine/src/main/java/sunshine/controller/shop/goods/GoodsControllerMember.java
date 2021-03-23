@@ -9,9 +9,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import sunshine.command.PaymentCommand;
 import sunshine.service.shop.goods.GoodsDetailService;
 import sunshine.service.shop.goods.GoodsListService;
 import sunshine.service.shop.goods.GoodsOrderInsertService;
+import sunshine.service.shop.goods.GoodsPaymentService;
 
 @Component
 @Controller
@@ -25,6 +27,9 @@ public class GoodsControllerMember {
 
 	@Autowired
 	GoodsOrderInsertService goodsOrderInsertService;
+	
+	@Autowired
+	GoodsPaymentService goodsPaymentService;
 	@RequestMapping("list")
 	public String goodsList(@RequestParam(value = "page", defaultValue = "1") Integer page, Model model) {
 		goodsListService.getGoodsList(model, page);
@@ -47,6 +52,18 @@ public class GoodsControllerMember {
 		goodsOrderInsertService.goodsOrderAdd(goodsNum,model,session);
 		return "goods/orderList";
 	}
+	
+	
+	
+	
+	@RequestMapping("paymentInsert")
+	public String paymentInsert(
+			PaymentCommand paymentCommand,Model model) {
+		goodsPaymentService.goodsPayment(paymentCommand,model);
+		return "goods/paymentInsert";
+	}
+			
+			
 			
 			
 	
