@@ -32,12 +32,16 @@ public class GoodsOrderInsertService {
     	goodsDto = (GoodsDTO)goodsMapper.getGoodsList(goodsDto).get(0);
     	MemOrderDTO  order = new MemOrderDTO();
     	
+    	
+    	
     	//상품 정보 넣기
 
     	System.out.println("goodsDto.getGoodsNum():"+goodsDto.getGoodsNum());
-    	order.setGoodsNum(goodsDto.getGoodsNum());
-
+    	 
+    	
+         
     	 order.setGoodsNum(goodsDto.getGoodsNum());
+    	 
 
     	
     	model.addAttribute("goodsDTO",goodsDto);
@@ -55,8 +59,7 @@ public class GoodsOrderInsertService {
 		 order.setMemPhone(memDto.getMemPhone()); 
 		 order.setMemEmail(memDto.getMemEmail());
 		 order.setMemAddr(memDto.getMemAddr()); 
-		 order.setMemRegist(memDto.getMemRegist()); 
-		 order.setMemResidentNum(memDto.getMemResidentNum());
+		 
 		 
 		 
 		 //회원주문 테이블 정보

@@ -25,6 +25,10 @@ public interface GoodsMapper {
 	public void goodsUpdate(GoodsDTO dto);
 
 	public <List>LoginInfo selectMem(String loginId);
+	
+	public void getGoodsListNum(String goodsNum);
+
+	public void paymentInsert(MemOrderDTO memOrderDTO);
 
 	
 	

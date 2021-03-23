@@ -21,8 +21,10 @@
 <tr>
 <td>${goods.goodsNum }</td>
 <td>${goods.goodsName }</td>
-<td>${goods.goodsPrice}</td><td>${goods.goodsAmount}</td>
-<td>${goods.goodsCategori}</td><td>${goods.goodsContent}</td>
+<td>${goods.goodsPrice}</td>
+<td>${goods.goodsAmount}</td>
+<td>${goods.goodsCategori}</td>
+<td>${goods.goodsContent}</td>
 <td><c:forTokens items="${goods.goodsImage }" delims="`" var="img" >
 	<img src="../goods/upload/${img }" width="500" height="500"/><br />
 </c:forTokens></tr>
