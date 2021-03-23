@@ -2,10 +2,11 @@ package sunshine.mapper;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
+import org.springframework.ui.Model;
 
+import sunshine.command.CondoCommand;
 import sunshine.model.DTO.CondoDTO;
 @Component
 @Repository
@@ -18,7 +19,7 @@ public interface CondoMapper {
 
 	public int getRoomCount(CondoDTO condoDTO) throws Exception;
 	
-		
+	public String condoModify(CondoCommand condoCommand , Model model) throws Exception;
 	
 }
 

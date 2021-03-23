@@ -70,8 +70,12 @@
                          ${noImg }  <%-- 이미지가 없을 경우   --%>
                         </td></tr>                                          
                         <tr><td>객실설명</td><td>
-                        <textarea cols="20" rows="10" id = "roomDetail" name = "roomDetail">내용</textarea></td></tr>
-                        <tr><td>
+                        <textarea cols="20" rows="10" id = "roomDetail" name = "roomDetail" placeholder="상세 입력 "></textarea></td></tr>
+                        <tr><td>등록 비밀번호</td>
+                        <td><input type ="password"  id ="roomPw" name ="roomPw" placeholder="등록 비밀번호를 정확히 입력하세요."></td></tr>
+                        <tr><td>비밀번호 확인</td>                      
+                        <td><input type ="password" id ="roomPwCK" name ="roomPwCK" placeholder="비밀번호 확인."></td></tr>
+                        <tr><td>              
                         	<input type="submit"  value ="등록">
                         </td>
                         <td>

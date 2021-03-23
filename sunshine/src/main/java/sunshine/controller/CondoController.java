@@ -17,6 +17,7 @@ import sunshine.command.CondoCommand;
 import sunshine.service.condo.CondoRegistService;
 import sunshine.service.condo.RoomDetailService;
 import sunshine.service.condo.RoomListService;
+import sunshine.service.condo.RoomModifyService;
 
 @Controller
 @RequestMapping(value = "condo")
@@ -28,6 +29,8 @@ public class CondoController {
 	RoomListService roomListService;
 	@Autowired
 	RoomDetailService roomDetailService;
+	@Autowired
+	RoomModifyService roomModifyService;
 	
 	@ModelAttribute
 	CondoCommand condoCommand() {
@@ -61,17 +64,17 @@ public class CondoController {
 		return "condo/roomList";
 	}
 	
-//	@RequestMapping(value = "roomDetail", method=RequestMethod.GET)
 	@RequestMapping(value = "roomDetail/{roomNum}")
-//	public String roomDetail(CondoCommand command, Model model) throws Exception {
-	public String roomDetail(@PathVariable(value="roomNum")String roomNum, Model model) throws Exception {
+	public String roomDetail(@PathVariable(value="roomNum")String roomNum, Model model, CondoCommand condoCommand) throws Exception {
+		model.addAttribute(condoCommand);
 		roomDetailService.getRoomDetail(roomNum, model);
 		return "condo/roomDetail";
 	}
-	@RequestMapping(value = "roomModify")
-	public String roomModify(@RequestParam(value="roomNum")String roomNum, Model model) throws Exception {
-//		roomDetailService.getRoomDetail(roomNum, model);
-		return "condo/roomModify";
+	@RequestMapping(value = "roomModify", method = RequestMethod.POST)
+	public String roomModify(CondoCommand condoCommand, Model model, MultipartHttpServletRequest mtfRequest)throws Exception {
+		String location = roomModifyService.getRooModify(condoCommand, model, mtfRequest);
+		return location;
+//		return "redirect:/condo/roomList";
 	}
 	
 }

@@ -8,9 +8,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Industrious by TEMPLATED</title>
+
 <style type="text/css">
 input{border:none;}
 </style>
+
 <meta charset="utf-8" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -77,7 +79,7 @@ input{border:none;}
 			</header>
 			<div class="highlights">
 				<section>
-					<form:form action="roomModify?roomNum=${list.get(0).roomNum }" name="frm" method="post" modelAttribute="condoCommand" enctype="multipart/form-data">
+					<form:form action="/condo/roomModify?roomNum=${list.get(0).roomNum }" name="frm" method="post" modelAttribute="condoCommand" enctype="multipart/form-data">
 					<table border="1">
 						<tr>
 							<td width="6%">객실 번호</td>
@@ -93,6 +95,9 @@ input{border:none;}
 									
 								</td>
 								<td>
+									${room.roomType }
+								</td>
+								<td>
 									<c:if test="${room.roomType == 'DR' }">
 										Double Room
 									</c:if>
@@ -105,7 +110,7 @@ input{border:none;}
 									<c:if test="${room.roomType == 'CR' }">
 										Connecting Room
 									</c:if><br />
-									 <select id = "roomType" name = "roomType">
+									 <select id = "roomType">
 			                           <option>수정할 객실 타입</option>
 			                           <option value ="DR">Double Room</option>
 			                           <option value ="TR">Twin Room</option>
@@ -131,11 +136,13 @@ input{border:none;}
 							</tr>
 						</c:forEach>
 					</table>
-				<a href ="../roomList">리스트로 </a>  &nbsp;&nbsp;&nbsp;
-				<a href ="../roomModify?roomNum=${list.get(0).roomNum }"> 수정 </a>  &nbsp;&nbsp;&nbsp;
-				<input type="submit" value="수정" />
-<%-- 				<input type="button" value="수정" onclick="javascript:location.href='roomModify?roomNum=${room.roomNum }'" /> --%>
-				<a href =""> 삭제</a>
+				<a href ="../roomList"><input type="button" value="리스트로 "></a>  &nbsp;&nbsp;&nbsp;
+<%-- 			<a href ="../roomModify?roomNum=${list.get(0).roomNum }"> 수정 </a>  &nbsp;&nbsp;&nbsp; --%>
+				<input type="submit" value="수정" onclick="return roomPwCk();" />&nbsp;&nbsp;&nbsp;
+				<a href ="#"><input type="button" value="삭제 "></a>  &nbsp;&nbsp;&nbsp;						
+<!-- 				<input type="password" id="roomPw" name ="roomPw" placeholder="비밀번호를 입력하세요"/><br /> -->
+				<form:password id="roomPw" path ="roomPw" placeholder="비밀번호를 입력하세요"/><br />
+				${PwErr }
 				</form:form>
 				</section>
 			</div>
@@ -269,5 +276,15 @@ input{border:none;}
 	<script src="../assets/js/breakpoints.min.js"></script>
 	<script src="../assets/js/util.js"></script>
 	<script src="../assets/js/main.js"></script>
+	
+	<script type="text/javascript">
+		function roomPwCk(){
+			if(document.getElementById('roomPw').value.trim() == ""){
+				alert("비밀번호를 입력하세요");
+				document.getElementById('roomPw').focus();
+				return false
+			}
+		}
+	</script>
 </body>
 </html>
