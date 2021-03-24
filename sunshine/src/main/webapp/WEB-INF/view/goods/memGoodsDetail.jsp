@@ -10,7 +10,7 @@
 <body>
 <form action="orderInsert" >
 <input type="hidden" name="goodsNum" value="${goods.goodsNum}"/>
-<table>
+<table border="1">
 <tr><th>상품번호</th> 
 <th>상품이름</th> 
 <th>상품가격</th> 
@@ -34,5 +34,6 @@
 </table>
 </form>
 <a href="main" >메인</a><br/>
+<a href="list">상품리스트</a>
 </body>
 </html>

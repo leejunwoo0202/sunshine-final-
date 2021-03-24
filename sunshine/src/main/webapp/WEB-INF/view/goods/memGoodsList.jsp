@@ -9,7 +9,7 @@
 </head>
 <body>
 상품리스트<br/>
-<table>
+<table border="1">
 
 <tr><th>상품번호</th> 
 <th>상품이름</th> 
@@ -40,5 +40,6 @@
 
 </table>
 <%@ include file="../include/includePage.jsp" %><br/>
+<a href="list">상품리스트</a>
 </body>
 </html>

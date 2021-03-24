@@ -21,7 +21,11 @@ public class MemOrderDTO {
 	String memResidentNum;
 	String memAmount;
 	
+	String payNum;
 	
+	String deliveryAddress;
+	String payDivision;
+	String depositChk;
 	
 	public String getGoodsTotalPrice() {
 		return goodsTotalPrice;
@@ -119,6 +123,30 @@ public class MemOrderDTO {
 	}
 	public void setMemResidentNum(String memResidentNum) {
 		this.memResidentNum = memResidentNum;
+	}
+	public String getPayNum() {
+		return payNum;
+	}
+	public void setPayNum(String payNum) {
+		this.payNum = payNum;
+	}
+	public String getDeliveryAddress() {
+		return deliveryAddress;
+	}
+	public void setDeliveryAddress(String deliveryAddress) {
+		this.deliveryAddress = deliveryAddress;
+	}
+	public String getPayDivision() {
+		return payDivision;
+	}
+	public void setPayDivision(String payDivision) {
+		this.payDivision = payDivision;
+	}
+	public String getDepositChk() {
+		return depositChk;
+	}
+	public void setDepositChk(String depositChk) {
+		this.depositChk = depositChk;
 	}
 	
 	

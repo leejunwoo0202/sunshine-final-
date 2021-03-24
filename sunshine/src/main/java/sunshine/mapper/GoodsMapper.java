@@ -30,6 +30,12 @@ public interface GoodsMapper {
 
 	public void paymentInsert(MemOrderDTO memOrderDTO);
 
+	public void paymentInsertPro(MemOrderDTO memOrderDTO);
+	
+	public String mOrderNum();
+
+	
+
 	
 	
 	

@@ -68,16 +68,27 @@
     
     </update>
     
+    <select id ="mOrderNum" resultType="string" >
+    	select shop_payment_seq.nextval from dual    
+    </select>
+    
     <insert id="paymentInsert"  parameterType="sunshine.model.DTO.MemOrderDTO">
     insert into shop_member_order(
     m_order_num,m_order_date, goods_num, goods_total_price, mem_no, mem_name,
     mem_id, mem_phone, mem_email,mem_addr)
     values(
-    m_order_num_seq.nextval, sysdate,  #{goodsNum}, #{goodsTotalPrice},  #{memNo}, #{memName}, 
+    #{mOrderNum}, sysdate,  #{goodsNum}, #{goodsTotalPrice},  #{memNo}, #{memName}, 
     #{memId}, #{memPhone}, #{memEmail}, #{memAddr} )
     </insert>
     
+    <insert id="paymentInsertPro" parameterType="sunshine.model.DTO.MemOrderDTO">
+    insert into shop_payment(
+    pay_num, m_order_num, delivery_address, pay_division)
+    values(
+    shop_payment_seq.nextval,#{mOrderNum}, #{deliveryAddress}, 
+    #{payDivision})
     
+    </insert>
     
     
 </mapper>

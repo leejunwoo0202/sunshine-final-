@@ -70,7 +70,8 @@
 </table>
 <br/>
 
-<input type="submit" value="전송">
+<input type="submit" value="주문하기">
+<a href="list">상품리스트</a>
 </form>
 </body>
 </html>

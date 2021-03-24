@@ -54,13 +54,22 @@ public class GoodsControllerMember {
 	}
 	
 	
-	
+	//주문하기
 	
 	@RequestMapping("paymentInsert")
 	public String paymentInsert(
 			PaymentCommand paymentCommand,Model model) {
 		goodsPaymentService.goodsPayment(paymentCommand,model);
 		return "goods/paymentInsert";
+	}
+	
+	//결제하기
+	
+	@RequestMapping("paymentInsertPro")
+	public String paymentInsertPro(
+			PaymentCommand paymentCommand, Model model) {
+		goodsPaymentService.goodsPaymentPro(paymentCommand,model);
+		return "goods/paymentProList";
 	}
 			
 			

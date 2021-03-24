@@ -15,6 +15,11 @@ public class PaymentCommand {
         	String memEmail;
         	String memAddr;
         	
+        	String payNum;
+        	String mOrderNum;
+        	String deliveryAddress;
+        	String payDivision;
+        	String depositChk;
         	
 			public String getGoodsAmountOrder() {
 				return goodsAmountOrder;
@@ -87,6 +92,36 @@ public class PaymentCommand {
 			}
 			public void setMemAddr(String memAddr) {
 				this.memAddr = memAddr;
+			}
+			public String getPayNum() {
+				return payNum;
+			}
+			public void setPayNum(String payNum) {
+				this.payNum = payNum;
+			}
+			public String getmOrderNum() {
+				return mOrderNum;
+			}
+			public void setmOrderNum(String mOrderNum) {
+				this.mOrderNum = mOrderNum;
+			}
+			public String getDeliveryAddress() {
+				return deliveryAddress;
+			}
+			public void setDeliveryAddress(String deliveryAddress) {
+				this.deliveryAddress = deliveryAddress;
+			}
+			public String getPayDivision() {
+				return payDivision;
+			}
+			public void setPayDivision(String payDivision) {
+				this.payDivision = payDivision;
+			}
+			public String getDepositChk() {
+				return depositChk;
+			}
+			public void setDepositChk(String depositChk) {
+				this.depositChk = depositChk;
 			}
         	
         	

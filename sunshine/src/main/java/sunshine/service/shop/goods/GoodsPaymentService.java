@@ -18,15 +18,17 @@ public class GoodsPaymentService {
 	
 	public void goodsPayment(PaymentCommand paymentCommand, Model model) {
 		
+		String mOrderNum = goodsMapper.mOrderNum();
 		MemOrderDTO memOrderDTO = new MemOrderDTO();
 		System.out.println("paymentCommand.getGoodsNum:"+paymentCommand.getGoodsNum());
 		System.out.println("paymentCommand.getMemNo:"+paymentCommand.getMemNo());
-		
+		memOrderDTO.setmOrderNum(mOrderNum);
 		String goodsAmount = paymentCommand.getGoodsAmountOrder();
 		String goodsPrice = paymentCommand.getGoodsPrice();
 		System.out.println(goodsAmount);
 		String goodsTotalPrice = String.valueOf(Integer.parseInt(goodsAmount) *  Integer.parseInt(goodsPrice));
 		
+		memOrderDTO.setmOrderNum(mOrderNum);
 		
 		memOrderDTO.setGoodsNum(paymentCommand.getGoodsNum());
 		memOrderDTO.setGoodsTotalPrice(goodsTotalPrice);
@@ -38,11 +40,26 @@ public class GoodsPaymentService {
 		memOrderDTO.setMemEmail(paymentCommand.getMemEmail());
 		memOrderDTO.setMemAddr(paymentCommand.getMemAddr());
 		
+		model.addAttribute("mOrderNum", mOrderNum);
 		
 		
 		goodsMapper.paymentInsert(memOrderDTO);
 		
 		
+		
+		
+		
+	}
+
+	public void goodsPaymentPro(PaymentCommand paymentCommand, Model model) {
+		MemOrderDTO memOrderDTO = new MemOrderDTO();
+		
+		
+		memOrderDTO.setmOrderNum(paymentCommand.getmOrderNum());
+		memOrderDTO.setDeliveryAddress(paymentCommand.getDeliveryAddress());
+		memOrderDTO.setPayDivision(paymentCommand.getPayDivision());
+		
+		goodsMapper.paymentInsertPro(memOrderDTO);
 		
 		
 	}
