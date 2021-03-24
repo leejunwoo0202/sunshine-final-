@@ -130,6 +130,7 @@ form:errors{color:red;}
 							-->
 										<img alt="img" src="/condo/upload/${img }" width="300px"
 											height="300px" />
+<!-- 										<input type="file" name="roomImg" multiple="multiple" /> -->
 									</c:forTokens></td>
 							</tr>
 						</c:forEach>
