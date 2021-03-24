@@ -34,6 +34,8 @@ public interface GoodsMapper {
 	
 	public String mOrderNum();
 
+	public List<GoodsDTO> getPaymentList(GoodsDTO dto);
+
 	
 
 	

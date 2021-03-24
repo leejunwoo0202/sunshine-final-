@@ -36,7 +36,7 @@ function fileDelete(imgFile,btn){
 
 <form action="modifyPro" method="post" enctype="multipart/form-data">
 <input type="hidden" name="goodsNum" value="${goods.goodsNum}"/>
-
+<input type="hidden" name="goodsImage1" value="${goods.goodsImage }"/>
 <table border="1">
 <tr>
 <th>상품번호</th> 
@@ -53,9 +53,10 @@ function fileDelete(imgFile,btn){
 <td><input type="text" name="goodsAmount" value="${goods.goodsAmount}"/></td>
 <td><input type="text" name="goodsCategori"value="${goods.goodsCategori}"/></td>
 <td><textarea rows="10" cols="50" name="goodsContent">${goods.goodsContent}</textarea></td>
+<td><input type="file" name="goodsImage" /></td>
 <td><c:forTokens items="${goods.goodsImage }" delims="`" var="img" >
 	<img src="../goods/upload/${img }" width="400" height="500"/><br />
-	<%-- <button type="button" onclick="delete('${img }',this);">삭제</button> --%>
+	<button type="button" onclick="filedelete('${img }',this);">삭제</button>
 </c:forTokens></tr>
 <tr>
 

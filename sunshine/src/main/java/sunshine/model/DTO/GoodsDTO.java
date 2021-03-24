@@ -1,5 +1,6 @@
 package sunshine.model.DTO;
 
+import java.io.File;
 import java.sql.Timestamp;
 
 public class GoodsDTO {
@@ -10,6 +11,7 @@ public class GoodsDTO {
      String goodsCategori;
      String goodsContent;
      String goodsImage;
+     File goodsImage1;
      String ipAddr;
      Timestamp goodsRegister;
      Long readCount;
@@ -136,7 +138,15 @@ public class GoodsDTO {
 		this.startEndPageDTO = startEndPageDTO;
 	}
 
- 
+	public File getGoodsImage1() {
+		return goodsImage1;
+	}
+
+	public void setGoodsImage1(File goodsImage1) {
+		this.goodsImage1 = goodsImage1;
+	}
+
+    
      
      
      

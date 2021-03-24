@@ -15,6 +15,7 @@ import sunshine.service.shop.goods.GoodsDetailService;
 import sunshine.service.shop.goods.GoodsListService;
 import sunshine.service.shop.goods.GoodsUpdateService;
 import sunshine.service.shop.goods.GoodsWriteService;
+import sunshine.service.shop.goods.ImgDelService;
 
 @Controller
 @RequestMapping("goods")
@@ -34,6 +35,9 @@ public class GoodsController {
 	
 	@Autowired
 	GoodsUpdateService goodsUpdateService;
+	
+	@Autowired
+	ImgDelService imgDelService;
 	
 	@RequestMapping("main")
 	public String shopMain() {
@@ -85,13 +89,21 @@ public class GoodsController {
     }
     @RequestMapping("modifyPro")
     public String modifyPro(GoodsCommand goodsCommand,
+    		@RequestParam(value = "goodsImage1") String goodsImage1,
     		HttpSession session) {
     	System.out.println("controllerGoodsNum:"+goodsCommand.getGoodsNum());
-    	goodsUpdateService.execute(goodsCommand,session);
+    	goodsUpdateService.execute(goodsCommand,session, goodsImage1);
     	System.out.println(goodsCommand.getGoodsNum());
     	return "redirect:detail?goodsNum="+goodsCommand.getGoodsNum();
     }
     
+    @RequestMapping("imgDel")
+    public String imgDel(
+    		@RequestParam(value ="imgfile") String imgfile,
+    		Model model, HttpSession session) {
+    	imgDelService.imgDel(imgfile,model,session);
+    	return "goods/imgDel";
+    }
     
     
     

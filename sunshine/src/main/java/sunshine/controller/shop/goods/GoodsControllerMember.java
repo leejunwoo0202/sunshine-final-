@@ -13,6 +13,7 @@ import sunshine.command.PaymentCommand;
 import sunshine.service.shop.goods.GoodsDetailService;
 import sunshine.service.shop.goods.GoodsListService;
 import sunshine.service.shop.goods.GoodsOrderInsertService;
+import sunshine.service.shop.goods.GoodsPaymentListService;
 import sunshine.service.shop.goods.GoodsPaymentService;
 
 @Component
@@ -30,8 +31,12 @@ public class GoodsControllerMember {
 	
 	@Autowired
 	GoodsPaymentService goodsPaymentService;
+	
+	@Autowired
+	GoodsPaymentListService goodsPaymentListService;
+	
 	@RequestMapping("list")
-	public String goodsList(@RequestParam(value = "page", defaultValue = "1") Integer page, Model model) {
+	public String goodsList(@RequestParam(value = "page", defaultValue = "1") Integer page, Model model			) {
 		goodsListService.getGoodsList(model, page);
 		return "goods/memGoodsList";
 	}
@@ -73,6 +78,13 @@ public class GoodsControllerMember {
 	}
 			
 			
+	@RequestMapping("paymentList")
+	public String paymentList(
+			@RequestParam(value = "page", defaultValue = "1")
+			Integer page, Model model,HttpSession session) {
+		goodsPaymentListService.goodsPayList(model, page,session);
+		return "goods/paymentList";
+	}
 			
 			
 	
