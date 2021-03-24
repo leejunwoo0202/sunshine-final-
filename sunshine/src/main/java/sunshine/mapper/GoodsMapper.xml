@@ -62,8 +62,8 @@
        goods_price = #{goodsPrice},
        goods_amount = #{goodsAmount},
        goods_categori = #{goodsCategori},
-       goods_content = #{goodsContent}
-       
+       goods_content = #{goodsContent},
+       goods_image = #{goodsImage}
        where goods_num = #{goodsNum}
     
     </update>
@@ -90,5 +90,12 @@
     
     </insert>
     
+    <select id ="getPaymentList" parameterType="sunshine.model.DTO.GoodsDTO"
+    resultType="sunshine.model.DTO.GoodsDTO">
+    select *
+    from shop_payment
+    where 
+    
+    </select>
     
 </mapper>

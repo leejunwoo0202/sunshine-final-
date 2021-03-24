@@ -2,6 +2,8 @@ package sunshine.service.shop.goods;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
@@ -26,6 +28,8 @@ public class GoodsListService {
     	GoodsDTO dto = new GoodsDTO();
     	dto.setStartEndPageDTO(
     			new StartEndPageDTO(startRow,endRow));
+    	
+    	
     	List<GoodsDTO> list1 =
     			goodsMapper.getGoodsList(dto);
     	
