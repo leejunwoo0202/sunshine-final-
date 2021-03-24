@@ -104,5 +104,4 @@ public class CondoDTO {
 		this.roomReg = roomReg;
 	}
 	
-	
 }

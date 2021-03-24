@@ -1,5 +1,7 @@
 package sunshine.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,6 +17,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import lombok.val;
 import sunshine.command.CondoCommand;
 import sunshine.service.condo.CondoRegistService;
+import sunshine.service.condo.RoomDelService;
 import sunshine.service.condo.RoomDetailService;
 import sunshine.service.condo.RoomListService;
 import sunshine.service.condo.RoomModifyService;
@@ -31,6 +34,8 @@ public class CondoController {
 	RoomDetailService roomDetailService;
 	@Autowired
 	RoomModifyService roomModifyService;
+	@Autowired
+	RoomDelService roomDelService;
 	
 	@ModelAttribute
 	CondoCommand condoCommand() {
@@ -71,10 +76,16 @@ public class CondoController {
 		return "condo/roomDetail";
 	}
 	@RequestMapping(value = "roomModify", method = RequestMethod.POST)
-	public String roomModify(CondoCommand condoCommand, Model model, MultipartHttpServletRequest mtfRequest)throws Exception {
-		String location = roomModifyService.getRooModify(condoCommand, model, mtfRequest);
+	public String roomModify(@Validated CondoCommand condoCommand, BindingResult result, Model model, HttpSession session,  MultipartHttpServletRequest mtfRequest)throws Exception {
+		String location = roomModifyService.roomModify(condoCommand, model, session, mtfRequest);
 		return location;
 //		return "redirect:/condo/roomList";
 	}
+	@RequestMapping(value = "roomDel", method = RequestMethod.POST )
+	public String roomDel(CondoCommand condoCommand, Model model, HttpSession session) throws Exception {
+		String location = roomDelService.roomDel(condoCommand, model, session);
+		return location;
+	}
+	
 	
 }

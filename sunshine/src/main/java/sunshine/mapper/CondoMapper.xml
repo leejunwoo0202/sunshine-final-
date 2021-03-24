@@ -45,7 +45,13 @@ ROOM_NUM,ROOM_TYPE,ROOM_PRICE,ROOM_IMAGE,ROOM_DETAIL, room_pw, room_reg
 <update id="condoModify" parameterType="sunshine.model.DTO.CondoDTO">
 	update condo_room
 		set room_type = #{roomType}, room_price = #{roomPrice}, room_detail = #{roomDetail}
-		where room_pw =#{roomPw}
+		where room_num=#{roomNum} and room_pw=#{roomPw}
 </update>
+
+
+<delete id="roomDel" parameterType="sunshine.model.DTO.CondoDTO">
+	delete from condo_room 
+		where room_num=#{roomNum} and room_pw=#{roomPw}
+</delete>
 
 </mapper>

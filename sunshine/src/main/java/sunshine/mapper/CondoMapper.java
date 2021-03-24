@@ -19,7 +19,9 @@ public interface CondoMapper {
 
 	public int getRoomCount(CondoDTO condoDTO) throws Exception;
 	
-	public String condoModify(CondoCommand condoCommand , Model model) throws Exception;
+	public String condoModify(CondoDTO condoDTO) throws Exception;
+
+	public Integer roomDel(CondoDTO condoDTO);
 	
 }
 

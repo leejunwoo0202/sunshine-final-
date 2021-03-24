@@ -11,6 +11,7 @@
 
 <style type="text/css">
 input{border:none;}
+form:errors{color:red;}
 </style>
 
 <meta charset="utf-8" />
@@ -39,11 +40,11 @@ input{border:none;}
 	<!-- Nav -->
 	<nav id="menu">
 		<ul>
-			<li><a href="index.html">Home</a></li>
-			<li><a href="signUp">회원가입</a></li>
+			<li><a href="/">Home</a></li>
+			<li><a href="/signUp">회원가입</a></li>
 			<li><a href="generic.html">Generic</a></li>
-			<li><a href="member/login.do">로그인</a>
-			<li><a href="condo/condoMain">콘도</a>
+			<li><a href="/member/login.do">로그인</a>
+			<li><a href="/condo/condoMain">콘도</a>
 			<li><a href="#">레스토랑</a>
 			<li><a href="#">프렌즈샵</a>
 			<li><a href="#">리프트권</a>
@@ -79,7 +80,7 @@ input{border:none;}
 			</header>
 			<div class="highlights">
 				<section>
-					<form:form action="/condo/roomModify?roomNum=${list.get(0).roomNum }" name="frm" method="post" modelAttribute="condoCommand" enctype="multipart/form-data">
+					<form:form action="/condo/roomModify" onsubmit="return roomPwCk();" name="frm" method="post" modelAttribute="condoCommand" enctype="multipart/form-data">
 					<table border="1">
 						<tr>
 							<td width="6%">객실 번호</td>
@@ -91,11 +92,7 @@ input{border:none;}
 						<c:forEach var="room" items="${list }">
 							<tr>
 								<td>
-									${room.roomNum}
-									
-								</td>
-								<td>
-									${room.roomType }
+									${room.roomNum } <input type="hidden" name="roomNum" value="${room.roomNum }" />
 								</td>
 								<td>
 									<c:if test="${room.roomType == 'DR' }">
@@ -110,14 +107,15 @@ input{border:none;}
 									<c:if test="${room.roomType == 'CR' }">
 										Connecting Room
 									</c:if><br />
-									 <select id = "roomType">
+									 <select id = "roomType" name="roomType">
 			                           <option>수정할 객실 타입</option>
 			                           <option value ="DR">Double Room</option>
 			                           <option value ="TR">Twin Room</option>
 			                           <option value ="FR">Family Room</option>
 			                           <option value ="CR">Connecting Room</option>                           
 			                        </select>
-									<form:errors path="roomType" />
+<%-- 			                        <input type="hidden" name="roomType" value="EL{room.roomType }"> --%>
+									<form:errors path="roomType" ></form:errors>
 								</td>
 								<td>
 									<form:input path="roomPrice" value="${room.roomPrice}" size="3"/>원
@@ -138,10 +136,11 @@ input{border:none;}
 					</table>
 				<a href ="../roomList"><input type="button" value="리스트로 "></a>  &nbsp;&nbsp;&nbsp;
 <%-- 			<a href ="../roomModify?roomNum=${list.get(0).roomNum }"> 수정 </a>  &nbsp;&nbsp;&nbsp; --%>
-				<input type="submit" value="수정" onclick="return roomPwCk();" />&nbsp;&nbsp;&nbsp;
-				<a href ="#"><input type="button" value="삭제 "></a>  &nbsp;&nbsp;&nbsp;						
+				<input type="submit" value="수정"  />&nbsp;&nbsp;&nbsp;
+				<input type="button" value="삭제 " onclick="roomDel();">  &nbsp;&nbsp;&nbsp;						
 <!-- 				<input type="password" id="roomPw" name ="roomPw" placeholder="비밀번호를 입력하세요"/><br /> -->
 				<form:password id="roomPw" path ="roomPw" placeholder="비밀번호를 입력하세요"/><br />
+				<form:errors path="roomPw" ></form:errors>
 				${PwErr }
 				</form:form>
 				</section>
@@ -285,6 +284,19 @@ input{border:none;}
 				return false
 			}
 		}
+		function roomDel(){
+			if(confirm('객실을 삭제하시겠습니까?')){
+				if(document.getElementById('roomPw').value.trim() == ""){
+					alert("비밀번호를 입력하세요");
+					document.getElementById('roomPw').focus();
+					return false
+				}else{
+					 document.frm.action = "/condo/roomDel";
+				     frm.submit();
+				}
+			}
+		}
+			
 	</script>
 </body>
 </html>

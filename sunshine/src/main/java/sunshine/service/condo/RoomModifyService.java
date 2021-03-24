@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.UUID;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
@@ -25,24 +27,24 @@ public class RoomModifyService {
 	@Autowired
 	PasswordEncoder passwordEncoder;
 
-	public String getRooModify(CondoCommand condoCommand, Model model, MultipartHttpServletRequest mtfRequest)throws Exception{
+	public String roomModify(CondoCommand condoCommand, Model model, HttpSession session, MultipartHttpServletRequest mtfRequest )throws Exception{
 		CondoDTO condoDTO = new CondoDTO();
 		String location="";
+		System.out.println("dto : " + condoDTO.getRoomNum());
+		System.out.println("command : " + condoCommand.getRoomNum());
 		String roomNum=condoCommand.getRoomNum();
 		condoDTO = condoMapper.RoomList(condoDTO).get(0);
 		
-		if(!passwordEncoder.matches(condoCommand.getRoomPw(), condoDTO.getRoomPw())) { //비밀번호 일치하지 않으면 디테일 페이지로 ㄱㄱ
+		if(!condoCommand.getRoomPw().equals(condoDTO.getRoomPw())) { //비밀번호 일치하지 않으면 디테일 페이지로 ㄱㄱ
 			System.out.println("비밀번호 틀림");
 	         model.addAttribute("PwErr", "비밀번호가 다릅니다.");
 			location = "redirect:/condo/roomDetail/"+roomNum;
-		}else { //비밀번호 일치한다면
-			
-				System.out.println("ty: "+condoCommand.getRoomType());
+		}else { //비밀번호 일치한다면			
 	            condoDTO.setRoomType(condoCommand.getRoomType());
 				condoDTO.setRoomPrice(condoCommand.getRoomPrice());
 				condoDTO.setRoomDetail(condoCommand.getRoomDetail());
 			  //파일
-//	         String path = "WEB-INF/view/hotel/room/upload";
+//	         String path = "/WEB-INF/view/condo/upload";
 //	         String roomImage = "";
 //	         List<MultipartFile> fileList = mtfRequest.getFiles("roomImg");
 //	         MultipartFile mf = condoCommand.getRoomImage();
@@ -51,23 +53,21 @@ public class RoomModifyService {
 //	            String originalFileExtension = original.substring(original.lastIndexOf("."));
 //	            String store = UUID.randomUUID().toString().replace("-", "") + originalFileExtension;
 //	            roomImage = original + "`";
-//	            String saveFile = path + System.currentTimeMillis() + original;
-//	            try {
-//	               mf.transferTo(new File(saveFile));
-//	            } catch (IllegalStateException | IOException e) {
-//	               e.printStackTrace();
-//	            }
+////	            String saveFile = path + System.currentTimeMillis() + original;
+//	            String filePath = path + "/" + store;
+//	           mf.transferTo(new File(filePath));
 //	            
 //	         } else {
 //			roomImage = condoDTO.getRoomImage();
 //	         }
 //			condoDTO.setRoomImage(roomImage);
+			condoDTO.setRoomImage("room1.jpg`room2.jpg`rooom3.jpg`");
 
 			
 		}
 		
 		
-		 condoMapper.condoModify(condoCommand,model);
+		 condoMapper.condoModify(condoDTO);
 		 location = "redirect:condo/roomList";
 		 return location;
 	}
