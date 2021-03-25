@@ -9,6 +9,7 @@
  
 </sql>
 
+
 <resultMap type="sunshine.model.DTO.GoodsDTO" id="baseResultMap">
    <id column="goods_num" jdbcType="VARCHAR" property="goodsNum"/>
    <result column="goods_Name" jdbcType="VARCHAR" property="goodsName"/>
@@ -90,12 +91,28 @@
     
     </insert>
     
-    <select id ="getPaymentList" parameterType="sunshine.model.DTO.GoodsDTO"
-    resultType="sunshine.model.DTO.GoodsDTO">
-    select *
-    from shop_payment
-    where 
+    <sql id="baseColumn1">
+    pay_num payNum, p.m_order_num orderNum, delivery_address deliveryAddress,
+    pay_division payDivision, deposit_chk depositChk, goods_name goodsName,
+    goods_categori goodsCategori, goods_content goodsContent, goods_image goodsImage
+ 
+</sql>
+    
+    <select id ="getPaymentList"  parameterType="string"
+    resultType="sunshine.model.DTO.PaymentDTO">
+    select <include refid="baseColumn1"/>
+    from shop_payment p join shop_member_order o 
+    on p.m_order_num = o.m_order_num
+    join shop_goods g
+    on o.goods_num = g.goods_num
+    where mem_id = #{memId}                 
     
     </select>
+ 
+    <select id="getPaymentCount" resultType="int">
+       select count(*) from shop_payment
+    </select>
+ 
+ 
     
 </mapper>

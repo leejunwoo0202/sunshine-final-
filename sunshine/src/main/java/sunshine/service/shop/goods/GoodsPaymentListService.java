@@ -11,7 +11,9 @@ import org.springframework.ui.Model;
 
 import sunshine.PageAction;
 import sunshine.mapper.GoodsMapper;
+import sunshine.model.LoginInfo;
 import sunshine.model.DTO.GoodsDTO;
+import sunshine.model.DTO.PaymentDTO;
 import sunshine.model.DTO.StartEndPageDTO;
 
 @Component
@@ -30,9 +32,14 @@ public class GoodsPaymentListService {
 		GoodsDTO dto = new GoodsDTO();
 		dto.setStartEndPageDTO(
 				new StartEndPageDTO(startRow, endRow));
-		List<GoodsDTO> list = 
-				goodsMapper.getPaymentList(dto);
-		int count = goodsMapper.getGoodsCount();
+		
+		PaymentDTO paymentDTO = new PaymentDTO();
+		String memId = ((LoginInfo) session.getAttribute("loginInfo")).getUserId();
+		System.out.println(memId);
+		
+		List<PaymentDTO> list = 
+				goodsMapper.getPaymentList(memId);
+		int count = goodsMapper.getPaymentCount(paymentDTO);
 		model.addAttribute("list",list);
 		model.addAttribute("count",count);
 		

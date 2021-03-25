@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import sunshine.model.LoginInfo;
 import sunshine.model.DTO.GoodsDTO;
 import sunshine.model.DTO.MemOrderDTO;
+import sunshine.model.DTO.PaymentDTO;
 
 @Component
 @Repository
@@ -18,7 +19,7 @@ public interface GoodsMapper {
 	   
 	public List<GoodsDTO> getGoodsList(GoodsDTO dto);
 	
-	public Integer getGoodsCount();
+	public Integer getGoodsCount(GoodsDTO goodsDTO);
 
 	public void goodsDelete(String goodsNum);
 
@@ -34,7 +35,9 @@ public interface GoodsMapper {
 	
 	public String mOrderNum();
 
-	public List<GoodsDTO> getPaymentList(GoodsDTO dto);
+	public List<PaymentDTO> getPaymentList(String memId);
+
+	public int getPaymentCount(PaymentDTO paymentDTO);
 
 	
 

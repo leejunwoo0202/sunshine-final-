@@ -33,7 +33,7 @@
 </td></tr>
 </table>
 </form>
-<a href="main" >메인</a><br/>
+
 <a href="list">상품리스트</a>
 </body>
 </html>

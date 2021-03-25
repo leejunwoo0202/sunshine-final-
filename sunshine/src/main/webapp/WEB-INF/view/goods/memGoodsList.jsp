@@ -40,7 +40,7 @@
 
 </table>
 <%@ include file="../include/includePage.jsp" %><br/>
-<a href="list">상품리스트</a>
+
 <a href="paymentList">결제내역</a>
 </body>
 </html>

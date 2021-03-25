@@ -32,15 +32,15 @@ public class GoodsListService {
     	
     	List<GoodsDTO> list1 =
     			goodsMapper.getGoodsList(dto);
+    	GoodsDTO goodsDTO = new GoodsDTO();
     	
-    	
-    	int count = goodsMapper.getGoodsCount();
+    	int count1 = goodsMapper.getGoodsCount(goodsDTO);
     	model.addAttribute("list",list1);
-    	model.addAttribute("count",count);
+    	model.addAttribute("count1",count1);
     	
     	PageAction pageAction = new PageAction();
     	pageAction.page(
-    			model, count, limit, limitPage, page,"goodsList?");
+    			model, count1, limit, limitPage, page,"list?");
     	
     }
 	
