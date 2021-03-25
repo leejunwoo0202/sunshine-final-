@@ -61,7 +61,8 @@
 					<li><a href="restaurant/restaurantMain">레스토랑</a>				
 					<li><a href="condo/condoMain">콘도</a>				
 					<li><a href="goods/main">프렌즈샵</a>
-
+					
+					<li><a href="condoMem/memList">객실리스트</a>					
 					<li><a href="goodsMem/list">상품리스트</a>
 					<li><a href="#">리프트권</a>										
                      
