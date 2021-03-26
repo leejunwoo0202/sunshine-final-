@@ -9,6 +9,8 @@ import sunshine.model.LoginInfo;
 @Repository
 public interface LoginMapper {
 	public LoginInfo loginUser(String loginId);
+
 	
 	
+	    
 }

@@ -1,6 +1,7 @@
 package sunshine.model;
 
 public class LoginInfo {
+	private String memNo;
      private String userId;
      private String userPw;
      private String email;
@@ -11,6 +12,13 @@ public class LoginInfo {
      
      
 	
+     
+	public String getMemNo() {
+		return memNo;
+	}
+	public void setMemNo(String memNo) {
+		this.memNo = memNo;
+	}
 	public String getGrade() {
 		return grade;
 	}

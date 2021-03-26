@@ -8,7 +8,6 @@
 	templated.co @templatedco
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 -->
-
 <html>
 	<head>
 		<meta charset="UTF-8">
@@ -59,12 +58,18 @@
 				<ul>
 					<li><a href="main">Home</a></li>
 					<li><a href="register/main" >myPage</a>
-					
 					<li><a href="restaurant/restaurantMain">레스토랑</a>				
 					<li><a href="condo/condoMain">콘도</a>				
 					<li><a href="goods/main">프렌즈샵</a>
 					<li><a href="ski/skiMain">스키장</a>										
+
+                    <li><a href="review/main">후기</a>
+					<li><a href="condoMem/memList">객실리스트</a>					
+					<li><a href="goodsMem/list">상품리스트</a>
+					<li><a href="employee/employeeMain">직원등록</a>										
+					<li><a href="ski/skiMain">스키장 컨텐츠 등록</a>
                        
+
 				</ul>
 			</nav>
                   

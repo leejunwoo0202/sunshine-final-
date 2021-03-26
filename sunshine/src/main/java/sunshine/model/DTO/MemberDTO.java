@@ -14,7 +14,7 @@ public class MemberDTO {
 	String memAddr;
 	Date memRegist;
 	String memResidentNum;
-
+    
 	StartEndPageDTO startEndPageDTO;
 
 	public MemberDTO() {
@@ -37,6 +37,9 @@ public class MemberDTO {
 		this.memResidentNum = memResidentNum;
 	}
 
+
+
+	
 
 
 	public String getMemNo() {

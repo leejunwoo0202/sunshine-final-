@@ -1,5 +1,7 @@
 package sunshine.command;
 
+import java.io.File;
+
 import org.springframework.web.multipart.MultipartFile;
 
 public class GoodsCommand {
@@ -52,7 +54,5 @@ public class GoodsCommand {
 	public void setGoodsImage(MultipartFile[] goodsImage) {
 		this.goodsImage = goodsImage;
 	}
-     
-     
      
 }

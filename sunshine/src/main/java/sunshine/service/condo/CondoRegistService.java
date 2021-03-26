@@ -33,6 +33,7 @@ public class CondoRegistService {
 		condoDTO.setRoomNum(condoCommand.getRoomNum());
 		condoDTO.setRoomType(condoCommand.getRoomType());
 		condoDTO.setRoomPrice(condoCommand.getRoomPrice());
+		condoDTO.setRoomPw(condoCommand.getRoomPw());
 //		condoDTO.setRoomImage(condoCommand.getRoomImage());
 		condoDTO.setRoomDetail(condoCommand.getRoomDetail());
 		// 이미지 파일 저장
@@ -43,7 +44,7 @@ public class CondoRegistService {
 	      String roomImage = "";
 	      List<MultipartFile> fileList = mtfRequest.getFiles("roomImage");
 	      if(condoCommand.getRoomImage() != null) {
-	    	  for(MultipartFile mf : condoCommand.getRoomImage()) { 
+	    	  for(MultipartFile mf : fileList) { 
 	         String original = mf.getOriginalFilename();
 	         String originalFileExtension = original.substring(original.lastIndexOf("."));
 	         String store = UUID.randomUUID().toString().replace("-", "") 

@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-등록이 완료 되었습니다.
+<!--  등록 완료 --> 
 <a href="../index.jsp">메인</a>
 </body>
 </html>

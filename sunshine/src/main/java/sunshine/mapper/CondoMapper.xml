@@ -6,16 +6,16 @@ PUBLIC "-//mybtis.org//DTD Mapper 3.0//EN"
 <mapper namespace="sunshine.mapper.CondoMapper">
 <sql id="basecolumn">
   room_num roomNum , room_type roomType, room_price roomPrice,
-  room_image roomImage, room_detail roomDetail
+  room_image roomImage, room_detail roomDetail, room_pw roomPw, room_reg roomReg
 </sql>
 
 <sql id="basecolumn1">
-ROOM_NUM,ROOM_TYPE,ROOM_PRICE,ROOM_IMAGE,ROOM_DETAIL
+ROOM_NUM,ROOM_TYPE,ROOM_PRICE,ROOM_IMAGE,ROOM_DETAIL, room_pw, room_reg
 </sql>
 
 <insert id="insertCondo" parameterType="sunshine.model.DTO.CondoDTO">
 	insert into CONDO_ROOM(<include refid="basecolumn1"/>)
-	values(#{roomNum},#{roomType},#{roomPrice},#{roomImage},#{roomDetail})
+	values(#{roomNum},#{roomType},#{roomPrice},#{roomImage},#{roomDetail},#{roomPw},sysdate)
 </insert>
 
 <select id= "RoomList" parameterType="sunshine.model.DTO.CondoDTO" 
@@ -24,8 +24,34 @@ ROOM_NUM,ROOM_TYPE,ROOM_PRICE,ROOM_IMAGE,ROOM_DETAIL
 	 	from ( select rownum rn , <include refid="basecolumn" /> 
 	 	from(select <include refid="basecolumn1" />
 	 		from condo_room
-	 			order by room_num desc )
+	 		<trim prefix="where" prefixOverrides="AND | OR">
+            	<if test="roomNum != null">
+               	  room_num=#{roomNum}
+            	</if>
+         	</trim>
+	 			order by room_num desc
+	 		   )
+	 	   
 	 		) 
+	 	 <if test="startEndPageDTO != null">
+	    	where rn between #{startEndPageDTO.startPage}
+	         and #{startEndPageDTO.endPage}
+    	</if>
 </select>
+<select id="getRoomCount" resultType="int">
+	select count(*) from condo_room
+</select>
+
+<update id="condoModify" parameterType="sunshine.model.DTO.CondoDTO">
+	update condo_room
+		set room_type = #{roomType}, room_price = #{roomPrice}, room_detail = #{roomDetail}
+		where room_num=#{roomNum} and room_pw=#{roomPw}
+</update>
+
+
+<delete id="roomDel" parameterType="sunshine.model.DTO.CondoDTO">
+	delete from condo_room 
+		where room_num=#{roomNum} and room_pw=#{roomPw}
+</delete>
 
 </mapper>

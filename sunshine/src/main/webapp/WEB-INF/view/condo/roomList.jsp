@@ -71,25 +71,29 @@
 						<section>
 							<a href ="condoForm">객실등록</a>
 															
-							<table  >
+							<table >
 							<caption>객실리스트</caption>
 								<tr>
 								<td>객실번호</td><td>객실타입</td><td>객실요금</td><td>객실사진</td><td>상세</td>
 								</tr>
 							
-							<c:forEach var ="room" items="${list}" >
+							<c:forEach var ="room" items="${list }" >
 							<tr>
-							<td>${room.roomNum}</td> 
+							<td><a href ="roomDetail/${room.roomNum}">${room.roomNum}</a></td> 
+<%-- 							<td><a href ="roomDetail?roomNum="${roomNum }>${room.roomNum}</a></td>  --%>
 							<td>${room.roomType}</td> 
 							<td>${room.roomPrice}</td> 
-							<td><c:forTokens items="${room.roomImage}" delims="`"
-							var="img" varStatus="status">
-							<img alt="img" src="WEB-INF/view/condo/upload/${img}" />
+							<td><c:forTokens items="${room.roomImage }" delims="`" var="img" varStatus="status" end="0" >
+							<!--  
+							<img alt="img" src="WEB-INF/view/condo/upload/${img }" />
+							-->
+							<a href ="roomDetail/${room.roomNum }"><img alt="img" src="/condo/upload/${img }" width = "200px"/></a>
 							</c:forTokens></td>
-							<td>${room.roomDetail}</td>
+							<td>${room.roomDetail }</td>
 							</c:forEach>
 								
-							</table>	
+							</table>
+							<%@ include file="../include/includePage.jsp" %>	
 						</section>
 					</div>
 				</div>
