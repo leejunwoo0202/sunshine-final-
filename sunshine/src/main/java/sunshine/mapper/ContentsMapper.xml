@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	<mapper namespace="sunshine.mapper.ContentsMapper" >
+	<sql id="basecolumn">
+	CONTENTS_NO contentsNo, TCHER_NO tcherNo, CONTENTS_NAME contentsName,
+    CONTENTS_PRICE contentsPrice, DIV_PEOPLE divPeople, ISSUE_DATE issueDate,
+    VALIDITY validity, GRADE grade
+	</sql>
+	<sql id="basecolumn1">
+	CONTENTS_NO contentsNo, CONTENTS_NAME contentsName, CONTENTS_PRICE contentsPrice, DIV_PEOPLE divPeople,
+	ISSUE_DATE issueDate, VALIDITY validity, GRADE grade
+	</sql>
+	<insert id="contentsRegist" parameterType="sunshine.model.DTO.ContentsDTO">
+			insert into SKI_CONTENTS(
+			CONTENTS_NO, CONTENTS_NAME, CONTENTS_PRICE, DIV_PEOPLE, 
+			ISSUE_DATE, VALIDITY, GRADE)
+			values(
+			SKI_CONTENTS_SEQ.NEXTVAL,#{contentsName}, #{contentsPrice}, #{divPeople},
+			 #{issueDate}, #{validity}, #{grade})
+	</insert>
+	<select id="contentsList" resultType="sunshine.model.DTO.ContentsDTO">
+		select CONTENTS_NO contentsNo, CONTENTS_NAME contentsName, CONTENTS_PRICE contentsPrice,
+		DIV_PEOPLE divPeople,  ISSUE_DATE issueDate, VALIDITY validity, GRADE grade
+		from SKI_CONTENTS
+	</select>
+	<select id="contentsDetail" parameterType="string" resultType="sunshine.model.DTO.ContentsDTO">
+		select CONTENTS_NO contentsNo, CONTENTS_NAME contentsName, CONTENTS_PRICE contentsPrice,
+		DIV_PEOPLE divPeople,  ISSUE_DATE issueDate, VALIDITY validity, GRADE grade
+		from SKI_CONTENTS
+		where CONTENTS_NO = #{contentsNo}
+	</select>
+	<update id="contentsModify" parameterType="sunshine.model.DTO.ContentsDTO">
+		update SKI_CONTENTS
+		set CONTENTS_NAME =#{contentsName}, CONTENTS_PRICE= #{contentsPrice}, GRADE = #{grade}
+		where CONTENTS_NO = #{contentsNo}
+	</update>
+	<delete id="contentsDelete" parameterType="string">
+		delete from SKI_CONTENTS
+		where CONTENTS_NO = #{contentsNo}
+	</delete>
+	</mapper>
+	

@@ -2,7 +2,6 @@ package sunshine.service.condo;
 
 import javax.servlet.http.HttpSession;
 
-import org.eclipse.jdt.internal.compiler.env.IModule.IService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
@@ -17,7 +16,7 @@ import sunshine.model.DTO.CondoDTO;
 public class RoomDelService {
 @Autowired
 CondoMapper condoMapper;
-@Autowired
+@Autowired	
 PasswordEncoder passwordEncoder;
 	public String roomDel(CondoCommand condoCommand, Model model, HttpSession session) throws Exception {
 		String location = "";

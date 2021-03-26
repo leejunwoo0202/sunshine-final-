@@ -73,7 +73,6 @@ public class EmployeeController {
 			EmployeeCommand employeeCommand) {
 				employeeModifyOkService.execute(employeeCommand);
 	return "redirect:/employee/employeeDetail?emNo="+employeeCommand.getEmNo();
-	
 	}
 	@RequestMapping(value="employeeDelete")
 	public String employeeDelete(
