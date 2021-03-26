@@ -1,6 +1,7 @@
 package sunshine.model.DTO;
 
 public class CondoDTO {
+	//콘도 객실등록 condo_room
 	String roomNum;
 	String roomType;
 	Integer roomPrice;

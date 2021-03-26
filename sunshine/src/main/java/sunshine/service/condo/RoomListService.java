@@ -36,7 +36,7 @@ public class RoomListService {
     	
     	PageAction pageAction = new PageAction();
     	pageAction.page(
-    			model, count, limit, limitPage, page,"roomList?");
+    			model, count, limit, limitPage, page,"memList?");
 		
 	}
 }
