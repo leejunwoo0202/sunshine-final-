@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sunshine.mapper.ReviewMapper">
+
+<sql id="baseColumn">
+board_no, mem_id, b_subject, b_content,
+b_write_date, b_views
+</sql>
+<sql id="baseColumn1">
+board_no boardNo, mem_id memId, b_subject bSubject, b_content bContent,
+b_write_date bWriteDate, b_views bViews
+</sql>
+
+<insert id="insertReview" parameterType="sunshine.model.DTO.ReviewDTO">
+insert into board(
+board_no ,mem_id, b_subject , b_content, b_write_date, B_VIEWS)
+values(board_seq.nextval,  #{memId}, #{bSubject}, #{bContent}, sysdate, '0')
+
+</insert>
+
+<select id="getReviewList" parameterType="sunshine.model.DTO.ReviewDTO"
+resultType="sunshine.model.DTO.ReviewDTO">
+
+select *
+from(select rownum rn, <include refid="baseColumn1"/>
+         from(select <include refid="baseColumn"/>
+        from board
+        <if test="boardNo != null" >
+           where board_no = #{boardNo}
+        </if>
+           order by b_write_date desc
+)
+)
+<if test="startEndPageDTO != null">
+     <where>
+     rn between #{startEndPageDTO.startPage} and #{startEndPageDTO.endPage}
+     </where>
+
+</if>
+</select>
+
+<select id="reviewCount" resultType="int">
+	select count(*) from board
+</select>
+
+
+<update id="updateCount" parameterType="string">
+	<if test="value != null">
+		update board
+		set board_count = board_count + 1
+		where board_no = #{boardNo}
+	</if>
+</update>
+
+
+
+</mapper>

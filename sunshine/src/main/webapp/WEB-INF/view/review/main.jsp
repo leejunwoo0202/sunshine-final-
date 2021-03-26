@@ -8,7 +8,7 @@
 </head>
 <body>
 <a href="reviewInsert">후기쓰기</a>
-<a href="#">후기리스트</a>
+<a href="reviewList">후기리스트</a>
 
 </body>
 </html>

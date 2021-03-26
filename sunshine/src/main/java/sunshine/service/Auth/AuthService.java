@@ -30,6 +30,7 @@ public class AuthService {
 			HttpSession session, Model model) throws Exception{
 		String location;
 		loginInfo = loginMapper.loginUser(loginCommand.getLoginId());
+		
 		if (loginInfo == null) {
 			model.addAttribute( "userFail","일치하지 않는 아이디");
 			location = "member/login";
