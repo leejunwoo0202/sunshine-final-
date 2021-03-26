@@ -24,7 +24,9 @@
 		<tr><td colspan="2">
 		<input type="submit" value="등록" />
 		<input type="reset" value="초기화" />
-		</td></tr>
+
+			</td>
+		</tr>
 </table>
 </form>
 </body>

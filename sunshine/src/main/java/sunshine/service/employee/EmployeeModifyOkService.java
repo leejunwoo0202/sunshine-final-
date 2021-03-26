@@ -8,7 +8,6 @@ import sunshine.command.EmployeeCommand;
 import sunshine.mapper.EmployeeMapper;
 import sunshine.model.DTO.EmployeeDTO;
 
-@Component
 @Service
 public class EmployeeModifyOkService {
 	@Autowired

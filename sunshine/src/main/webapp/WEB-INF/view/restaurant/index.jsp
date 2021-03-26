@@ -70,7 +70,7 @@
 				<div class="inner">
 					<header class="special">
 						<h2>선샤인 레스토랑 관리자 페이지</h2>
-						
+						<h3>상품등록11</h3>
 					</header>
 					<div class="highlights">
 						<section>

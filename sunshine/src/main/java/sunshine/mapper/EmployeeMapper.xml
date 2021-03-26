@@ -11,7 +11,6 @@
 	EM_NO, EM_NAME, EM_ID, EM_PW, EM_PHONE, EM_EMAIL, EM_ADDR,
 	 EM_REGIST, EM_RESIDENT_NUM
 </sql>
-<!--  -->
 <insert id="employeeJoin" parameterType="sunshine.model.DTO.EmployeeDTO">
 		insert into EM ( <include refid="basecolumn1" />  )
 		values(EM_SEQ.NEXTVAL,#{emName},#{emId},#{emPw},#{emPhone},

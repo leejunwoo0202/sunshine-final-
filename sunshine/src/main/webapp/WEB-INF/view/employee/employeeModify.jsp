@@ -20,7 +20,7 @@
 		<td>${emNo.emName }</td>
 		<td>${emNo.emId }</td>
 		<td><input type="text" value="${emNo.emPhone }" name="emPhone"/></td>
-		<td><input type="text" value="${emNo.emEmail }" name="emEmail"/>		</td>
+		<td><input type="text" value="${emNo.emEmail }" name="emEmail"/></td>
 		<td><input type="text" value="${emNo.emAddr }" name="emAddr"/></td>
 	</tr>
 	<tr><td colspan="6">
