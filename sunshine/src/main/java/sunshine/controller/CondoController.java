@@ -70,9 +70,9 @@ public class CondoController {
 	}
 	
 	@RequestMapping(value = "roomDetail/{roomNum}")
-	public String roomDetail(@PathVariable(value="roomNum")String roomNum, Model model, CondoCommand condoCommand) throws Exception {
+	public String roomDetail(@PathVariable(value="roomNum")String roomNum, Model model, CondoCommand condoCommand , HttpSession session) throws Exception {
 		model.addAttribute(condoCommand);
-		roomDetailService.getRoomDetail(roomNum, model);
+		roomDetailService.getRoomDetail(roomNum, model, session);
 		return "condo/roomDetail";
 	}
 	@RequestMapping(value = "roomModify", method = RequestMethod.POST)

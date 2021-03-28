@@ -11,12 +11,12 @@ PUBLIC "-//mybtis.org//DTD Mapper 3.0//EN"
 	<select id="loginUser"
 		parameterType="string"
 		resultType="sunshine.model.LoginInfo">
-			 select mem_id userId , mem_pw userPw, mem_name name, mem_email email 
+			 select MEM_NO memNo, mem_id userId , mem_pw userPw, mem_name name, mem_email email, MEM_PHONE phone
 			 ,'mem' grade 
 			 from mem
 			 where mem_id = #{logId}
 			 union
-			 select em_id userId , em_pw userPw, em_name name, em_email email 
+			 select em_no memNo, em_id userId , em_pw userPw, em_name name, em_email email, EM_PHONE phone
 			 ,'em' grade 
 			 from em
 			 where em_id = #{logId}

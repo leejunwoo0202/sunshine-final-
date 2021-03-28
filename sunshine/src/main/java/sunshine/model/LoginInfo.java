@@ -6,13 +6,21 @@ public class LoginInfo {
      private String userPw;
      private String email;
      private String name;
-     private String grade; 
+     private String grade;
+     
+     private String phone;
      
      
      
      
 	
      
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
 	public String getMemNo() {
 		return memNo;
 	}

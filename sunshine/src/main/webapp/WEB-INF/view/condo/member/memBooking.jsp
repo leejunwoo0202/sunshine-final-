@@ -1,7 +1,7 @@
 <%@page import="org.springframework.web.bind.annotation.RequestParam"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" isELIgnored="false"%>
-<%@ include file="../include/include.jsp"%>
+<%@ include file="../../include/include.jsp"%>
 <!DOCTYPE HTML>
 <!--객실 리스트-->
 <html>
@@ -9,22 +9,16 @@
 <meta charset="UTF-8">
 <title>Industrious by TEMPLATED</title>
 
-<style type="text/css">
-input {
-	border: none;
-}
-
-form:errors {
-	color: red;
-}
-</style>
 
 <meta charset="utf-8" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, user-scalable=no" />
 <meta name="description" content="" />
 <meta name="keywords" content="" />
-<link rel="stylesheet" href="../assets/css/main.css" />
+<link rel="stylesheet" href="../../assets/css/main.css" />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body class="is-preload">
 
@@ -72,7 +66,7 @@ form:errors {
 				released under the Creative Commons License.
 			</p>
 		</div>
-		<video autoplay loop muted playsinline src="../images/banner.mp4"></video>
+		<video autoplay loop muted playsinline src="../../images/banner.mp4"></video>
 	</section>
 
 	<!-- Highlights -->
@@ -80,28 +74,21 @@ form:errors {
 	<section class="wrapper">
 		<div class="inner">
 			<header class="special">
-				<h2>객실 상세</h2>
-
+									
 			</header>
 			<div class="highlights">
-				<section>
-					<form:form action="/condo/roomModify" onsubmit="return roomPwCk();"
-						name="frm" method="post" modelAttribute="condoCommand"
-						enctype="multipart/form-data">
-						<table border="1">
-							<tr>
-								<td width="6%">객실 번호</td>
-								<td width="10%">객실 타입</td>
-								<td width="14%">요금</td>
-								<td width="30%">상세</td>
-								<td width="40%">이미지</td>
-							</tr>
-							<c:forEach var="room" items="${list }">
-								<tr>
-									<td>${room.roomNum } <input type="hidden" name="roomNum"
-										value="${room.roomNum }" />
-									</td>
-									<td><c:if test="${room.roomType == 'DR' }">
+		<section>
+				<form action="../memReser" method="get">
+					<table border="1">
+					<caption><h2>객실 예약</h2></caption>
+						<tr>
+							<td>객실정보</td><td>${room.roomType }_${room.roomNum }
+							<input type="hidden" name="roomNum" value="${room.roomNum}"/></td>
+						</tr>
+						<tr>
+							<td>객실타입</td>
+							<td>
+								<c:if test="${room.roomType == 'DR' }">
 										Double Room
 									</c:if> <c:if test="${room.roomType == 'TR' }">
 										Twin Room
@@ -109,41 +96,58 @@ form:errors {
 										Family Room
 									</c:if> <c:if test="${room.roomType == 'CR' }">
 										Connecting Room
-									</c:if><br /> <select id="roomType" name="roomType">
-											<option>수정할 객실 타입</option>
-											<option value="DR">Double Room</option>
-											<option value="TR">Twin Room</option>
-											<option value="FR">Family Room</option>
-											<option value="CR">Connecting Room</option>
-									</select> <%-- 			                        <input type="hidden" name="roomType" value="EL{room.roomType }"> --%>
-										<form:errors path="roomType"></form:errors></td>
-									<td><form:input path="roomPrice" value="${room.roomPrice}"
-											size="3" />원</td>
-									<td><form:input path="roomDetail"
-											value="${room.roomDetail}" /></td>
-									<td><c:forTokens items="${room.roomImage }" delims="`"
-											var="img" varStatus="status">
-											<!--  
-							<img alt="img" src="WEB-INF/view/condo/upload/${img }" />
-							-->
-											<img alt="img" src="/condo/upload/${img }" width="300px"
-												height="300px" />
-											<!-- 										<input type="file" name="roomImg" multiple="multiple" /> -->
-										</c:forTokens></td>
-								</tr>
-							</c:forEach>
-						</table>
-						<a href="../roomList"><input type="button" value="리스트로 "></a>  &nbsp;&nbsp;&nbsp;
-<%-- 			<a href ="../roomModify?roomNum=${list.get(0).roomNum }"> 수정 </a>  &nbsp;&nbsp;&nbsp; --%>
-						<input type="submit" value="수정" />&nbsp;&nbsp;&nbsp;
-				<input type="button" value="삭제 " onclick="roomDel();">  &nbsp;&nbsp;&nbsp;						
-<!-- 				<input type="password" id="roomPw" name ="roomPw" placeholder="비밀번호를 입력하세요"/><br /> -->
-						<form:password id="roomPw" path="roomPw" placeholder="비밀번호를 입력하세요" />
-						<br />
-						<form:errors path="roomPw"></form:errors>
-				${PwErr }
-				</form:form>
-				</section>
+								</c:if>
+							<input type="hidden" name="roomType" value="${room.roomType}"/></td>
+						</tr>
+							<td>이용요금</td><td>
+							<input type="hidden" name="roomPrice" value="${room.roomPrice} " />
+							<fmt:formatNumber value="${room.roomPrice}" pattern="#,###" />원 </td>
+						</tr>
+						
+						<tr>
+							<td>이름</td><td>${user.name} 
+							<input type="hidden" name="name" value="${user.name} " /></td>
+						</tr>
+						<tr>
+							<td>E-mail</td><td>${user.email }	
+							<input type="hidden" name="email" value="${user.email } "/></td>
+						</tr>
+							<tr>
+							<td>연락처</td><td>${user.phone }	
+							<input type="hidden" name=" phone" value="${user.phone }"/></td>
+						</tr>
+					<div class="w3-col m2">
+						<tr >
+							<td> <label><i class="fa fa-male"></i> 성인</label></td>
+							<td> <input class="w3-input w3-border" type="number" placeholder="2" name ="person"> </td>
+						</tr>	
+						<tr>
+							<td> <label><i class="fa fa-child"></i> 어린이</label></td>
+							<td> <input class="w3-input w3-border" type="number" placeholder="0" name="personKids"> </td>
+						</tr>	
+					</div>
+						<tr>
+							<td rowspan="1">체크인 <br /><hr/> 체크아웃</td>
+							<td><input type = "date" name ="checkIn"/><br /><hr/>
+								<input type = "date" name ="checkOut"/>
+						</td>
+						</tr>
+						<tr>
+							<td>결제수단</td>
+							<td>		
+								<input type="radio" name=" payMethod" value="무통장입금" checked="checked" style="appearance: auto;"/>무통장입금<br />
+								<input type="radio" name=" payMethod" value="카드"/>카드								
+							</td>
+						</tr>
+						
+										
+					</table>
+					<hr/>
+					<input type = "submit" value ="결제"/>
+					
+				</form>		
+				
+		</section>
 			</div>
 		</div>
 	</section>
@@ -182,7 +186,7 @@ form:errors {
 						</blockquote>
 						<div class="author">
 							<div class="image">
-								<img src="../images/pic01.jpg" alt="" />
+								<img src="../../images/pic01.jpg" alt="" />
 							</div>
 							<p class="credit">
 								- <strong>Jane Doe</strong> <span>CEO - ABC Inc.</span>
@@ -199,7 +203,7 @@ form:errors {
 						</blockquote>
 						<div class="author">
 							<div class="image">
-								<img src="../images/pic03.jpg" alt="" />
+								<img src="../../images/pic03.jpg" alt="" />
 							</div>
 							<p class="credit">
 								- <strong>John Doe</strong> <span>CEO - ABC Inc.</span>
@@ -216,7 +220,7 @@ form:errors {
 						</blockquote>
 						<div class="author">
 							<div class="image">
-								<img src="../images/pic02.jpg" alt="" />
+								<img src="../../images/pic02.jpg" alt="" />
 							</div>
 							<p class="credit">
 								- <strong>Janet Smith</strong> <span>CEO - ABC Inc.</span>
@@ -270,33 +274,13 @@ form:errors {
 	</footer>
 
 	<!-- Scripts -->
-	<script src="../assets/js/jquery.min.js"></script>
-	<script src="../assets/js/browser.min.js"></script>
-	<script src="../assets/js/breakpoints.min.js"></script>
-	<script src="../assets/js/util.js"></script>
-	<script src="../assets/js/main.js"></script>
+	<script src="../../assets/js/jquery.min.js"></script>
+	<script src="../../assets/js/browser.min.js"></script>
+	<script src="../../assets/js/breakpoints.min.js"></script>
+	<script src="../../assets/js/util.js"></script>
+	<script src="../../assets/js/main.js"></script>
 
-	<script type="text/javascript">
-		function roomPwCk(){
-			if(document.getElementById('roomPw').value.trim() == ""){
-				alert("비밀번호를 입력하세요");
-				document.getElementById('roomPw').focus();
-				return false
-			}
-		}
-		function roomDel(){
-			if(confirm('객실을 삭제하시겠습니까?')){
-				if(document.getElementById('roomPw').value.trim() == ""){
-					alert("비밀번호를 입력하세요");
-					document.getElementById('roomPw').focus();
-					return false
-				}else{
-					 document.frm.action = "/condo/roomDel";
-				     frm.submit();
-				}
-			}
-		}
-			
-	</script>
+	
+
 </body>
 </html>

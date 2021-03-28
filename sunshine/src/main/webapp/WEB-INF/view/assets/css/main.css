@@ -48,7 +48,8 @@ section, summary, time, mark, audio, video {
   border: 0;
   font-size: 100%;
   font: inherit;
-  vertical-align: baseline; }
+/*   vertical-align: baseline;  */
+  }
 
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
@@ -81,11 +82,16 @@ input::-moz-focus-inner {
   border: 0;
   padding: 0; }
 
-input, select, textarea {
+select, textarea {
   -moz-appearance: none;
   -webkit-appearance: none;
   -ms-appearance: none;
   appearance: none; }
+input {						
+  -moz-appearance: auto;
+  -webkit-appearance: auto;
+  -ms-appearance: auto;
+  appearance: auto; }
 
 /* Typography */
 html {
@@ -218,7 +224,7 @@ hr {
   hr.major {
     margin: 4rem 0; }
 
-input, select, textarea {
+inpdut, select, textarea {
   color: #555555; }
 
 a {
@@ -431,16 +437,18 @@ textarea {
 
 input[type="checkbox"],
 input[type="radio"] {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  -ms-appearance: none;
-  appearance: none;
-  display: block;
-  float: left;
-  margin-right: -2rem;
-  opacity: 0;
-  width: 1rem;
-  z-index: -1; }
+	color:red;
+/*   -moz-appearance: auto; */
+/*   -webkit-appearance: auto; */
+/*   -ms-appearance: auto; */
+/*   appearance: auto; */
+/*   display: block; */
+/*   float: left; */
+/*   margin-right: -2rem; */
+/*   opacity: 0; */
+/*   width: 1rem; */
+/*   z-index: -1; */
+} 
   input[type="checkbox"] + label,
   input[type="radio"] + label {
     text-decoration: none;

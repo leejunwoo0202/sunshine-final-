@@ -11,7 +11,7 @@
 <table border="1">
 <form:form action="memberModifyPro" name="frm" method="post" id="frm"  
 modelAttribute="loginCommand">
- <tr><td>비밀번호확인<input type="text" name="loginPw" ></td></tr>
+ <tr><td>비밀번호확인<input type="password" name="loginPw" ></td></tr>
  <tr><td><input type="submit" value="전송"></td></tr>
  
       
