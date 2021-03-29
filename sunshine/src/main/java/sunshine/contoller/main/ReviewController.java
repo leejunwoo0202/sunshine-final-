@@ -1,6 +1,7 @@
 package sunshine.contoller.main;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,8 +10,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import sunshine.command.ReviewCommand;
+import sunshine.model.DTO.EmployeeDTO;
+import sunshine.service.review.ReviewDeleteService;
+import sunshine.service.review.ReviewDetailService;
 import sunshine.service.review.ReviewInsertService;
 import sunshine.service.review.ReviewListService;
+import sunshine.service.review.ReviewUpdateService;
 
 @Controller
 @RequestMapping("review")
@@ -21,6 +26,15 @@ public class ReviewController {
 	
 	@Autowired
 	ReviewListService reviewListService;
+	
+	@Autowired
+	ReviewDetailService reviewDetailService;
+	
+	@Autowired
+	ReviewDeleteService reviewDeleteService;
+	
+	@Autowired
+	ReviewUpdateService reviewUpdateService;
 	
 	       @RequestMapping("main")
 	       public String reviewMain() {
@@ -48,6 +62,43 @@ public class ReviewController {
 	    	   reviewListService.execute(page,model);
 	    	   return "review/reviewList";
 	       }
+	       
+	       @RequestMapping("detail")
+	       public String reviewDetail(
+	    		   @RequestParam(value = "boardNo")String boardNo,
+	    		   Model model) {
+	    	   reviewDetailService.reviewDetail(boardNo,model);
+	    	   return "review/reviewDetail";
+	       }
+	       
+	       @RequestMapping("delete")
+	       public String reviewDelete(@RequestParam(value = "boardNo")
+	       String boardNo,HttpSession session) {
+	    	   reviewDeleteService.execute(boardNo,session);
+	    	   return "redirect:/review/reviewList";
+	    	   
+	       }
+	       
+	       @RequestMapping("modify")
+	       public String reviewModify(
+	    		   @RequestParam(value = "boardNo")String boardNo,
+	       Model model){  
+	    	   reviewDetailService.reviewDetail(boardNo,model);
+	    	   return "review/reviewModify";
+	    	   
+	       }   
+	       
+	       @RequestMapping("modifyPro")
+	       public String modifyPro(ReviewCommand reviewCommand,
+	    		   HttpSession session) {
+	    	   reviewUpdateService.execute(reviewCommand,session);
+	    	   return "redirect:/review/reviewList";
+	    	   
+	       }
+	      
+	       
+	       
+	       
 	       }
 	    		   
 
