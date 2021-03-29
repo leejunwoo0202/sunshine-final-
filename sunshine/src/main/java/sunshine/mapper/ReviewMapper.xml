@@ -19,6 +19,15 @@ values(board_seq.nextval,  #{memId}, #{bSubject}, #{bContent}, sysdate, '0')
 
 </insert>
 
+<insert id="insertReviewEm" parameterType="sunshine.model.DTO.ReplyDTO">
+insert into reply(
+REPLY_NO, BOARD_NO,REPLY_CONTENT,REPLY_WRITE_DATE ,EM_ID)
+values(reply_SEQ.nextval, #{boardNo}, #{replyContent}, sysdate, #{emId})
+
+</insert>
+
+
+
 <select id="getReviewList" parameterType="sunshine.model.DTO.ReviewDTO"
 resultType="sunshine.model.DTO.ReviewDTO">
 
@@ -53,6 +62,19 @@ from(select rownum rn, <include refid="baseColumn1"/>
 	</if>
 </update>
 
+<delete id="reviewDelete" parameterType="String">
+  delete from board
+  where board_no = #{boardNo}
+
+</delete>
+
+<update id="reviewUpdate" parameterType="sunshine.model.DTO.ReviewDTO">
+update board
+set B_SUBJECT = #{bSubject}, B_CONTENT = #{bContent}
+where board_no = #{boardNo}
+
+
+</update>
 
 
 </mapper>
