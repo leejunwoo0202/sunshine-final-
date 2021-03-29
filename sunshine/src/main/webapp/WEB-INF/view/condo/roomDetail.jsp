@@ -9,22 +9,12 @@
 <meta charset="UTF-8">
 <title>Industrious by TEMPLATED</title>
 
-<style type="text/css">
-input {
-	border: none;
-}
-
-form:errors {
-	color: red;
-}
-</style>
-
 <meta charset="utf-8" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, user-scalable=no" />
 <meta name="description" content="" />
 <meta name="keywords" content="" />
-<link rel="stylesheet" href="../assets/css/main.css" />
+<link rel="stylesheet" href="../../assets/css/main.css" />
 </head>
 <body class="is-preload">
 
@@ -83,18 +73,18 @@ form:errors {
 				<h2>객실 상세</h2>
 
 			</header>
-			<div class="highlights">
-				<section>
+<!-- 			<div class="highlights"> -->
+<!-- 				<section> -->
 					<form:form action="/condo/roomModify" onsubmit="return roomPwCk();"
 						name="frm" method="post" modelAttribute="condoCommand"
 						enctype="multipart/form-data">
 						<table border="1">
 							<tr>
-								<td width="6%">객실 번호</td>
-								<td width="10%">객실 타입</td>
-								<td width="14%">요금</td>
-								<td width="30%">상세</td>
-								<td width="40%">이미지</td>
+								<td width="0%">객실 번호</td>
+								<td width="20%">객실 타입</td>
+								<td width="10%">요금</td>
+								<td width="20%">상세</td>
+								<td width="45%">이미지</td>
 							</tr>
 							<c:forEach var="room" items="${list }">
 								<tr>
@@ -110,15 +100,14 @@ form:errors {
 									</c:if> <c:if test="${room.roomType == 'CR' }">
 										Connecting Room
 									</c:if><br /> <select id="roomType" name="roomType">
-											<option>수정할 객실 타입</option>
+											<option value="${room.roomType}">수정할 객실 타입</option>
 											<option value="DR">Double Room</option>
 											<option value="TR">Twin Room</option>
 											<option value="FR">Family Room</option>
 											<option value="CR">Connecting Room</option>
 									</select> <%-- 			                        <input type="hidden" name="roomType" value="EL{room.roomType }"> --%>
 										<form:errors path="roomType"></form:errors></td>
-									<td><form:input path="roomPrice" value="${room.roomPrice}"
-											size="3" />원</td>
+									<td><form:input path="roomPrice" value="${room.roomPrice}"/></td>
 									<td><form:input path="roomDetail"
 											value="${room.roomDetail}" /></td>
 									<td><c:forTokens items="${room.roomImage }" delims="`"
@@ -126,8 +115,8 @@ form:errors {
 											<!--  
 							<img alt="img" src="WEB-INF/view/condo/upload/${img }" />
 							-->
-											<img alt="img" src="/condo/upload/${img }" width="300px"
-												height="300px" />
+											<img alt="img" src="/condo/upload/${img }" width="250px"
+												height="250px" />
 											<!-- 										<input type="file" name="roomImg" multiple="multiple" /> -->
 										</c:forTokens></td>
 								</tr>
@@ -136,15 +125,16 @@ form:errors {
 						<a href="../roomList"><input type="button" value="리스트로 "></a>  &nbsp;&nbsp;&nbsp;
 <%-- 			<a href ="../roomModify?roomNum=${list.get(0).roomNum }"> 수정 </a>  &nbsp;&nbsp;&nbsp; --%>
 						<input type="submit" value="수정" />&nbsp;&nbsp;&nbsp;
-				<input type="button" value="삭제 " onclick="roomDel();">  &nbsp;&nbsp;&nbsp;						
+				<input type="button" value="삭제 " onclick="roomDel();">  &nbsp;&nbsp;&nbsp;<br/>						
 <!-- 				<input type="password" id="roomPw" name ="roomPw" placeholder="비밀번호를 입력하세요"/><br /> -->
 						<form:password id="roomPw" path="roomPw" placeholder="비밀번호를 입력하세요" />
 						<br />
-						<form:errors path="roomPw"></form:errors>
-				${PwErr }
+						<form:errors path="roomPw"></form:errors>${PwErr }
+					
 				</form:form>
-				</section>
-			</div>
+				
+<!-- 				</section> -->
+<!-- 			</div> -->
 		</div>
 	</section>
 

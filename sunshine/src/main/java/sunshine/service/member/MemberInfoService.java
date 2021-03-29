@@ -37,9 +37,9 @@ public class MemberInfoService {
 //		System.out.println(dto.getMemId());
 		model.addAttribute("memDto", dto);
 		
-//		// 직원 데려오기
-//		EmployeeDTO employeeDTO = empMapper.employeeDetail(loginInfo.getMemNo());
-//		model.addAttribute("empDto", employeeDTO);
+		// 직원 데려오기
+		EmployeeDTO employeeDTO = empMapper.employeeDetail(loginInfo.getMemNo());
+		model.addAttribute("empDto", employeeDTO);
 	}
 }
 
