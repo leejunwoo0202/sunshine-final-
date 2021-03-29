@@ -18,5 +18,7 @@ public interface ReviewMapper {
 	public void reviewUpdate(ReviewDTO reviewDTO);
 
 	public void insertReviewEm(ReplyDTO replyDTO);
+
+	public List<ReplyDTO> getReplyList(ReplyDTO replyDTO);
     
 }

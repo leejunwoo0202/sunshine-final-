@@ -27,10 +27,23 @@
 </tr>
 </table>
 
+<c:forEach items="${reply }" var="re">
+<c:if test=" ${re.emId  != null}"  >
 <table border="1" >
-<tr><td></td></tr>
-
+<tr><td>작성자</td><td>답변</td><td>날짜</td></tr>
+	<tr><td>${re.emId }</td><td>${re.replyContent }</td><td>${re.replyWriteDate }</td></tr>
 </table>
+</c:if>
+
+
+<c:if test=" ${re.emId   == null}"  >
+ 댓글 없음 <hr />
+ <a href="#" >
+ 댓글 추가
+ </a>
+</c:if>
+</c:forEach>
+  
 
 <table border="1">
 <tr><td colspan="2">답변하기</td></tr>

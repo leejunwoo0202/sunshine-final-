@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<%-- <form action="detail/${board.boardNo}"> --%>
 <table border="1"  name="frm" id="frm" >
 
 <tr>
@@ -17,19 +17,18 @@
 <td>제목</td><td>내용</td>
 <td>작성일</td>
 </tr>
-<c:forEach items="${lists}" var="board" varStatus="status"  >
+<c:forEach items="${lists }" var="board" varStatus="status"  >
 <tr>
-<td><a href="detail?boardNo=${board.boardNo }">${board.boardNo }</a></td>
+<td><input type="hidden" name="boardNo" value="${board.boardNo }" />
+	<a href="detail?boardNo=${board.boardNo }">${board.boardNo }</a></td>
 <td>${board.memId }</td>
 <td>${board.bSubject }</td>
 <td>${board.bContent}</td>
 <td>${board.bWriteDate }</td>
 </tr>
-
 </c:forEach>
-
-     
 </table>
+<!-- </form> -->
 <%@ include file="../include/includePage.jsp" %><br />
 <a href="../main">메인화면</a>
 

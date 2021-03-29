@@ -6,7 +6,7 @@ public class ReplyDTO {
 
 	String replyNo;
 	String boardNo;
-	String memNo;
+//	String memNo;
 	String replyContent;
 	Date replyWriteDate;
 	String emId;
@@ -29,12 +29,12 @@ public class ReplyDTO {
 	public void setBoardNo(String boardNo) {
 		this.boardNo = boardNo;
 	}
-	public String getMemNo() {
-		return memNo;
-	}
-	public void setMemNo(String memNo) {
-		this.memNo = memNo;
-	}
+//	public String getMemNo() {
+//		return memNo;
+//	}
+//	public void setMemNo(String memNo) {
+//		this.memNo = memNo;
+//	}
 	public String getReplyContent() {
 		return replyContent;
 	}

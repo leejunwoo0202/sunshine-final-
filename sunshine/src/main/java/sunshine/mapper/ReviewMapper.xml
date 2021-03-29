@@ -26,11 +26,8 @@ values(reply_SEQ.nextval, #{boardNo}, #{replyContent}, sysdate, #{emId})
 
 </insert>
 
-
-
 <select id="getReviewList" parameterType="sunshine.model.DTO.ReviewDTO"
 resultType="sunshine.model.DTO.ReviewDTO">
-
 select *
 from(select rownum rn, <include refid="baseColumn1"/>
          from(select <include refid="baseColumn"/>
@@ -45,9 +42,22 @@ from(select rownum rn, <include refid="baseColumn1"/>
      <where>
      rn between #{startEndPageDTO.startPage} and #{startEndPageDTO.endPage}
      </where>
-
 </if>
 </select>
+
+<select id="getReplyList" parameterType="sunshine.model.DTO.ReplyDTO"
+resultType="sunshine.model.DTO.ReplyDTO">
+select REPLY_NO replyNo, BOARD_NO boardNo, REPLY_CONTENT replyContent,
+REPLY_WRITE_DATE replyWriteDate, EM_ID emId
+from REPLY
+<trim prefix="where" prefixOverrides="AND|OR">
+	<if test="boardNo != null">
+		BOARD_NO = #{boardNo}
+	</if>
+</trim>
+</select>
+
+
 
 <select id="reviewCount" resultType="int">
 	select count(*) from board
