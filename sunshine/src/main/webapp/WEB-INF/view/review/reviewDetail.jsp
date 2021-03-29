@@ -27,21 +27,23 @@
 </tr>
 </table>
 
+<!-- 주소에서 boardNo으로 넘어오는데 reply에 boarNo가 없어서 오류가 나는거야 준우야 -->
+<!-- 그래서 주소창에 boardNo가 아니라 다른 값으로 주소 넘어오거나 -->
+<!--  reply에 boardNo값이 있어야해 무슨말인지 알지..? -->
 <c:forEach items="${reply }" var="re">
-<c:if test=" ${re.emId  != null}"  >
-<table border="1" >
-<tr><td>작성자</td><td>답변</td><td>날짜</td></tr>
-	<tr><td>${re.emId }</td><td>${re.replyContent }</td><td>${re.replyWriteDate }</td></tr>
-</table>
-</c:if>
-
-
-<c:if test=" ${re.emId   == null}"  >
- 댓글 없음 <hr />
- <a href="#" >
- 댓글 추가
- </a>
-</c:if>
+	<c:if test=" ${re.emId != null}"  >
+	<table border="1" >
+	<tr><td>작성자</td><td>답변</td><td>날짜</td></tr>
+	<tr><td>${reply.emId }</td><td>${reply.replyContent }</td><td>${reply.replyWriteDate }</td></tr>
+	</table>
+	</c:if>
+	
+	<c:if test=" ${re.emId == null}"  >
+	 댓글 없음 <hr />
+	 <a href="#" >
+	 댓글 추가
+	 </a>
+	</c:if>
 </c:forEach>
   
 

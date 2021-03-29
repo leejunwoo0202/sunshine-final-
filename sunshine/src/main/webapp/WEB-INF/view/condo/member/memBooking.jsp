@@ -113,13 +113,13 @@
 							<input type="hidden" name="email" value="${user.email } "/></td>
 						</tr>
 							<tr>
-							<td>연락처</td><td>${user.phone }	
-							<input type="hidden" name=" phone" value="${user.phone }"/></td>
+							<td>연락처</td><td>
+							<input type="text" name=" phone" value="${user.phone }"/></td>
 						</tr>
 					<div class="w3-col m2">
 						<tr >
 							<td> <label><i class="fa fa-male"></i> 성인</label></td>
-							<td> <input class="w3-input w3-border" type="number" placeholder="2" name ="person"> </td>
+							<td> <input class="w3-input w3-border" type="number" placeholder="2" name ="person" > </td>
 						</tr>	
 						<tr>
 							<td> <label><i class="fa fa-child"></i> 어린이</label></td>

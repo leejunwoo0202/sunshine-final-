@@ -17,6 +17,7 @@ import sunshine.model.DTO.MemberDTO;
 import sunshine.service.condo.RoomBookingService;
 import sunshine.service.condo.RoomDetailService;
 import sunshine.service.condo.RoomListService;
+import sunshine.service.condo.RoomReserService;
 import sunshine.service.member.MemberInfoService;
 
 @Controller
@@ -29,6 +30,9 @@ public class CondoControllerMember {
 	RoomDetailService roomDetailService;
 	@Autowired
 	RoomBookingService roomBookingService;
+	@Autowired
+	RoomReserService roomReserService;
+	
 	
 @RequestMapping(value = "memList")
 	public String memList(@RequestParam(value="page", defaultValue = "1")Integer page, Model model)throws Exception {
@@ -49,9 +53,9 @@ public String memBooking(@PathVariable(value="roomNum")String roomNum ,HttpSessi
 	
 	return "condo/member/memBooking";
 }
-@RequestMapping(value = "memReser")
-public String memReser() {
-	
+@RequestMapping(value = "memReser", method = RequestMethod.POST)
+public String memReser(Model model , HttpSession session) throws Exception{
+	roomReserService.roomReser(model,session);
 	return "condo/member/myReser";
 }
 }

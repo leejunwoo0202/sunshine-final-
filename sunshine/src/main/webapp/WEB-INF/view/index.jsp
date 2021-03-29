@@ -89,7 +89,7 @@
 	<section id="banner">
 		<div class="inner">
 			<h1>SunShine</h1>
-			<p>선샤인 빌리지</p>
+			<p>	</p>
 		</div>
 		<video autoplay loop muted playsinline src="images/banner.mp4"></video>
 	</section>
@@ -193,25 +193,21 @@
 	<section class="wrapper">
 		<div class="inner">
 			<header class="special">
-				<h2>Faucibus consequat lorem</h2>
-				<p>In arcu accumsan arcu adipiscing accumsan orci ac. Felis id
-					enim aliquet. Accumsan ac integer lobortis commodo ornare aliquet
-					accumsan erat tempus amet porttitor.</p>
+				<h2>SUNSHINE FAMILY SITE</h2>
+				<p><div style="color:red;" >SunShine</div>  다양한 관계사를 소개 합니다.</p>
 			</header>
 			<div class="testimonials">
 				<section>
 					<div class="content">
 						<blockquote>
-							<p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum
-								adipiscing gravida odio porttitor sem non mi integer non
-								faucibus.</p>
+							<p>(스키 컨텐츠 소개 글) </p> 
 						</blockquote>
 						<div class="author">
 							<div class="image">
-								<img src="images/pic01.jpg" alt="" />
+								<img src="images/pop02.jpg" alt="" />
 							</div>
 							<p class="credit">
-								- <strong>Jane Doe</strong> <span>CEO - ABC Inc.</span>
+								- <strong>스키강습</strong> <span> SKI_lESSON </span> 
 							</p>
 						</div>
 					</div>
@@ -219,13 +215,11 @@
 				<section>
 					<div class="content">
 						<blockquote>
-							<p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum
-								adipiscing gravida odio porttitor sem non mi integer non
-								faucibus.</p>
+							<p>Sunshine Village Condo</p>
 						</blockquote>
 						<div class="author">
 							<div class="image">
-								<img src="images/pic03.jpg" alt="" />
+								<img src="images/pop03.jpg" alt="" />
 							</div>
 							<p class="credit">
 								- <strong>John Doe</strong> <span>CEO - ABC Inc.</span>
@@ -236,20 +230,35 @@
 				<section>
 					<div class="content">
 						<blockquote>
-							<p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum
-								adipiscing gravida odio porttitor sem non mi integer non
-								faucibus.</p>
+							<p>프렌즈샵</p>
 						</blockquote>
 						<div class="author">
 							<div class="image">
-								<img src="images/pic02.jpg" alt="" />
+								<img src="images/pop01.jpg" alt="" />
 							</div>
 							<p class="credit">
-								- <strong>Janet Smith</strong> <span>CEO - ABC Inc.</span>
+								- <strong>asd</strong> <span>CEO - ABC Inc.</span>
 							</p>
 						</div>
 					</div>
 				</section>
+				
+<!-- 					<section> -->
+<!-- 					<div class="content"> -->
+<!-- 						<blockquote> -->
+<!-- 							<p>레스토랑</p>  -->
+<!-- 						</blockquote> -->
+<!-- 						<div class="author"> -->
+<!-- 							<div class="image"> -->
+<!-- 								<img src="images/pop04.jpg" alt="" /> -->
+<!-- 							</div> -->
+<!-- 							<p class="credit"> -->
+<!-- 								- <strong>Janet Smith</strong> <span>CEO - ABC Inc.</span> -->
+<!-- 							</p> -->
+<!-- 						</div> -->
+<!-- 					</div> -->
+<!-- 				</section> -->
+				
 			</div>
 		</div>
 	</section>
@@ -259,38 +268,38 @@
 		<div class="inner">
 			<div class="content">
 				<section>
-					<h3>Accumsan montes viverra</h3>
-					<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing
-						gravida odio porttitor sem non mi integer non faucibus ornare mi
-						ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien
-						lorem accumsan varius montes viverra nibh in adipiscing. Lorem
-						ipsum dolor vestibulum ante ipsum primis in faucibus vestibulum.
-						Blandit adipiscing eu felis iaculis volutpat ac adipiscing sed
-						feugiat eu faucibus. Integer ac sed amet praesent. Nunc lacinia
-						ante nunc ac gravida.</p>
+					<h3>Company Introduction</h3>
+					<p>
+						대표자 : OOO | 개인정보보호책임자 : OOO | 통신판매신고 : 제 ####-##호 <br />공정위
+						사업자등록번호 ###-##-##### 회원제예약실 : 02-000-0001 ~ 3 회원제프론트 :
+						030-000-0001 ~ 2 퍼블릭프론트 : 030-000-0000 ~ 2 <br />
+						상품판매부 : 020-000-0000 | 식음료 : 050-222-0000 <br/>
+						연습장 : 000-111-0000 스키장&콘도 : 000-111-2222 <br /> <a href="#">[업장 전화안내
+							바로가기]</a><br /> 업장 주소 : OO시 OO구 OO면 대로2222번길 66(OO면 O리 산OO-1번지)<br />
+						스키장/콘도 주소 : OO시 OO면 OO로 111(OO면 OO리 산44-3번지)
+					</p>
 				</section>
 				<section>
-					<h4>Sem turpis amet semper</h4>
+					<h4>Terms And Conditions</h4>
 					<ul class="alt">
-						<li><a href="#">Dolor pulvinar sed etiam.</a></li>
-						<li><a href="#">Etiam vel lorem sed amet.</a></li>
-						<li><a href="#">Felis enim feugiat viverra.</a></li>
-						<li><a href="#">Dolor pulvinar magna etiam.</a></li>
+						<li><a href="#">홈페이지 이용약관</a></li>
+						<li><a href="#">채용 정보</a></li>
+						<li><a href="#">개인정보 처리방침</a></li>
+						<li><a href="#">영상정보처리기기 운영관리방침</a></li>
 					</ul>
 				</section>
 				<section>
-					<h4>Magna sed ipsum</h4>
+					<h4>Messenger </h4>
 					<ul class="plain">
-						<li><a href="#"><i class="icon fa-twitter">&nbsp;</i>Twitter</a></li>
-						<li><a href="#"><i class="icon fa-facebook">&nbsp;</i>Facebook</a></li>
-						<li><a href="#"><i class="icon fa-instagram">&nbsp;</i>Instagram</a></li>
-						<li><a href="#"><i class="icon fa-github">&nbsp;</i>Github</a></li>
+						<li><a href="https://twitter.com/"><i class="icon fa-twitter">&nbsp;</i>Twitter</a></li>
+						<li><a href="https://www.facebook.com/"><i class="icon fa-facebook">&nbsp;</i>Facebook</a></li>
+						<li><a href="https://www.instagram.com/"><i class="icon fa-instagram">&nbsp;</i>Instagram</a></li>
+						<li><a href="https://github.com/"><i class="icon fa-github">&nbsp;</i>Github</a></li>
 					</ul>
 				</section>
 			</div>
 			<div class="copyright">
-				&copy; Untitled. Photos <a href="https://unsplash.co">Unsplash</a>,
-				Video <a href="https://coverr.co">Coverr</a>.
+				&copy; Sunshine Village 
 			</div>
 		</div>
 	</footer>
