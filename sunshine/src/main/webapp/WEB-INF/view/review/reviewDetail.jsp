@@ -12,6 +12,7 @@
 <input type="hidden" name="boardNo" value="${detail.boardNo }"/>
 
 <table border="1">
+<tr><th>리뷰</th></tr>
 <tr>
 <td>글번호</td>
 <td>회원아이디</td>
@@ -26,25 +27,38 @@
 <td>${detail.bWriteDate }</td>
 </tr>
 </table>
+<a href="delete?boardNo=${detail.boardNo }">리뷰삭제</a>
+<a href="modify?boardNo=${detail.boardNo }">리뷰수정</a>
+<br/><br/><br/><br/>
 
 <!-- 주소에서 boardNo으로 넘어오는데 reply에 boarNo가 없어서 오류가 나는거야 준우야 -->
 <!-- 그래서 주소창에 boardNo가 아니라 다른 값으로 주소 넘어오거나 -->
 <!--  reply에 boardNo값이 있어야해 무슨말인지 알지..? -->
-<c:forEach items="${reply }" var="re">
-	<c:if test=" ${re.emId != null}"  >
+
+
+
+
+
+
+
+
+     <c:choose>
+     <c:when test="${reply ne null }">
 	<table border="1" >
-	<tr><td>작성자</td><td>답변</td><td>날짜</td></tr>
-	<tr><td>${reply.emId }</td><td>${reply.replyContent }</td><td>${reply.replyWriteDate }</td></tr>
+	<tr><th colspan="3">답변</th></tr>
+	<tr><td>답변번호</td><td>작성자</td><td>답변</td><td>날짜</td></tr>
+	<tr><td>${reply[0].replyNo }</td><td>${reply[0].emId }</td><td>${reply[0].replyContent }</td><td>${reply[0].replyWriteDate }</td></tr>
 	</table>
-	</c:if>
-	
-	<c:if test=" ${re.emId == null}"  >
+	</c:when>
+
+      <c:when test="${reply eq null }">
 	 댓글 없음 <hr />
 	 <a href="#" >
 	 댓글 추가
 	 </a>
-	</c:if>
-</c:forEach>
+	</c:when>
+	</c:choose>
+<br/><br/><br/><br/><br/><br/><br/> 
   
 
 <table border="1">
@@ -55,8 +69,7 @@
 <tr><td colspan="2"><input type="submit" value="답변작성"/></td></tr>
 </table>
 </form>
-<a href="delete?boardNo=${detail.boardNo }">후기삭제</a>
-<a href="modify?boardNo=${detail.boardNo }">후기수정</a>
+
 
 </body>
 </html>

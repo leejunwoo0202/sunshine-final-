@@ -10,7 +10,6 @@
 <body>
 <%-- <form action="detail/${board.boardNo}"> --%>
 <table border="1"  name="frm" id="frm" >
-
 <tr>
 <td>글번호</td>
 <td>회원아이디</td>

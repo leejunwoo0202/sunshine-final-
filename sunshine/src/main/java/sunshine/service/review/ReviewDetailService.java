@@ -26,12 +26,16 @@ public class ReviewDetailService {
 		
 		ReplyDTO replyDTO = new ReplyDTO();
 		replyDTO.setBoardNo(boardNo);
-		List<ReplyDTO> list1 = reviewMapper.getReplyList(replyDTO);
 		
-		System.out.println("리뷰답글 : " + list1.get(0).getReplyNo());
-		System.out.println(list1.get(0).getEmId());
+		List<ReplyDTO> listReply = reviewMapper.getReplyList(replyDTO);
 		
-		model.addAttribute("reply",list1.get(0));
+		/*
+		 * System.out.println("리뷰답글 : " + list1.get(0).getReplyNo());
+		 * System.out.println(list1.get(0).getEmId());
+		 * System.out.println(list1.get(0).getBoardNo());
+		 */
+		
+		model.addAttribute("reply",listReply);
 		
 		
 		

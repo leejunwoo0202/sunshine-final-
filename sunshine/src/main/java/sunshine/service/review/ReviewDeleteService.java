@@ -17,9 +17,11 @@ public class ReviewDeleteService {
 	public void execute(String boardNo,HttpSession session) {
 		ReviewDTO dto = new ReviewDTO();
 		dto.setBoardNo(boardNo);
+		System.out.println(dto.getBoardNo());
 		
 		dto = reviewMapper.getReviewList(dto).get(0);
 		
+		reviewMapper.replyDelete(boardNo);
 		reviewMapper.reviewDelete(boardNo);
 	}
 	

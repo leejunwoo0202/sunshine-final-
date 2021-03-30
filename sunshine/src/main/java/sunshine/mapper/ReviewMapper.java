@@ -20,5 +20,7 @@ public interface ReviewMapper {
 	public void insertReviewEm(ReplyDTO replyDTO);
 
 	public List<ReplyDTO> getReplyList(ReplyDTO replyDTO);
+
+	public void replyDelete(String boardNo);
     
 }

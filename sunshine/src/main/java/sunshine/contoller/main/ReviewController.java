@@ -66,6 +66,7 @@ public class ReviewController {
 	       @RequestMapping("detail")
 	       public String reviewDetail(
 	    		   @RequestParam(value = "boardNo" ) String boardNo,
+	    		   
 	    		   Model model) {
 	    	   reviewDetailService.reviewDetail(boardNo, model);
 	    	   return "review/reviewDetail";
