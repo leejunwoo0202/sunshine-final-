@@ -26,6 +26,18 @@ public class MainController {
 		return "member/signUp";
 	}
 	
+	@RequestMapping(value = "elements")
+	public String elements() {
+		return "elements";
+	}
+	
+	@RequestMapping(value = "generic")
+	public String generic() {
+		return "generic";
+	}
+	
+	
+	
 //>>>>>>> branch 'master' of https://github.com/leejunwoo0202/sunshine-final-.git
 }
 

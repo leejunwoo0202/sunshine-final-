@@ -59,6 +59,7 @@
 				<li><a href="review/main">후기</a>
 				<li><a href="condoMem/memList">객실리스트</a>
 				<li><a href="goodsMem/list">상품리스트</a>
+				
 			</ul>
 		</nav>
 
