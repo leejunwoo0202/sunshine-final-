@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import sunshine.command.CondoCommand;
+import sunshine.command.CondoReserCommand;
 import sunshine.mapper.MemberMapper;
 import sunshine.model.LoginInfo;
 import sunshine.model.DTO.MemberDTO;
@@ -54,8 +55,8 @@ public String memBooking(@PathVariable(value="roomNum")String roomNum ,HttpSessi
 	return "condo/member/memBooking";
 }
 @RequestMapping(value = "memReser", method = RequestMethod.POST)
-public String memReser(Model model , HttpSession session) throws Exception{
-	roomReserService.roomReser(model,session);
+public String memReser(Model model , HttpSession session , CondoReserCommand command) throws Exception{
+	roomReserService.roomReser(model,session,command);
 	return "condo/member/myReser";
 }
 }

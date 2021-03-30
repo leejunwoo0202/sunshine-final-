@@ -81,6 +81,7 @@
 				<form action="../memReser" method="get">
 					<table border="1">
 					<caption><h2>객실 예약</h2></caption>
+					<input type = "hidden" value="${user.userId}"/>
 						<tr>
 							<td>객실정보</td><td>${room.roomType }_${room.roomNum }
 							<input type="hidden" name="roomNum" value="${room.roomNum}"/></td>
