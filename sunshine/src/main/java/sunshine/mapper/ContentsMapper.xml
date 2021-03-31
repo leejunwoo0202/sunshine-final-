@@ -24,6 +24,20 @@
 		DIV_PEOPLE divPeople,  ISSUE_DATE issueDate, VALIDITY validity, GRADE grade
 		from SKI_CONTENTS
 	</select>
+	
+	<select id="contentsList1" resultType="sunshine.model.DTO.ContentsDTO" parameterType="string">
+		select CONTENTS_NO contentsNo, CONTENTS_NAME contentsName, CONTENTS_PRICE contentsPrice,
+		DIV_PEOPLE divPeople,  ISSUE_DATE issueDate, VALIDITY validity, GRADE grade
+		from SKI_CONTENTS
+		where contentsName = #{contentsName}
+	</select>
+	
+	<select id="getPrice" parameterType="sunshine.model.DTO.ContentsDTO" resultType="sunshine.model.DTO.ContentsDTO">
+		select <include refid="basecolumn1" />
+		from ski_contents
+		where CONTENTS_NAME = #{contentsName} and DIV_PEOPLE = #{divPeople}
+	</select>
+	
 	<select id="contentsDetail" parameterType="string" resultType="sunshine.model.DTO.ContentsDTO">
 		select CONTENTS_NO contentsNo, CONTENTS_NAME contentsName, CONTENTS_PRICE contentsPrice,
 		DIV_PEOPLE divPeople,  ISSUE_DATE issueDate, VALIDITY validity, GRADE grade

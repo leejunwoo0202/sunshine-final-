@@ -22,7 +22,7 @@
 </tr>
 <tr>
 <td>${contents.contentsNo }</td>
-<td><input type="text" value="${contents.contentsName }" name="contentsName"/></td>
+<td><input type="text" value="${contents.contentsName }" name="contentsName" readonly="readonly"/></td>
 <td><input type="text" value="${contents.contentsPrice }" name="contentsPrice"/></td>
 <td>${contents.divPeople }</td>
 <td>${contents.issueDate }</td>

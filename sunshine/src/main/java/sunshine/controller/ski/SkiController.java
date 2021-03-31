@@ -41,7 +41,7 @@ public class SkiController {
 		return "ski/contentsRegistOk";
 	}
 	@RequestMapping(value = "contentsList")
-	public String contentsList(Model model) {
+	public String contentsList(Model model) throws Exception {
 	contentsListService.execute(model);
 		return "ski/contentsList";
 	}

@@ -10,7 +10,11 @@
 <form action="contentsRegistOk" method="post" name="frm">
 <table border="1">
 	<tr><td>컨텐츠명</td>
-		<td><input type="text" name="contentsName"/></td></tr>
+		<td>
+				<select id="contentsName" name="contentsName">
+					<option value="티켓">티켓</option>
+					<option value="강습">강습</option>
+				</select></td></tr>
 	<tr><td>컨텐츠 가격</td>
 		<td><input type="text" name="contentsPrice" /></td></tr>
 	<tr><td>연령구분</td>
@@ -27,34 +31,6 @@
 		</td></tr>
 		
 <!-- 회원입장에서 예약할 때 -->
-<!-- 		<tr> -->
-<!-- 			<th></th> -->
-<!-- 			<th>상품명</th> -->
-<!-- 			<th>구분</th> -->
-<!-- 			<th>가격</th> -->
-<!-- 		</tr> -->
-<!-- 		<tr> -->
-<!-- 			<th>1. 리프트</th> -->
-<!-- 			<td> -->
-<!-- 			<select> -->
-<!-- 				<option value="주간권">주간권</option> -->
-<!-- 				<option value="오전권/오후권">오전권/오후권</option> -->
-<!-- 				<option value="야간권">야간권</option> -->
-<!-- 				<option>오후 야간권</option> -->
-<!-- 				<option>심야권</option> -->
-<!-- 				<option>야간심야권</option> -->
-<!-- 				<option>1회권</option> -->
-<!-- 			</select> -->
-<!-- 			</td> -->
-<!-- 			<td> -->
-<!-- 				<select> -->
-<!-- 					<option>대인</option> -->
-<!-- 					<option>소인</option> -->
-<!-- 				</select> -->
-<!-- 			</td> -->
-<!-- 			<td> -->		
-<!-- 			</td> -->
-<!-- 		</tr> -->
 </table>
 </form>
 

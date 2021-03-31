@@ -15,7 +15,8 @@ import sunshine.model.DTO.ContentsDTO;
 public class ContentsListService {
 	@Autowired
 	ContentsMapper contentsMapper;
-	public void execute(Model model) {
+	public void execute(Model model) throws Exception {
+		ContentsDTO dto = new ContentsDTO();
 		List<ContentsDTO> list = contentsMapper.contentsList();
 		model.addAttribute("list", list);
 	}
