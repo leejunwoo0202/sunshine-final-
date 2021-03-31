@@ -1,98 +1,111 @@
 <!DOCTYPE HTML>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!--
 	Industrious by TEMPLATED
 	templated.co @templatedco
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 -->
 <html>
-	<head>
-		<title>Generic Page - Industrious by TEMPLATED</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<meta name="description" content="" />
-		<meta name="keywords" content="" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
+<head>
+<title>Generic Page - Industrious by TEMPLATED</title>
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, user-scalable=no" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<link rel="stylesheet" href="../assets/css/main.css" />
+</head>
+<body class="is-preload">
 
-		<!-- Header -->
-			<header id="header">
-				<a class="logo" href="index.html">Industrious</a>
-				<nav>
-					<a href="#menu">Menu</a>
-				</nav>
-			</header>
+	<!-- Header -->
+	<header id="header">
+		<a class="logo" href="main">sunshine</a>
 
-		<!-- Nav -->
-			<nav id="menu">
-				<ul class="links">
-					<li><a href="index.html">Home</a></li>
-					<li><a href="elements.html">Elements</a></li>
-					<li><a href="generic.html">Generic</a></li>
-				</ul>
-			</nav>
+	</header>
 
-		<!-- Heading -->
-			<div id="heading" >
-				<h1>Generic Page</h1>
+
+
+	<!-- Heading -->
+	<div id="heading">
+		<h1>상품수정</h1>
+	</div>
+
+	<!-- Main -->
+	<section id="main" class="wrapper">
+		<div class="inner">
+			<div class="content">
+				<table border="1">
+<tr><td>결제번호</td><td>배송지</td><td>결제구분</td><td>입금확인</td>
+<td>상품구분</td><td>상품내용</td></tr>
+<tr>
+<c:forEach items="${list}" var="paymentDTO" varStatus="cnt">
+<td>${paymentDTO.payNum}</td>
+<td>${paymentDTO.deliveryAddress }</td>
+<td>${paymentDTO.payDivision}</td>
+<td>${paymentDTO.depositChk}</td>
+<td>${paymentDTO.goodsCategori }</td>
+<td>${paymentDTO.goodsContent }</td>
+
+
+</tr>
+</c:forEach>
+</table>
+<%@ include file="../include/includePage.jsp" %><br/>
+<a href="list">상품리스트</a>
 			</div>
+		</div>
+	</section>
 
-		<!-- Main -->
-			<section id="main" class="wrapper">
-				<div class="inner">
-					<div class="content">
-						<header>
-							<h2>Feugiat consequat</h2>
-						</header>
-						<p>Lorem ipsum dolor sit accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Magna et cursus lorem faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod tempus. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac sed amet praesent. Nunc lacinia ante nunc ac gravida lorem ipsum dolor sit amet dolor feugiat consequat. </p>
-						<p>Lorem ipsum dolor sit accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Magna et cursus lorem faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod tempus. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac sed amet praesent. Nunc lacinia ante nunc ac gravida lorem ipsum dolor sit amet dolor feugiat consequat. </p>
-						<hr />
-						<h3>Magna odio tempus commodo</h3>
-						<p>In arcu accumsan arcu adipiscing accumsan orci ac. Felis id enim aliquet. Accumsan ac integer lobortis commodo ornare aliquet accumsan erat tempus amet porttitor. Ante commodo blandit adipiscing integer semper orci eget. Faucibus commodo adipiscing mi eu nullam accumsan morbi arcu ornare odio mi adipiscing nascetur lacus ac interdum morbi accumsan vis mi accumsan ac praesent.</p>
-						<p>Felis sagittis eget tempus primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Magna sed etiam ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus lorem ipsum dolor sit amet nullam.</p>
-					</div>
-				</div>
-			</section>
+	<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<div class="content">
+				<section>
+					<h3>Company Introduction</h3>
+					<p>
+						대표자 : OOO | 개인정보보호책임자 : OOO | 통신판매신고 : 제 ####-##호 <br />공정위
+						사업자등록번호 ###-##-##### 회원제예약실 : 02-000-0001 ~ 3 회원제프론트 :
+						030-000-0001 ~ 2 퍼블릭프론트 : 030-000-0000 ~ 2 <br /> 상품판매부 :
+						020-000-0000 | 식음료 : 050-222-0000 <br /> 연습장 : 000-111-0000
+						스키장&콘도 : 000-111-2222 <br /> <a href="#">[업장 전화안내 바로가기]</a><br />
+						업장 주소 : OO시 OO구 OO면 대로2222번길 66(OO면 O리 산OO-1번지)<br /> 스키장/콘도 주소 :
+						OO시 OO면 OO로 111(OO면 OO리 산44-3번지)
+					</p>
+				</section>
+				<section>
+					<h4>Terms And Conditions</h4>
+					<ul class="alt">
+						<li><a href="#">홈페이지 이용약관</a></li>
+						<li><a href="#">채용 정보</a></li>
+						<li><a href="#">개인정보 처리방침</a></li>
+						<li><a href="#">영상정보처리기기 운영관리방침</a></li>
+					</ul>
+				</section>
+				<section>
+					<h4>Messenger</h4>
+					<ul class="plain">
+						<li><a href="https://twitter.com/"><i
+								class="icon fa-twitter">&nbsp;</i>Twitter</a></li>
+						<li><a href="https://www.facebook.com/"><i
+								class="icon fa-facebook">&nbsp;</i>Facebook</a></li>
+						<li><a href="https://www.instagram.com/"><i
+								class="icon fa-instagram">&nbsp;</i>Instagram</a></li>
+						<li><a href="https://github.com/"><i
+								class="icon fa-github">&nbsp;</i>Github</a></li>
+					</ul>
+				</section>
+			</div>
+			<div class="copyright">&copy; Sunshine Village</div>
+		</div>
+	</footer>
 
-		<!-- Footer -->
-			<footer id="footer">
-				<div class="inner">
-					<div class="content">
-						<section>
-							<h3>Accumsan montes viverra</h3>
-							<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing. Lorem ipsum dolor vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing sed feugiat eu faucibus. Integer ac sed amet praesent. Nunc lacinia ante nunc ac gravida.</p>
-						</section>
-						<section>
-							<h4>Sem turpis amet semper</h4>
-							<ul class="alt">
-								<li><a href="#">Dolor pulvinar sed etiam.</a></li>
-								<li><a href="#">Etiam vel lorem sed amet.</a></li>
-								<li><a href="#">Felis enim feugiat viverra.</a></li>
-								<li><a href="#">Dolor pulvinar magna etiam.</a></li>
-							</ul>
-						</section>
-						<section>
-							<h4>Magna sed ipsum</h4>
-							<ul class="plain">
-								<li><a href="#"><i class="icon fa-twitter">&nbsp;</i>Twitter</a></li>
-								<li><a href="#"><i class="icon fa-facebook">&nbsp;</i>Facebook</a></li>
-								<li><a href="#"><i class="icon fa-instagram">&nbsp;</i>Instagram</a></li>
-								<li><a href="#"><i class="icon fa-github">&nbsp;</i>Github</a></li>
-							</ul>
-						</section>
-					</div>
-					<div class="copyright">
-						&copy; Untitled. Photos <a href="https://unsplash.co">Unsplash</a>, Video <a href="https://coverr.co">Coverr</a>.
-					</div>
-				</div>
-			</footer>
+	<!-- Scripts -->
+	<script src="../assets/js/jquery.min.js"></script>
+	<script src="../assets/js/browser.min.js"></script>
+	<script src="../assets/js/breakpoints.min.js"></script>
+	<script src="../assets/js/util.js"></script>
+	<script src="../assets/js/main.js"></script>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+</body>
 </html>

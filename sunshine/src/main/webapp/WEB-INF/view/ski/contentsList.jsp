@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../include/include.jsp" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,7 +21,7 @@
 	   <td>${contents.divPeople }</td>
 	   <td>${contents.issueDate }</td>
 	   <td>${contents.validity }</td>
-	   <td>${contents.grade }</td>
+	   <td>${contents.contentsDiv }</td>
 	   </tr>
 	  </c:forEach>
 </table>

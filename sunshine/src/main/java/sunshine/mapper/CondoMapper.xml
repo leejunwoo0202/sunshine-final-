@@ -13,6 +13,17 @@ PUBLIC "-//mybtis.org//DTD Mapper 3.0//EN"
 ROOM_NUM,ROOM_TYPE,ROOM_PRICE,ROOM_IMAGE,ROOM_DETAIL, room_pw, room_reg
 </sql>
 
+<sql id="reser">
+RESER_NUM,MEM_NO,RESER_DATE,RESER_NAME,RESER_ADULT_NUM,RESER_PHONE,RESER_ROOM,RESER_KIDS_NUM,
+CHK_IN_DATE,CHK_OUT_DATE,PAY_METHOD
+</sql>
+
+<!-- <insert id="insertReser"> -->
+<!-- 	insert into condo_reser(<include refid="reser"/>) -->
+<!-- 	values(CONDO_RESER_SEQ.nextval,#{}) -->
+<!-- </insert> -->
+
+
 <insert id="insertCondo" parameterType="sunshine.model.DTO.CondoDTO">
 	insert into CONDO_ROOM(<include refid="basecolumn1"/>)
 	values(#{roomNum},#{roomType},#{roomPrice},#{roomImage},#{roomDetail},#{roomPw},sysdate)
@@ -53,5 +64,8 @@ ROOM_NUM,ROOM_TYPE,ROOM_PRICE,ROOM_IMAGE,ROOM_DETAIL, room_pw, room_reg
 	delete from condo_room 
 		where room_num=#{roomNum} and room_pw=#{roomPw}
 </delete>
+
+
+
 
 </mapper>

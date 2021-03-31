@@ -49,7 +49,7 @@ public class CondoRegistService {
 	         String originalFileExtension = original.substring(original.lastIndexOf("."));
 	         String store = UUID.randomUUID().toString().replace("-", "") 
 	        		 +originalFileExtension;
-	         	roomImage += original+"`"; 	
+	         	roomImage += store+"`"; 	
 	            File file = new File(filePath + "/" + store);
 	            try {
 					mf.transferTo(file);

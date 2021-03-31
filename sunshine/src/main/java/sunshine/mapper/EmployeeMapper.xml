@@ -39,4 +39,13 @@
 		delete from EM
 		where EM_NO = #{emNo}
 </delete>
+
+<select id="selectByEmployee" parameterType="string"
+resultType="sunshine.model.DTO.EmployeeDTO">
+select <include refid="basecolumn"/>
+from em where em_id = #{emId}
+
+</select>
+
+
 </mapper>

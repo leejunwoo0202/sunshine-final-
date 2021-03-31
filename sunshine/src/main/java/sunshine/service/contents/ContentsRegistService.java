@@ -23,7 +23,7 @@ public class ContentsRegistService {
 		contentsDTO.setDivPeople(contentsCommand.getDivPeople());
 		contentsDTO.setIssueDate(new Timestamp(contentsCommand.getIssueDate().getTime()));
 		contentsDTO.setValidity(contentsCommand.getValidity());
-		contentsDTO.setGrade(contentsCommand.getGrade());
+		contentsDTO.setContentsDiv(contentsCommand.getContentsDiv());
 		contentsMapper.contentsRegist(contentsDTO);
 	}
 }

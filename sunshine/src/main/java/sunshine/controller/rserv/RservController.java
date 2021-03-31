@@ -21,6 +21,10 @@ import sunshine.service.rserv.RservListService;
 	public String rservRegist() {
 		return "rserv/rservRegist";
 	}
+	@RequestMapping(value="rservDetail")
+	public String reservDetail() {
+		return "rserv/rservDetail";
+	}
 //	@RequestMapping(value="contentsPrice", method = RequestMethod.POST)
 //	public String getP(@RequestParam(value="contentsName")String contentsName, @RequestParam(value = "divPeople") String divPeople, Model model) throws Exception {
 //		contentsListService.execute(contentsName, divPeople, model);

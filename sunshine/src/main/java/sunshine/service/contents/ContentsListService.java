@@ -17,7 +17,7 @@ public class ContentsListService {
 	ContentsMapper contentsMapper;
 	public void execute(Model model) throws Exception {
 		ContentsDTO dto = new ContentsDTO();
-		List<ContentsDTO> list = contentsMapper.contentsList();
+		List<ContentsDTO> list = contentsMapper.contentsList(dto);
 		model.addAttribute("list", list);
 	}
 }

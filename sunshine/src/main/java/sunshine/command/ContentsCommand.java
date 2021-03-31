@@ -1,6 +1,5 @@
 package sunshine.command;
 
-import java.sql.Timestamp;
 import java.util.Date;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -15,7 +14,7 @@ public class ContentsCommand {
 	Date issueDate;
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	Date validity;
-	String grade;
+	String contentsDiv;
 	public String getContentsNo() {
 		return contentsNo;
 	}
@@ -58,11 +57,12 @@ public class ContentsCommand {
 	public void setValidity(Date validity) {
 		this.validity = validity;
 	}
-	public String getGrade() {
-		return grade;
+	public String getContentsDiv() {
+		return contentsDiv;
 	}
-	public void setGrade(String grade) {
-		this.grade = grade;
+	public void setContentsDiv(String contentsDiv) {
+		this.contentsDiv = contentsDiv;
 	}
+
 	
 }

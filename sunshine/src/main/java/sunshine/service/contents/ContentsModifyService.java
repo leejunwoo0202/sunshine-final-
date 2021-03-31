@@ -15,7 +15,7 @@ public class ContentsModifyService {
 		contentsDTO.setContentsNo(contentsCommand.getContentsNo());
 		contentsDTO.setContentsName(contentsCommand.getContentsName());
 		contentsDTO.setContentsPrice(contentsCommand.getContentsPrice());
-		contentsDTO.setGrade(contentsCommand.getGrade());
+		contentsDTO.setContentsDiv(contentsCommand.getContentsDiv());
 		contentsMapper.contentsModify(contentsDTO);
 	}
 }

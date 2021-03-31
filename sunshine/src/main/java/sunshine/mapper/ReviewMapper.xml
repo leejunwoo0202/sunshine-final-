@@ -19,9 +19,15 @@ values(board_seq.nextval,  #{memId}, #{bSubject}, #{bContent}, sysdate, '0')
 
 </insert>
 
+<insert id="insertReviewEm" parameterType="sunshine.model.DTO.ReplyDTO">
+insert into reply(
+REPLY_NO, BOARD_NO,REPLY_CONTENT,REPLY_WRITE_DATE ,EM_ID)
+values(reply_SEQ.nextval, #{boardNo}, #{replyContent}, sysdate, #{emId})
+
+</insert>
+
 <select id="getReviewList" parameterType="sunshine.model.DTO.ReviewDTO"
 resultType="sunshine.model.DTO.ReviewDTO">
-
 select *
 from(select rownum rn, <include refid="baseColumn1"/>
          from(select <include refid="baseColumn"/>
@@ -36,9 +42,22 @@ from(select rownum rn, <include refid="baseColumn1"/>
      <where>
      rn between #{startEndPageDTO.startPage} and #{startEndPageDTO.endPage}
      </where>
-
 </if>
 </select>
+
+<select id="getReplyList" parameterType="sunshine.model.DTO.ReplyDTO"
+resultType="sunshine.model.DTO.ReplyDTO">
+select REPLY_NO replyNo, BOARD_NO boardNo, REPLY_CONTENT replyContent,
+REPLY_WRITE_DATE replyWriteDate, EM_ID emId
+from REPLY
+<trim prefix="where" prefixOverrides="AND|OR">
+	<if test="boardNo != null">
+		BOARD_NO = #{boardNo}
+	</if>
+</trim>
+</select>
+
+
 
 <select id="reviewCount" resultType="int">
 	select count(*) from board
@@ -53,6 +72,25 @@ from(select rownum rn, <include refid="baseColumn1"/>
 	</if>
 </update>
 
+<delete id="replyDelete" parameterType="string">
+
+delete from reply
+where board_no = #{boardNo}
+</delete>
+
+<delete id="reviewDelete" parameterType="string">
+
+delete from board 
+where board_no = #{boardNo}
+</delete>
+
+<update id="reviewUpdate" parameterType="sunshine.model.DTO.ReviewDTO">
+update board
+set B_SUBJECT = #{bSubject}, B_CONTENT = #{bContent}
+where board_no = #{boardNo}
+
+
+</update>
 
 
 </mapper>

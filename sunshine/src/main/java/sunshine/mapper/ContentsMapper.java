@@ -11,7 +11,7 @@ import sunshine.model.DTO.ContentsDTO;
 @Component
 public interface ContentsMapper {
 	public void contentsRegist(ContentsDTO contentsDTO);
-	public List<ContentsDTO> contentsList();
+	public List<ContentsDTO> contentsList(ContentsDTO contentsDTO);
 	public ContentsDTO contentsDetail(String contentsNo);
 	public void contentsModify(ContentsDTO contentsDTO);
 	public void contentsDelete(String contentsNo);

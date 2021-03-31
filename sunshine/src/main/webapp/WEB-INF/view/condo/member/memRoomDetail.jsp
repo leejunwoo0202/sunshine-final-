@@ -2,6 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" isELIgnored="false"%>
 <%@ include file="../../include/include.jsp"%>
+<%@ page import="sunshine.model.DTO.MemberDTO" %>
 <!DOCTYPE HTML>
 <!--객실 리스트-->
 <html>
@@ -9,17 +10,15 @@
 <meta charset="UTF-8">
 <title>Industrious by TEMPLATED</title>
 
-<style type="text/css">
-input{border:none;}
-form:errors{color:red;}
-</style>
 
 <meta charset="utf-8" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, user-scalable=no" />
 <meta name="description" content="" />
 <meta name="keywords" content="" />
-<link rel="stylesheet" href="../assets/css/main.css" />
+<link rel="stylesheet" href="../../assets/css/main.css" />
+<link rel="stylesheet" href="../../assets/css/imgSlider.css" />
+
 </head>
 <body class="is-preload">
 
@@ -67,84 +66,109 @@ form:errors{color:red;}
 				released under the Creative Commons License.
 			</p>
 		</div>
-		<video autoplay loop muted playsinline src="../images/banner.mp4"></video>
+		<video autoplay loop muted playsinline src="../../images/banner.mp4"></video>
 	</section>
 
 	<!-- Highlights -->
-	
+
 	<section class="wrapper">
 		<div class="inner">
 			<header class="special">
 				<h2>객실 상세</h2>
-
+						
+<!-- 						<div> 버튼 클릭시 이미지 변경  -->
+<!-- 						<img alt="img" src="../../images/left_btn.png" /> -->
+<!-- 						<img alt="img" src="../../images/right_btn.png" /> -->
+<!-- 						</div> -->
+	
 			</header>
 			<div class="highlights">
-				<section>
-					<form:form action="/condo/roomModify" onsubmit="return roomPwCk();" name="frm" method="post" modelAttribute="condoCommand" enctype="multipart/form-data">
-					<table border="1">
-						<tr>
-							<td width="6%">객실 번호</td>
-							<td width="10%">객실 타입</td>
-							<td width="14%">요금</td>
-							<td width="30%">상세</td>							
-							<td width="40%">이미지</td>
-						</tr>
-						<c:forEach var="room" items="${list }">
+<!-- 				<section> -->
+				
+				
+				
+				
+					<form action="../memBooking/${list.get(0).roomNum}" method="post">
+				
+						<table border="1" >
+					
 							<tr>
-								<td>
-									${room.roomNum } <input type="hidden" name="roomNum" value="${room.roomNum }" />
-								</td>
-								<td>
-									<c:if test="${room.roomType == 'DR' }">
-										Double Room
-									</c:if>
-									<c:if test="${room.roomType == 'TR' }">
-										Twin Room
-									</c:if>
-									<c:if test="${room.roomType == 'FR' }">
-										Family Room
-									</c:if>
-									<c:if test="${room.roomType == 'CR' }">
-										Connecting Room
-									</c:if><br />
-									 <select id = "roomType" name="roomType">
-			                           <option>수정할 객실 타입</option>
-			                           <option value ="DR">Double Room</option>
-			                           <option value ="TR">Twin Room</option>
-			                           <option value ="FR">Family Room</option>
-			                           <option value ="CR">Connecting Room</option>                           
-			                        </select>
-<%-- 			                        <input type="hidden" name="roomType" value="EL{room.roomType }"> --%>
-									<form:errors path="roomType" ></form:errors>
-								</td>
-								<td>
-									<form:input path="roomPrice" value="${room.roomPrice}" size="3"/>원
-								</td>
-								<td>
-									<form:input path="roomDetail" value="${room.roomDetail}"/>
-								</td>								
-								<td><c:forTokens items="${room.roomImage }" delims="`"
-										var="img" varStatus="status">
-										<!--  
-							<img alt="img" src="WEB-INF/view/condo/upload/${img }" />
-							-->
-										<img alt="img" src="/condo/upload/${img }" width="300px"
-											height="300px" />
-<!-- 										<input type="file" name="roomImg" multiple="multiple" /> -->
-									</c:forTokens></td>
+								<td> 타입</td>
+								<td>선샤인 콘도</td>
+								<td> 이용 요금</td>
+								<td>상세 </td>
+								<td></td>
+							
+								
 							</tr>
-						</c:forEach>
-					</table>
-				<a href ="../roomList"><input type="button" value="리스트로 "></a>  &nbsp;&nbsp;&nbsp;
-<%-- 			<a href ="../roomModify?roomNum=${list.get(0).roomNum }"> 수정 </a>  &nbsp;&nbsp;&nbsp; --%>
-				<input type="submit" value="수정"  />&nbsp;&nbsp;&nbsp;
-				<input type="button" value="삭제 " onclick="roomDel();">  &nbsp;&nbsp;&nbsp;						
-<!-- 				<input type="password" id="roomPw" name ="roomPw" placeholder="비밀번호를 입력하세요"/><br /> -->
-				<form:password id="roomPw" path ="roomPw" placeholder="비밀번호를 입력하세요"/><br />
-				<form:errors path="roomPw" ></form:errors>
-				${PwErr }
-				</form:form>
-				</section>
+
+							<c:forEach var="room" items="${list}" >
+							
+							
+							<input type="hidden" value="${room.roomNum}"/>			
+							<input type="hidden" value="${room.roomType}"/>			
+							<input type="hidden" value="${room.roomPrice}"/>	
+
+<%-- 							<c:if test="${loginInfo.grade eq 'em'}" > --%>
+<!-- 							직원 -->
+<%-- 							</c:if> --%>
+<%-- 							<c:if test="${loginInfo.grade eq 'mem' }"> --%>
+<!-- 							회원 -->
+<%-- 							</c:if> --%>
+
+							<input type ="hidden" value="${user.memNo}"/>
+							<input type ="hidden" value="${user.userId}"/>
+							<input type ="hidden" value="${user.name}"/>
+							<input type ="hidden" value="${user.email}"/>
+							<input type ="hidden" value="${user.phone}"/>
+						
+								<tr>
+									<td><c:if test="${room.roomType == 'DR' }">
+										Double Room
+									</c:if> <c:if test="${room.roomType == 'TR' }">
+										Twin Room
+									</c:if> <c:if test="${room.roomType == 'FR' }">
+										Family Room
+									</c:if> <c:if test="${room.roomType == 'CR' }">
+										Connecting Room
+									</c:if></td>
+									
+								<td>					
+								<div class="imgBannerWrap">
+										<c:forEach items="${list }" var="room">
+												<c:forTokens items="${room.roomImage }" delims="`" var="img" varStatus="status" > 
+					<!-- 											객실이미지 -->
+													<img class="imgSlide" src="/condo/upload/${img }" alt="객실 사진" style="width:700px; height:500px"/>
+<!-- 													<a href="hotel" class="imgSlide" -->
+<%-- 														style="background-image: url('/condo/upload/${img }'); width:700px; height:500px" --%>
+<!-- 													> -->
+					<!-- 												<p class="textArea">21321312321</p> -->
+					<!-- 												<p class="textArea-field">sadasdasdasd</p> -->
+													</a>
+												</c:forTokens>
+					
+													<!-- 이미지 슬라이드 버튼 -->
+													<div class="imageSlider">
+														<a class="prev" onclick="button_click(-1);">&#10094</a>
+														<a class="next" onclick="button_click(1);">&#10095</a>
+													</div>
+										<td><fmt:formatNumber value="${room.roomPrice}" pattern="#,###" />원</td> 
+										<td>${room.roomDetail}</td>
+										</c:forEach>
+								</div>						
+							</c:forEach>
+							
+							
+							
+							
+						</table>
+						<div class="button-book" >
+							<a href="../memList"><input type="button" value="리스트 " ></a>
+							<input type="submit" value="예약" style="float: right;"/>						
+						</div>
+						</form>
+						
+<!-- 				</section> -->
 			</div>
 		</div>
 	</section>
@@ -183,7 +207,7 @@ form:errors{color:red;}
 						</blockquote>
 						<div class="author">
 							<div class="image">
-								<img src="../images/pic01.jpg" alt="" />
+								<img src="../../images/pic01.jpg" alt="" />
 							</div>
 							<p class="credit">
 								- <strong>Jane Doe</strong> <span>CEO - ABC Inc.</span>
@@ -200,7 +224,7 @@ form:errors{color:red;}
 						</blockquote>
 						<div class="author">
 							<div class="image">
-								<img src="../images/pic03.jpg" alt="" />
+								<img src="../../images/pic03.jpg" alt="" />
 							</div>
 							<p class="credit">
 								- <strong>John Doe</strong> <span>CEO - ABC Inc.</span>
@@ -217,7 +241,7 @@ form:errors{color:red;}
 						</blockquote>
 						<div class="author">
 							<div class="image">
-								<img src="../images/pic02.jpg" alt="" />
+								<img src="../../images/pic02.jpg" alt="" />
 							</div>
 							<p class="credit">
 								- <strong>Janet Smith</strong> <span>CEO - ABC Inc.</span>
@@ -271,13 +295,38 @@ form:errors{color:red;}
 	</footer>
 
 	<!-- Scripts -->
-	<script src="../assets/js/jquery.min.js"></script>
-	<script src="../assets/js/browser.min.js"></script>
-	<script src="../assets/js/breakpoints.min.js"></script>
-	<script src="../assets/js/util.js"></script>
-	<script src="../assets/js/main.js"></script>
-	
+	<script src="../../assets/js/jquery.min.js"></script>
+	<script src="../../assets/js/browser.min.js"></script>
+	<script src="../../assets/js/breakpoints.min.js"></script>
+	<script src="../../assets/js/util.js"></script>
+	<script src="../../assets/js/main.js"></script>
+
 	<script type="text/javascript">
+		var currSlide = 1;
+		showSlide(currSlide);
+	
+		function button_click(num) {
+		  // 버튼 클릭
+		  showSlide((currSlide += num));
+		}
+	
+		function showSlide(num) {
+		  // 이미지 변경
+		  const slides = document.querySelectorAll(".imgSlide");
+		  if(num < 1) {
+		    currSlide = 1;
+		  }
+		  if(num > slides.length) {
+		    currSlide = slides.length;
+		  }
+		  for(var i=0; i < slides.length ; i++) {
+		    slides[i].style.display = "none";
+		  } 
+		  slides[currSlide - 1].style.display = "block";
+		}
+	
+	
+	
 		function roomPwCk(){
 			if(document.getElementById('roomPw').value.trim() == ""){
 				alert("비밀번호를 입력하세요");

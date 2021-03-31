@@ -12,7 +12,7 @@ public class ContentsDTO {
 	String divPeople;
 	Timestamp issueDate;
 	Date validity;
-	String grade;
+	String contentsDiv;
 	public String getContentsNo() {
 		return contentsNo;
 	}
@@ -55,11 +55,12 @@ public class ContentsDTO {
 	public void setValidity(Date validity) {
 		this.validity = validity;
 	}
-	public String getGrade() {
-		return grade;
+	public String getContentsDiv() {
+		return contentsDiv;
 	}
-	public void setGrade(String grade) {
-		this.grade = grade;
+	public void setContentsDiv(String contentsDiv) {
+		this.contentsDiv = contentsDiv;
 	}
+
 	
 }

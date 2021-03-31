@@ -79,13 +79,27 @@
 							
 							<c:forEach var ="room" items="${list }" >
 							<tr>
-							<td>${room.roomType}</td> 
-							<td>${room.roomPrice}</td> 
+							
+							<td>
+									<c:if test="${room.roomType == 'DR' }">
+										Double Room
+									</c:if>
+									<c:if test="${room.roomType == 'TR' }">
+										Twin Room
+									</c:if>
+									<c:if test="${room.roomType == 'FR' }">
+										Family Room
+									</c:if>
+									<c:if test="${room.roomType == 'CR' }">
+										Connecting Room
+									</c:if><br />
+						
+							<td><fmt:formatNumber value="${room.roomPrice}" pattern="#,###" />원</td> 
 							<td><c:forTokens items="${room.roomImage }" delims="`" var="img" varStatus="status" end="0" >
-							<a href ="roomDetail/${room.roomNum}"><img alt="img" src="/condo/upload/${img }" width = "200px"/></a>
+							<a href ="memRoomDetail/${room.roomNum}"><img alt="img" src="/condo/upload/${img }" width = "200px"/></a>
 							</c:forTokens></td>
 							<td>${room.roomDetail }</td>
-							<td><input type="button" value="예약"  onclick="javascript:location='/condoMem/memBooking?roomNum=${room.roomNum}'"/></td>	
+							<td><input type="button" value="객실 보기"  onclick="javascript:location='memRoomDetail/${room.roomNum}'"/></td>	
 							</c:forEach>
 							</table>
 							<%@ include file="../../include/includePage.jsp" %>	

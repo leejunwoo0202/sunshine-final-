@@ -29,7 +29,7 @@
 	   <td>${contents.divPeople }</td>
 	   <td>${contents.issueDate }</td>
 	   <td>${contents.validity }</td>
-	   <td>${contents.grade }</td>
+	   <td>${contents.contentsDiv }</td>
 	   </tr>
 	   <tr><td colspan="7">
 		<input type="button" value="수정" onclick="javascript:location.href='contentsModify?contentsNo=${contents.contentsNo }'" />

@@ -18,7 +18,7 @@
 <td>연령 구분</td>
 <td>발급일</td>
 <td>유효기간</td>
-<td>등급</td>
+<td>예약 구분</td>
 </tr>
 <tr>
 <td>${contents.contentsNo }</td>
@@ -27,7 +27,7 @@
 <td>${contents.divPeople }</td>
 <td>${contents.issueDate }</td>
 <td>${contents.validity }</td>
-<td><input type="text" value="${contents.grade }" name="grade"/></td>
+<td><input type="text" value="${contents.contentsDiv }" name="contentsDiv"/></td>
 </tr>
 <tr><td colspan="7">
 	<input type="submit" value="완료"/>
