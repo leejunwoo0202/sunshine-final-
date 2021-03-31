@@ -10,27 +10,7 @@
 <html>
 <head>
 <title>Generic Page - Industrious by TEMPLATED</title>
-<style>
-#table {
-    width: 1000px;
-    height:1000px;
-    
-  }
-  th{
-    width:400px;
-    height:200px;
-    border-collapse:seperate;
-    border-spacing: 10px;
-  }
-  
-  td{
-     width:400px;
-     height:200px;
-     border-collapse:seperate;
-     border-spacing: 10px;
-  }
-  
-</style>
+
 <meta charset="utf-8" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -60,7 +40,7 @@
 			<form action="modifyPro" method="post" enctype="multipart/form-data">
 <input type="hidden" name="goodsNum" value="${goods.goodsNum}"/>
 <input type="hidden" name="goodsImage1" value="${goods.goodsImage }"/>
-<table border="1"  id="table">
+<table>
 <tr>
 <th>상품번호</th> 
 <th>상품이름</th> 
@@ -68,7 +48,9 @@
 <th>상품개수 </th> 
 <th>상품종류</th> 
 <th>상품설명</th> 
-<th colspan="2">이미지</th> </tr>
+<th>이미지변경</th>
+<th>이미지</th>
+ </tr>
 <tr>
 <td>${goods.goodsNum }</td>
 <td><input type="text" name="goodsName" value="${goods.goodsName }"/></td>
@@ -78,14 +60,12 @@
 <td><textarea rows="10" cols="50" name="goodsContent">${goods.goodsContent}</textarea></td>
 <td><input type="file" name="goodsImage" /></td>
 <td><c:forTokens items="${goods.goodsImage }" delims="`" var="img" >
-	<img src="../goods/upload/${img }" width="400" height="500"/><br />
-	
+	<img src="../goods/upload/${img }" width="70" height="70"/>
 </c:forTokens></tr>
-<tr>
 
+<tr>
 <td colspan="8" align="center">
 <input type="submit" value="수정"/>
-
 </td>
 </tr>
 </table>
