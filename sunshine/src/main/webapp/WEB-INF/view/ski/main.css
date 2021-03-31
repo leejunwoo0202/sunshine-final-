@@ -2653,9 +2653,7 @@ body {
     #heading .testimonials .content .credit strong {
       color: #ce1b28; }
   #heading:before {
-    background: linear-gradient(
-135deg
-, #f6f3f35e 0%, #111111bf 74%);
+    background: linear-gradient(135deg, #ce1b28 0%, #111111 74%);
     content: ' ';
     display: block;
     height: 100%;
@@ -2831,5 +2829,5 @@ body.is-menu-visible #menu {
   -webkit-transform: translateX(0);
   -ms-transform: translateX(0);
   transform: translateX(0);
-  box-shadow: 0 0 1.5rem 0 rgba(255, 0, 0, 0.2);
+  box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.2);
   visibility: visible; }

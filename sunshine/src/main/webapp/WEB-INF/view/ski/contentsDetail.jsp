@@ -9,6 +9,7 @@
 </head>
 <body>
 <table border="1" style="width:1000px;">
+
 <colgroup>
 	<col width="10%" />
 	<col width="10%" />
