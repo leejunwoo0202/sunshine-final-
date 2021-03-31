@@ -1,6 +1,7 @@
 <!DOCTYPE HTML>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ include file="../include/includePage.jsp" %>
 <!--
 	Industrious by TEMPLATED
 	templated.co @templatedco
